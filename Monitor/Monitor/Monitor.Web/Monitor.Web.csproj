@@ -1578,50 +1578,49 @@
     <Content Include="lib\pllib\syntaxhighlighter\styles\shThemejqPlot.min.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
+    <Content Include="UI_Monitor\images\page\CementPreparation_QTXQS.jpg" />
+    <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS.jpg" />
+    <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS_dan.jpg" />
+    <Content Include="UI_Monitor\images\page\CoalPreparation_QTXQS.jpg" />
+    <Content Include="UI_Monitor\images\page\LimestoneCrushing.jpg" />
+    <Content Include="UI_Monitor\images\page\RawMealPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\111.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\template.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\template2.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\template1.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\五级.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\五级筒（单列）.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\四级.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\四级旋风筒.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\2.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\1.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\预热.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Clinker\view\预热器（双列）.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\template.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\template00.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\template1.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\五级.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\五级筒（单列）.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\四级.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\四级旋风筒.jpg" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\预热.png" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\view\预热器（双列）.jpg" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\view\template0.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template0.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
     <Content Include="UI_WebUserControls\OrganizationSelector\OrganisationTree.ascx" />
     <Content Include="UI_WebUserControls\TagsSelector\TagsSelector_Dcs.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\Clinker\monitor\MonitorView.aspx.cs">
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\Clinker\monitor\MonitorView.aspx.designer.cs">
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx.designer.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\monitor\MonitorView.aspx.cs">
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\Db_01_ND\Clinker\monitor\MonitorView.aspx.designer.cs">
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx.designer.cs">
+      <DependentUpon>MonitorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx.cs">
+      <DependentUpon>MonitorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx.designer.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_WebUserControls\OrganizationSelector\OrganisationTree.ascx.cs">
@@ -1657,7 +1656,6 @@
     <Folder Include="UI_Monitor\css\common\" />
     <Folder Include="UI_Monitor\css\page\" />
     <Folder Include="UI_Monitor\images\common\" />
-    <Folder Include="UI_Monitor\images\page\" />
     <Folder Include="UI_Monitor\js\page\" />
   </ItemGroup>
   <ItemGroup>
