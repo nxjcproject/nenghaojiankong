@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EasyUIJsonParser">
-      <HintPath>..\..\..\EasyUIJsonParser\EasyUIJsonParser\EasyUIJsonParser\bin\Debug\EasyUIJsonParser.dll</HintPath>
+      <HintPath>..\..\Lib\EasyUIJsonParser.dll</HintPath>
     </Reference>
     <Reference Include="InternalMemeryRestore">
       <HintPath>..\..\Lib\InternalMemeryRestore.dll</HintPath>
@@ -63,6 +63,9 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="WebStyleBaseForEnergy">
       <HintPath>..\..\Lib\WebStyleBaseForEnergy.dll</HintPath>
+    </Reference>
+    <Reference Include="WebUserContorls.Web">
+      <HintPath>..\..\Lib\WebUserContorls.Web.dll</HintPath>
     </Reference>
     <Reference Include="WebUserControls.Infrastructure">
       <HintPath>..\..\Lib\WebUserControls.Infrastructure.dll</HintPath>
@@ -1596,8 +1599,6 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
-    <Content Include="UI_WebUserControls\OrganizationSelector\OrganisationTree.ascx" />
-    <Content Include="UI_WebUserControls\TagsSelector\TagsSelector_Dcs.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1622,20 +1623,6 @@
     </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx.designer.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_WebUserControls\OrganizationSelector\OrganisationTree.ascx.cs">
-      <DependentUpon>OrganisationTree.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_WebUserControls\OrganizationSelector\OrganisationTree.ascx.designer.cs">
-      <DependentUpon>OrganisationTree.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_WebUserControls\TagsSelector\TagsSelector_Dcs.ascx.cs">
-      <DependentUpon>TagsSelector_Dcs.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_WebUserControls\TagsSelector\TagsSelector_Dcs.ascx.designer.cs">
-      <DependentUpon>TagsSelector_Dcs.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
