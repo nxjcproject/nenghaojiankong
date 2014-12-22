@@ -18,7 +18,7 @@
     <script type="text/javascript" src="/lib/ealib/easyui-lang-zh_CN.js" charset="utf-8"></script>
 
     <script type="text/javascript" charset="utf-8">
-        var viewNames = ["scyt", "view2", "view3", "view4", "view5"];
+        var viewNames = ["1#水泥制备"];
     </script>
     <script type="text/javascript" src="../../../js/common/Monitor.js" charset="utf-8"></script>
 
