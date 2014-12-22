@@ -12,16 +12,18 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker02.
 {
     public partial class MonitorView : WebStyleBaseForEnergy.webStyleBase
     {
+        private static readonly string connString = "";          //DCS连接字符串
+
         protected void Page_Load(object sender, EventArgs e)
         {
             base.InitComponts();
-#if DEBUG
-            // 调试用,自定义的数据授权
-            List<string> m_DataValidIdItems = new List<string>() { "C41B1F47-A48A-495F-A890-0AABB2F3BFF7", "zc_nxjc_qtx_efc", "zc_nxjc_qtx_tys" };
-            AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
-#endif
-            this.OrganisationTree.Organizations = GetDataValidIdGroup("ProductionOrganization");  //向web用户控件传递数据授权参数
-            this.OrganisationTree.PageName = "MonitorView.aspx";
+            ////////////////////调试用,自定义的数据授权
+            if (!mDataValidIdGroup.ContainsKey("ProductionOrganization"))
+            {
+                mDataValidIdGroup.Add("ProductionOrganization", new List<string>(1));
+                mDataValidIdGroup["ProductionOrganization"].Add("O0101");
+                mDataValidIdGroup["ProductionOrganization"].Add("O0102");
+            }
         }
 
         [WebMethod]
@@ -30,7 +32,7 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker02.
             SceneMonitor result = new SceneMonitor();
             result.time = DateTime.Now;
             result.Name = sceneName;
-            result.DataSet = ProcessEnergyMonitorService.GetRealtimeDatas(organizationId, sceneName);
+            result.DataSet = ProcessEnergyMonitorService.GetRealtimeDatas(connString,organizationId, sceneName);
             return result;
         }
 

@@ -12,6 +12,8 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
 {
     public partial class MonitorView : WebStyleBaseForEnergy.webStyleBase
     {
+        private static readonly string connString = "";          //DCS连接字符串
+
         protected void Page_Load(object sender, EventArgs e)
         {
             base.InitComponts();
@@ -21,7 +23,7 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
 #endif
             this.OrganisationTree.Organizations = GetDataValidIdGroup("ProductionOrganization");  //向web用户控件传递数据授权参数
-            this.OrganisationTree.PageName = "MonitorView.aspx";
+            //this.OrganisationTree.PageName = "MonitorView.aspx";
         }
 
         [WebMethod]
@@ -30,7 +32,7 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             SceneMonitor result = new SceneMonitor();
             result.time = DateTime.Now;
             result.Name = sceneName;
-            result.DataSet = ProcessEnergyMonitorService.GetRealtimeDatas(organizationId, sceneName);
+            result.DataSet = ProcessEnergyMonitorService.GetRealtimeDatas(connString,organizationId, sceneName);
             return result;
         }
 

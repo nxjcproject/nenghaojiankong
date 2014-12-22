@@ -13,8 +13,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
 {
     public class ProcessEnergyMonitorService
     {
-        private static readonly string _connStr = ConnectionStringFactory.NXJCConnectionString;
-        private static ISqlServerDataFactory _dataFactory = new SqlServerDataFactory(_connStr);
+        private static ISqlServerDataFactory _dataFactory;
 
         /// <summary>
         /// 获得DataSetInformation
@@ -70,8 +69,10 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="viewName"></param>
         /// <returns></returns>
-        public static IEnumerable<DataItem> GetRealtimeDatas(string organizationId, string viewName)
+        public static IEnumerable<DataItem> GetRealtimeDatas(string connString,string organizationId, string viewName)
         {
+            _dataFactory = new SqlServerDataFactory(connString);
+
             IList<DataItem> result = new List<DataItem>();
             //ArrayList idList = GetParametorsId(viewName);
             IEnumerable<DataSetInformation> dataSetInfor = GetDataSetInformation(organizationId,viewName);

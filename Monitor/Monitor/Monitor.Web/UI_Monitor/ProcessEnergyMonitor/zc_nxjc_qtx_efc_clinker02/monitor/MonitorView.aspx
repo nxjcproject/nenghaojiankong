@@ -26,14 +26,10 @@
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false" style="width: 100%;">
-        <div data-options="region:'west',split:true,border:true" title="生产线信息" style="width: 220px;">
-            <uc1:OrganisationTree runat="server" ID="OrganisationTree" />
+        <div data-options="region:'north',border:true,collapsible:false" style="font-size:15px;height:3%;">
+            当前时间：<span id="timestamp"></span>         
         </div>
-        <div data-options="region:'center',border:true,collapsible:false">
-            <div style="position: fixed; top: 0; padding-left: 5px; width: 100%; background: white; height: 20px; z-index: 100;">
-                时间：<span id="timestamp"></span>
-            </div>
-            <br />
+        <div data-options="region:'center',border:true,collapsible:false" style="height:97%">
             <div class="easyui-layout" data-options="fit:true,border:false">
                 <div data-options="region:'center',split:true,border:true,collapsible:false">
                     <div id="myTabs" class="easyui-tabs" data-options="fit:true" style="float: left;">
@@ -55,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div data-options="region:'east',split:true,border:true,collapsible:true" title="电表信息" style="width: 680px;">
+                <div data-options="region:'east',split:true,border:true,collapsible:true" title="电表信息" style="width: 910px;">
                     <div style="width: 100%; height: 400px">
                         <table id="consumption" class="easyui-datagrid" style="width: 100%; height: 100%">
                         </table>
