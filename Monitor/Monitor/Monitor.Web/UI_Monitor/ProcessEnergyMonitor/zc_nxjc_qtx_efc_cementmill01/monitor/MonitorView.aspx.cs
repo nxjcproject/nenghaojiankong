@@ -22,8 +22,6 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             List<string> m_DataValidIdItems = new List<string>() { "C41B1F47-A48A-495F-A890-0AABB2F3BFF7", "zc_nxjc_qtx_efc", "zc_nxjc_qtx_tys" };
             AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
 #endif
-            this.OrganisationTree.Organizations = GetDataValidIdGroup("ProductionOrganization");  //向web用户控件传递数据授权参数
-            //this.OrganisationTree.PageName = "MonitorView.aspx";
         }
 
         [WebMethod]
