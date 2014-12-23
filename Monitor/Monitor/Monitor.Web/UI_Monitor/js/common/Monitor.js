@@ -77,7 +77,7 @@ function displayScene(scene) {
 }
 function displayDataItem(dataSets) {
     $.each(dataSets, function (i, item) {
-        $("#" + publicData.tabIndex + "_" + item.ID).val(item.Value);
+        $("#v" + publicData.tabIndex + "_" + item.ID).val(item.Value);
     });
 }
 
