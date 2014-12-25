@@ -10,6 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/gray/easyui.css" />
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/icon.css" />
+    <link href="../../../css/common/Monitor.css" rel="stylesheet" />
 
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/common/jquery.utility.js" charset="utf-8"></script>
@@ -47,6 +48,10 @@
                         </div>
                         <div title="4" style="width: 100%">
                             <div id="template3">
+                            </div>
+                        </div>
+                        <div title="5" style="width: 100%">
+                            <div id="template4">
                             </div>
                         </div>
                     </div>

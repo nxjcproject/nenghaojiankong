@@ -1,0 +1,10 @@
+﻿body {
+}
+input {
+    text-align:right;
+    background-color:#C0C0C0;
+}
+.divBorder {
+    border:1px dashed #000;
+    font-size:12px;
+}

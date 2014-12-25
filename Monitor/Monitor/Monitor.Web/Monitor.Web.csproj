@@ -1581,11 +1581,13 @@
     <Content Include="lib\pllib\syntaxhighlighter\styles\shThemejqPlot.min.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
+    <Content Include="UI_Monitor\css\common\Monitor.css" />
     <Content Include="UI_Monitor\images\page\CementPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS_dan.jpg" />
     <Content Include="UI_Monitor\images\page\CoalPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\LimestoneCrushing.jpg" />
+    <Content Include="UI_Monitor\images\page\overview.jpg" />
     <Content Include="UI_Monitor\images\page\RawMealPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx" />
@@ -1595,10 +1597,12 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template4.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1640,7 +1644,6 @@
     <Folder Include="Images\common\" />
     <Folder Include="Images\Page\" />
     <Folder Include="js\page\" />
-    <Folder Include="UI_Monitor\css\common\" />
     <Folder Include="UI_Monitor\css\page\" />
     <Folder Include="UI_Monitor\images\common\" />
     <Folder Include="UI_Monitor\js\page\" />

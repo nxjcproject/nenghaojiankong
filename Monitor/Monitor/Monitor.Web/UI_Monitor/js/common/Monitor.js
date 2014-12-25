@@ -38,8 +38,16 @@ function InitializePage() {
     });
 }
 function loadTemplate(tabIndex, url) {
+    for (var i = 0; i <= 5; i++) {
+        $("#template" + i).empty();
+    }
     // 将模板加载至 templatePlaceHolder
     $("#template" + tabIndex).load(url);
+
+    //$("#template" + tabIndex + " :input").each(function (index,item) {
+    //    newId = "v" + tabIndex + "_" + item.id;
+    //    $("#" + item.id).attr("class", newId);
+    //});
 }
 function getLatestData() {
     //var m_MsgData;
@@ -49,7 +57,7 @@ function getLatestData() {
         data: JSON.stringify(dataToServer),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        success: function(data){
+        success: function (data) {
             serviceSuccessful(data);
         }
     });
@@ -110,29 +118,37 @@ function setupTimerToGetTableData() {
 
 function initializeTable() {
     $('#consumption').datagrid({
-            title:'产量/电量/电耗',
-            iconCls: 'icon-save', singleSelect: true, rownumbers: true, striped: true,
-            columns: [[
-                { field: 'Flag', title: '项目指标', width: '28%', align: 'center' },
-                { field: 'Shifts', title: '本日甲班', width: '12%', align: 'center' },
-                { field: 'StartTime', title: '本日乙班', width: '12%', align: 'center' },
-                { field: 'EndTime', title: '本日丙班', width: '12%', align: 'center' },
-                { field: 'Description', title: '本日合计', width: '12%', align: 'center' },
-                { field: 'CreatedDate', title: '本月累计', width: '12%', align: 'center' },
-                { field: 'CreatedDate', title: '本年累计',width:'12%', align: 'center' }
-            ]]
-        });
+        title: '产量/电量/电耗',
+        iconCls: 'icon-save', singleSelect: true, rownumbers: true, striped: true,
+        columns: [[
+            { field: 'Flag', title: '项目指标', width: '28%', align: 'center' },
+            { field: 'Shifts', title: '本日甲班', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'StartTime', title: '本日乙班', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'EndTime', title: '本日丙班', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'Description', title: '本日合计', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'CreatedDate', title: '本月累计', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'CreatedDate', title: '本年累计', width: '12%', align: 'right', formatter: numberFormatter }
+        ]]
+    });
     $('#ammeter').datagrid({
-            title: '电表值',
-            iconCls: 'icon-save', singleSelect: true, rownumbers: true, striped: true,
-            columns: [[
-                { field: 'Flag', title: '电表编号', width: '12%', align: 'center' },
-                { field: 'Shifts', title: '设备名称', width: '26%', align: 'center' },
-                { field: 'StartTime', title: '电表读数(kw.h)', width: '12%', align: 'center' },
-                { field: 'EndTime', title: '功率(kw)', width: '12%', align: 'center' },
-                { field: 'Description', title: '日合计(kw.h)', width: '12%', align: 'center' },
-                { field: 'CreatedDate', title: '月合计(kw.h)', width: '12%', align: 'center' },
-                { field: 'CreatedDate', title: '年累计(kw.h)', width: '12%', align: 'center' }
-            ]]
-        });
+        title: '电表值',
+        iconCls: 'icon-save', singleSelect: true, rownumbers: true, striped: true,
+        columns: [[
+            { field: 'Flag', title: '电表编号', width: '12%', align: 'center' },
+            { field: 'Shifts', title: '设备名称', width: '26%', align: 'center' },
+            { field: 'StartTime', title: '电表读数(kw.h)', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'EndTime', title: '功率(kw)', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'Description', title: '日合计(kw.h)', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'CreatedDate', title: '月合计(kw.h)', width: '12%', align: 'right', formatter: numberFormatter },
+            { field: 'CreatedDate', title: '年累计(kw.h)', width: '12%', align: 'right', formatter: numberFormatter }
+        ]]
+    });
+}
+function numberFormatter(val) {
+    if ($.isNumeric(value)) {
+        return value.toFixed(2);
+    }
+    else {
+        return "";
+    }
 }
