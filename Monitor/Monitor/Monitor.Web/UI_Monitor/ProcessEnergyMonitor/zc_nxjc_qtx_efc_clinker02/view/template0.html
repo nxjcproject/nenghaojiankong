@@ -1,137 +1,342 @@
-﻿<div style="position: relative; background-image: url('../../../images/page/overview.jpg'); width: 835px; height: 800px;">
-    <div class="divBorder" style="position: absolute; top: 233px; left: 580px; width: 136px;">
-        破碎机<br />
-        电流：<input class="easyui-numberbox" data-options="precision:2" id="Q11M_CUN_M" type="text" style="width: 63px" />
-        A<br />
-        温度：<input class="easyui-numberbox" data-options="precision:2" id="QTE09_T_M" type="text" style="width: 63px" />
-        ℃
+﻿<div style="position: relative; background-image: url('../../../images/page/overview.jpg'); width: 1720px; height: 770px; overflow: hidden;">
+    <div>
+        <p style="text-align: center; font-size: 30px;">2#熟料生产能耗监控总貌图</p>
+    </div>
+    <div class="divBorder" style="position: absolute; top: 178px; left: 1265px;">
+        <table>
+            <tr>
+                <td colspan="2">破碎机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="Q11M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>温度：</td>
+                <td>
+                    <input class="easyui-numberbox" id="QTE09_T_M" style="width: 63px" />℃</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="divBorder" style="position: absolute; top: 301px; left: 149px; width: 128px;">
-        煤磨主电机电流：<br />
-        &nbsp;
-        <input class="easyui-numberbox" data-options="precision:2" id="K18M_CUN_M" type="text" style="width: 63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 159px; left: 628px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">煤磨主电机</td>
+
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="K18M_CUN_M" style="width: 63px" />
+                    A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A007Power" style="width: 63px" />KW</td>
+            </tr>
+            <tr>
+                <td>煤粉通风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="K2M_CUN_M" style="width: 63px" />
+                    A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A008Power" style="width: 63px" />
+                    KW</td>
+            </tr>
+        </table>
+
     </div>
-    <div class="divBorder" style="position: absolute; top: 108px; left: 118px; width: 129px;">
-        煤粉通风机电流：<br />
-        <input class="easyui-numberbox" data-options="precision:2" id="K2M_CUN_M" type="text" style="width: 63px" />
-        A
-    </div>
-    <div class="divBorder" style="position: absolute; top: 549px; left: 555px; width: 166px;">
+
+    <div class="divBorder" style="position: absolute; top: 442px; left: 1234px;">
         入窑生料<br />
-        流 量：
-        <input class="easyui-numberbox" data-options="precision:2" id="F45AC_FF_M" type="text" style="width: 63px" />
-        t/h<br />
-        累计量：<input class="easyui-numberbox" data-options="precision:2" id="F45AC_TOL_M" type="text" style="width: 63px" />
-        t
+        <table style="width: 100%;">
+            <tr>
+                <td style="text-align: left">流  量：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="F45AC_FF_M" style="width: 63px" />
+                    t/h</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">累计量：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="F45AC_TOL_M" style="width: 63px" />
+                    t</td>
+            </tr>
+        </table>
+    </div>
+    <div class="divBorder" style="position: absolute; top: 443px; left: 1047px;">
+        生料主电机<br />
+        <table style="width: 100%;">
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="B49M_CUN_M" style="width: 63px" />
+                    A</td>
+
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A002Power" style="width: 63px" />
+                    KW</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="divBorder" style="position: absolute; top: 454px; left: 525px; width: 144px;">
-        生料磨主电机电流：<br />
-        <input class="easyui-numberbox" data-options="precision:2" id="B49M_CUN_M" type="text" style="width: 63px" />
-        A
-    </div>
-    <div class="divBorder" style="position: absolute; top: 271px; left: 315px; width: 113px;">
-        循环风机电流：<br />
-        &nbsp;
-        <input class="easyui-numberbox" data-options="precision:2" id="B52M_CUN_M" type="text" style="width: 63px" />
-        A  
-        <br />
-        尾排风机电流：<br />
-        &nbsp;
-        <input class="easyui-numberbox" data-options="precision:2" id="B20M_CUN_M" type="text" style="width: 63px" />
-        A
-    </div>
-
-
-    <div class="divBorder" style="position: absolute; top: 731px; left: 361px; width: 139px;">
-        窑主电机<br />
-        电流：<input class="easyui-numberbox" data-options="precision:2" id="F4M_CUN_M" type="text" style="width: 63px" />
-        A<br />
-        转速：<input class="easyui-numberbox" data-options="precision:2" id="F4M_SDF_M" type="text" style="width: 63px" />rpm
-    </div>
-    <div class="divBorder" style="position: absolute; top: 522px; left: 22px; width: 130px;">
-        窑头排风机电流：<br />
-        <input class="easyui-numberbox" data-options="precision:2" id="G4M_CUN_M" type="text" style="width: 63px" />
-        A<br />
-        高温风机电流：<br />
-        <input class="easyui-numberbox" data-options="precision:2" id="F30AC_CUN_M" type="text" style="width: 63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 220px; left: 833px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">循环风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="B52M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A001Power" style="width: 63px" />KW</td>
+            </tr>
+            <tr>
+                <td colspan="2">尾排风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="B20M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A004Power" style="width: 63px" />KW</td>
+            </tr>
+        </table>
     </div>
 
-
-    <div class="divBorder" style="position: absolute; top: 668px; left: 203px; width: 148px;">
-        分解炉喂煤量<br />
-        流 量:<input class="easyui-numberbox" data-options="precision:2" id="K12AC_SDF_M" type="text" style="width: 63px" />
-        t/h<br />
-        累计量<input class="easyui-numberbox" data-options="precision:2" id="K12AC_TOL_M" type="text" style="width: 63px" />
-        t
+    <div class="divBorder" style="position: absolute; top: 669px; left: 589px; right: 986px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">窑主电机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="F4M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>转速：</td>
+                <td>
+                    <input class="easyui-numberbox" id="F4M_SDF_M" style="width: 63px" />rpm</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 733px; left: 203px; width: 149px;">
-        窑头喂煤量<br />
-        流 量:<input class="easyui-numberbox" data-options="precision:2" id="K11AC_SDF_M" type="text" style="width: 63px" />
-        t/h<br />
-        累计量<input class="easyui-numberbox" data-options="precision:2" id="K11AC_TOL_M" type="text" style="width: 63px" />
-        t
+    <div class="divBorder" style="position: absolute; top: 668px; left: 424px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">高温风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="F30AC_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A005Power" style="width: 63px" />KW</td>
+            </tr>
+        </table>
+    </div>
+    <div class="divBorder" style="position: absolute; top: 668px; left: 261px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">窑头排风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="G4M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A006Power" style="width: 63px" />KW</td>
+            </tr>
+        </table>
+    </div>
+    <div class="divBorder" style="position: absolute; top: 395px; left: 35px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">分解炉喂煤量</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">流量:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="K12AC_SDF_M" style="width: 63px" />t/h</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">累计量:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="K12AC_TOL_M" style="width: 63px" />t</td>
+            </tr>
+            <tr>
+                <td colspan="2">窑头喂煤量</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">流量:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="K11AC_SDF_M" style="width: 63px" />t/h</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">累计量:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="K11AC_TOL_M" style="width: 63px" />t</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">A1出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FTT01_T_M" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">A1出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FPT03_P_M" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">B1出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FTT02_T_M" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">B1出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FPT02_P_M" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">A5出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FTT19_T_M" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">A5出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FPT17_P_M" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">B5出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FTT20_T_M" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">B5出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="FPT18_P_M" style="width: 63px" />Pa</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="divBorder" style="position: absolute; top: 708px; left: 6px; width: 186px;">
-        A1出口温度：<input class="easyui-numberbox" data-options="precision:2" id="FTT01_T_M" type="text" style="width: 63px" />
-        ℃<br />
-        A1出口压力：<input class="easyui-numberbox" data-options="precision:2" id="FPT03_P_M" type="text" style="width: 63px" />
-        Pa<br />
-        A5出口温度：<input class="easyui-numberbox" data-options="precision:2" id="FTT19_T_M" type="text" style="width: 63px" />
-        ℃<br />
-        A5出口压力：<input class="easyui-numberbox" data-options="precision:2" id="FPT17_P_M" type="text" style="width: 63px" />
-        Pa<br />
-
+    <div class="divBorder" style="position: absolute; top: 668px; left: 757px;">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="2">冷却风机电流</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">#1:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="F6M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">#2:</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="F7M_CUN_M" style="width: 63px" />A</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 623px; left: 553px; width: 246px;">
-        
-         <table style="width:220px;border:0px;margin:0px;padding:0px;border-collapse:collapse;">
-                <tr>
-                    <td colspan="2" style="font-size:25px;text-align:center;">2#熟料线</td>
-                </tr>
-                <tr style="font-size:14px;">
-                    <td style="width:45%;">总功率:</td>
-                    <td>
-                        <input class="easyui-numberbox" data-options="precision:2" id="Text8" type="text" style="width: 63px" /> KW
-                    </td>
-                </tr>
-                 <tr style="font-size:14px;">
-                    <td>生料磨电耗:</td>
-                    <td>
-                        <input class="easyui-numberbox" data-options="precision:2" id="Text9" type="text" style="width: 63px" />Kwh/t
-                    </td>
-                </tr>
-               
-                <tr style="font-size:14px;">
-                    <td >煤磨电耗:</td>
-                    <td>
-                       <input class="easyui-numberbox" data-options="precision:2" id="Text10" type="text" style="width: 63px" />Kwh/t
-                    </td>
-                </tr>
-                <tr style="font-size:14px;">
-                    <td >熟料综合电耗:</td>
-                    <td>
-                        <input class="easyui-numberbox" data-options="precision:2" id="Text11" type="text" style="width: 63px" />Kwh/t
-                    </td>
-                </tr>
-                 <tr style="font-size:14px;">
-                    <td>熟料综合煤耗:</td>
-                    <td>
-                       <input class="easyui-numberbox" data-options="precision:2" id="Text12" type="text" style="width: 63px" />Kwh/t
-                    </td>
-                </tr>
-                
-                 <tr style="font-size:14px;">
-                    <td >余热发电功率:</td>
-                    <td>
-                       <input class="easyui-numberbox" data-options="precision:2" id="Text13" type="text" style="width: 63px" />MW
-                    </td>
-                </tr>
-           </table>
+
+    <div class="divBorder" style="position: absolute; top: 583px; left: 1061px;">
+        <table style="border-style: none; border-color: inherit; border-width: 1px; margin: 0px; padding: 0px; border-collapse: collapse;">
+            <tr>
+                <td>熟料用电总功率(KW)</td>
+                <td colspan="3">
+                    <input class="easyui-numberbox" id="熟料用电总功率(KW)" style="text-align: center; width: 63px" /></td>
+            </tr>
+            <tr>
+                <td class="tdBorder" style="text-align: left">指标名称</td>
+                <td class="tdBorder" style="text-align: center">本日累计</td>
+                <td class="tdBorder" style="text-align: center">本月累计</td>
+                <td class="tdBorder" style="text-align: center">本年累计</td>
+            </tr>
+            <tr style="font-size: 14px;">
+                <td class="tdBorder">熟料用电量(KWh)</td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料用电量(KWh)本日合计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料用电量(KWh)本月累计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料用电量(KWh)本年累计" style="text-align: center; width: 63px" />
+                </td>
+            </tr>
+            <tr style="font-size: 14px;">
+                <td class="tdBorder">熟料产量(t)</td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料产量(t)本日合计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料产量(t)本月累计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料产量(t)本年累计" style="text-align: center; width: 63px" />
+                </td>
+            </tr>
+            <tr style="font-size: 14px;">
+                <td class="tdBorder" >熟料制备电耗(KWh/t)</td>
+                <td style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料制备电耗(KWh/t)本日合计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料制备电耗(KWh/t)本月累计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="熟料制备电耗(KWh/t)本年累计" style="text-align: center; width: 63px" />
+                </td>
+            </tr>
+            <tr style="font-size: 14px;">
+                <td class="tdBorder">生料磨电耗(KWh/t)</td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="生料磨电耗(KWh/t)本日合计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="生料磨电耗(KWh/t)本月累计" style="text-align: center; width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="生料磨电耗(KWh/t)本年累计" style="width: 63px" />
+                </td>
+            </tr>
+            <tr style="font-size: 14px;">
+                <td class="tdBorder">煤粉制备电耗(KWh/t)</td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="煤粉制备电耗(KWh/t)本日合计" style="width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="煤粉制备电耗(KWh/t)本月累计" style="width: 63px" />
+                </td>
+                <td class="tdBorder" style="text-align: center;">
+                    <input class="easyui-numberbox" id="煤粉制备电耗(KWh/t)本年累计" style="width: 63px" />
+                </td>
+            </tr>
+        </table>
     </div>
 
 </div>

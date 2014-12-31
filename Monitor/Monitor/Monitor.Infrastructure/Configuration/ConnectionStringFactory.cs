@@ -15,5 +15,8 @@ namespace Monitor.Infrastructure.Configuration
         //public static string NXJCConnectionString { get { return _connString; } }
 
         public static string NXJCConnectionString { get { return ConfigurationManager.ConnectionStrings["ConnNXJC"].ToString(); } }
+        public static string zc_nxjc_qtx_efc_cementmill01 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_cementmill01"].ToString(); } }
+        public static string zc_nxjc_qtx_efc_clinker02 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_clinker02"].ToString(); } }
+        public static string zc_nxjc_qtx_efc_clinker03 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_clinker03"].ToString(); } }
     }
 }

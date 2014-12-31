@@ -1,77 +1,192 @@
-﻿<div style="position: relative; background-image: url('../../../images/page/RawMealPreparation_QTXQS.jpg'); width: 835px; height: 800px;">
-    <div class="divBorder" style="position: absolute; top: 237px; left: 8px; width: 150px; bottom: 542px;">
-        台时：<input  class="easyui-numberbox" data-options="precision:2"  class="easyui-numberbox" data-options="precision:2" id="AFEED_TOTF" type="text" style="width: 63px" />
+﻿<div style="position: relative; background-image: url('../../../images/page/RawMealPreparation_QTXQS.jpg'); width: 835px; height: 770px;overflow:hidden;">
+    <div>
+        <p style="text-align: center; font-size: 30px;">3#原料制备能耗监控图</p>
+    </div>
+    <div class="divBorder" style="position: absolute; top: 221px; left: 11px; width: 150px; bottom: 558px;">
+        台时：<input class="easyui-numberbox" id="AFEED_TOTF"  style="width: 63px" />
         t/h
     </div>
-    <div class="divBorder" style="position: absolute; top: 589px; left: 175px; width: 147px;">
-        生料磨主电机电流：<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI1_211_02" type="text" style="width:63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 455px; left: 388px;">
+        <table>
+            <tr>
+                <td>提升机电流：</td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_211_10"  style="width: 63px" />A</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 194px; left: 8px; width: 130px; height: 20px;">
-        入磨提升机电流：<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI2_127_09" type="text" style="width:63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 455px; left: 605px;">
+        <table>
+            <tr>
+                <td>提升机电流：</td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_220_01_1"  style="width: 63px" />A</td>
+            </tr>
+        </table>
     </div>
-
-    <div class="divBorder" style="position: absolute; top: 494px; left: 388px; width: 96px;">
-        提升机电流：<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI1_211_10" type="text" style="width: 63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 110px; left: 428px;">
+        <table>
+            <tr>
+                <td colspan="2">循环风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_211_04"  style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A061Power"  style="width: 63px" />KW</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 494px; left: 589px; width: 96px;">
-        提升机电流：<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI1_220_01_1" type="text" style="width: 63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 110px; left: 678px;">
+        <table>
+            <tr>
+                <td colspan="2">尾排风机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_230_05"  style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A066Power"  style="width: 63px" />KW</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 190px; left: 446px; width: 106px;">
-        循环风机电流:<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI1_211_04" type="text" style="width:63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 383px; left: 170px;">
+        <table>
+            <tr>
+                <td colspan="2">选粉机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_211_02G1"  style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>转速：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AO1_211_02G1"  style="width: 63px" />r/min</td>
+            </tr>
+            <tr style="line-height: 2px;">
+                <td>&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">入磨提升机电流</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AI2_127_09"  style="width: 63px" />A</td>
+            </tr>
+            <tr style="line-height: 2px;">
+                <td>&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">主电机</td>
+            </tr>
+            <tr>
+                <td>电流：</td>
+                <td>
+                    <input class="easyui-numberbox" id="AI1_211_02"  style="width: 63px" />A</td>
+            </tr>
+            <tr>
+                <td>功率：</td>
+                <td>
+                    <input class="easyui-numberbox" id="A062Power"  style="width: 63px" />KW</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 190px; left: 643px; width: 108px;">
-        尾排风机电流:<br />
-        <input  class="easyui-numberbox" data-options="precision:2" id="AI1_230_05" type="text" style="width: 63px" />
-        A
+    <div class="divBorder" style="position: absolute; top: 636px; left: 454px;">
+        <table>
+            <tr>
+                <td colspan="2">增湿塔</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">入口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23002T01" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">入口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23002P01" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23002T02" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23002P02" style="width: 63px" />Pa</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 526px; left: 175px; width: 164px;">
-        选粉机<br />
-        电流：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_211_02G1" type="text" style="width: 63px" />
-        A<br />
-        转速：<input  class="easyui-numberbox" data-options="precision:2" id="AO1_211_02G1" type="text" style="width:63px" />
-        r/min
+    <div class="divBorder" style="position: absolute; top: 636px; left: 650px;">
+        <table>
+            <tr>
+                <td colspan="2">电收尘</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">入口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23004T01" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">入口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23004P01" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23004T02" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_23004P02" style="width: 63px" />Pa</td>
+            </tr>
+        </table>
     </div>
-    <div class="divBorder" style="position: absolute; top: 675px; left: 442px; width: 186px;">
-        增湿塔<br />
-        入口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23002T01" type="text" style="width:63px" />
-        ℃<br />
-        入口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23002P01" type="text" style="width: 63px" />
-        Pa<br />
-        出口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23002T02" type="text" style="width: 63px" />
-        ℃<br />
-        出口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23002P02" type="text" style="width:63px" />
-        Pa<br />
-    </div>
-    <div class="divBorder" style="position: absolute; top: 675px; left: 641px; width: 186px;">
-        电收尘<br />
-        入口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23004T01" type="text" style="width: 63px" />
-        ℃<br />
-        入口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23004P01" type="text" style="width:63px" />
-        Pa<br />
-        出口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23004T02" type="text" style="width: 63px" />
-        ℃<br />
-        出口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_23004P02" type="text" style="width: 63px" />
-        Pa<br />
-    </div>
-    <div class="divBorder" style="position: absolute; top: 675px; left: 241px; width: 186px;">
-        磨机<br />
-        进口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_21102T01" type="text" style="width:63px" />
-        ℃<br />
-        进口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_21102P01" type="text" style="width: 63px" />
-        Pa<br />
-        出口温度：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_21102T02" type="text" style="width:63px" />
-        ℃<br />
-        出口压力：<input  class="easyui-numberbox" data-options="precision:2" id="AI1_21102P03" type="text" style="width: 63px" />
-        Pa<br />
+    <div class="divBorder" style="position: absolute; top: 639px; left: 25px;">
+        <table>
+            <tr>
+                <td colspan="2">磨机</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">进口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_21102T01" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">进口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_21102P01" style="width: 63px" />Pa</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口温度：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_21102T02" style="width: 63px" />℃</td>
+            </tr>
+            <tr>
+                <td style="text-align: left" class="auto-style1">出口压力：</td>
+                <td style="text-align: left">
+                    <input class="easyui-numberbox" id="AI1_21102P03" style="width: 63px" />Pa</td>
+            </tr>
+        </table>
     </div>
 </div>

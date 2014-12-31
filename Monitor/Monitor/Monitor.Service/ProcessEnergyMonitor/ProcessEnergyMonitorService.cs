@@ -13,14 +13,19 @@ namespace Monitor.Service.ProcessEnergyMonitor
 {
     public class ProcessEnergyMonitorService
     {
-        private static ISqlServerDataFactory _dataFactory;
+        private  ISqlServerDataFactory _dataFactory;
+
+        public ProcessEnergyMonitorService(string connString)
+        {
+            _dataFactory = new SqlServerDataFactory(connString);
+        }
 
         /// <summary>
         /// 获得DataSetInformation
         /// </summary>
         /// <param name="viewName"></param>
         /// <returns></returns>
-        private static IEnumerable<DataSetInformation> GetDataSetInformation(string organizationId,string viewName)
+        private IEnumerable<DataSetInformation> GetDataSetInformation(string organizationId,string viewName)
         {
             IList<DataSetInformation> results = new List<DataSetInformation>();
             Query query = new Query("EnergyConsumptionContrast");
@@ -44,7 +49,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="dataSetInformations"></param>
         /// <returns></returns>
-        private static DataTable GetDataItemTable(IEnumerable<DataSetInformation> dataSetInformations)
+        private DataTable GetDataItemTable(IEnumerable<DataSetInformation> dataSetInformations)
         {
             //DataItem result = new DataItem();
             ComplexQuery cmpquery = new ComplexQuery();
@@ -69,10 +74,8 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="viewName"></param>
         /// <returns></returns>
-        public static IEnumerable<DataItem> GetRealtimeDatas(string connString,string organizationId, string viewName)
+        public IEnumerable<DataItem> GetRealtimeDatas(string organizationId, string viewName)
         {
-            _dataFactory = new SqlServerDataFactory(connString);
-
             IList<DataItem> result = new List<DataItem>();
             //ArrayList idList = GetParametorsId(viewName);
             IEnumerable<DataSetInformation> dataSetInfor = GetDataSetInformation(organizationId,viewName);
@@ -96,7 +99,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        private static string[] GetTableColumnName(DataTable dt)
+        private string[] GetTableColumnName(DataTable dt)
         {
             IList<string> result = new List<string>();
             foreach (DataColumn item in dt.Columns)
@@ -111,7 +114,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="viewName"></param>
         /// <returns></returns>
-        private static ArrayList GetParametorsId(string viewName)
+        private ArrayList GetParametorsId(string viewName)
         {
             ArrayList result = new ArrayList();
             ComplexQuery cmpquery = new ComplexQuery();
@@ -121,6 +124,31 @@ namespace Monitor.Service.ProcessEnergyMonitor
             foreach (DataRow row in data.Rows)
             {
                 result.Add(row["VariableName"].ToString().Trim());
+            }
+            return result;
+        }
+
+
+
+        /*************************************************************************************************************************************/
+        /// <summary>
+        /// 根据景老师DataTable获得键值对
+        /// </summary>
+        /// <param name="sourceDt"></param>
+        /// <param name="fieldName"></param>
+        /// <returns></returns>
+        public static IEnumerable<DataItem> GetPowerMonitor(DataTable sourceDt, string[] fieldName)
+        {
+            IList<DataItem> result = new List<DataItem>();
+            foreach (DataRow dr in sourceDt.Rows)
+            {
+                foreach (var item in fieldName)
+                {
+                    DataItem newData = new DataItem();
+                    newData.ID = dr["OrganizationID"].ToString().Trim() + dr["项目指标"].ToString().Trim() + item.Trim();
+                    newData.Value = dr[item].ToString().Trim();
+                    result.Add(newData);
+                }
             }
             return result;
         }

@@ -8,7 +8,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Monitor.Service.ProcessEnergyMonitor
 {
@@ -22,27 +21,28 @@ namespace Monitor.Service.ProcessEnergyMonitor
         {
             connectionstring = ConnectionStringFactory.NXJCConnectionString;
             sqlServer = new SqlServerDataFactory(connectionstring);
-            tzHelper = new TZHelper(connectionstring);
+            tzHelper = new TZHelper(connectionstring);           
         }
+
         //获取产量、电量电耗表格
         #region
         /// <summary>
         /// 获取不同监控画面能耗表(原料：RawMaterial_ClinkerProductionLine；生料：RawBatch_ClinkerProductionLine；燃料：Fuel_ClinkerProductionLine；熟料：Clinker_ClinkerProductionLine；水泥制备：CementPreparation_CementMillProductionLine；水泥粉磨：CementMill_CementMillProductionLine)
         /// </summary>
-        /// <param name="_organizeID"></param>
-        /// <param name="_viewName"></param>
+        /// <param name="_organizeID">生产机构ID</param>
+        /// <param name="_viewName">画面名称包括：原料，生料，燃料，熟料，水泥制备，水泥粉磨六个画面</param>
         /// <returns></returns>
         public static DataTable EnergyConsumptionTableQuery(string _organizeID, string _viewName)
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
             string month = date.Substring(0, 7);
             DataTable table = new DataTable();
-
+            
             CreatEnergyConsumptionTableStructure(table);
             switch (_viewName)
             {
                 case "RawMaterial_ClinkerProductionLine":// "原料":
-                    GetRawMaterialEnergyConsumptionTable(_organizeID, table, date);
+                    GetRawMaterialEnergyConsumptionTable(_organizeID,table, date);
                     break;
                 case "RawBatch_ClinkerProductionLine"://"生料":
                     GetRawBatchEnergyConsumptionTable(_organizeID, table, date);
@@ -60,16 +60,42 @@ namespace Monitor.Service.ProcessEnergyMonitor
                     GetMillEnergyConsumptionTable(_organizeID, table, date);
                     break;
                 default:
-                    return table;
+                    return table;                  
             }
             return table;
+        }
+
+        private static string ConvertViewName(string _viewName)
+        {
+            string name = _viewName.TrimStart('1', '2', '3', '#');
+            string result="";
+            switch (name)
+            {
+                case "石灰石破碎":
+                    result = "RawMaterial_ClinkerProductionLine";
+                    break;
+                case "原料制备":
+                    result = "RawBatch_ClinkerProductionLine";
+                    break;
+                case "煤粉制备":
+                    result = "Fuel_ClinkerProductionLine";
+                    break;
+                case "熟料制备":
+                    result = "Clinker_ClinkerProductionLine";
+                    break;
+                case "水泥制备":
+                    result = "CementPreparation_CementMillProductionLine";
+                    break;
+            }
+            return result;
+
         }
         /// <summary>
         /// 返回原料表
         /// </summary>
         /// <returns></returns>
         private static void GetRawMaterialEnergyConsumptionTable(string _organizeID, DataTable _table, string _date)//原料
-        {
+        {        
             string year_month = _date.Substring(0, 7);
             string year = _date.Substring(0, 4);
             string month = _date.Substring(5, 2);
@@ -84,13 +110,13 @@ namespace Monitor.Service.ProcessEnergyMonitor
                 _table.Rows.Add(dr);
             }
             DataTable monthData = tzHelper.GetReportData("tz_Report", _organizeID, year_month, "table_ClinkerMonthlyOutput");
-            DataRow[] monthRow = monthData.Select("vDate='" + day + "'");
-            _table.Rows[1]["本日甲班"] = monthRow.Count() > 0 ? monthRow[0]["LimestoneConsumptionFirstShift"] : 0;
+            DataRow[] monthRow = monthData.Select("vDate='"+day+"'");
+            _table.Rows[1]["本日甲班"]=monthRow.Count()>0?monthRow[0]["LimestoneConsumptionFirstShift"]:0;
             _table.Rows[1]["本日乙班"] = monthRow.Count() > 0 ? monthRow[0]["LimestoneConsumptionSecondShift"] : 0;
             _table.Rows[1]["本日丙班"] = monthRow.Count() > 0 ? monthRow[0]["LimestoneConsumptionThirdShift"] : 0;
             _table.Rows[1]["本日合计"] = monthRow.Count() > 0 ? monthRow[0]["LimestoneConsumptionSum"] : 0;
             DataTable yearData = tzHelper.GetReportData("tz_Report", _organizeID, year, "table_ClinkerYearlyOutput");
-            DataRow[] yearRow = yearData.Select("vDate='" + month + "'");
+            DataRow[] yearRow = yearData.Select("vDate='" + month+"'");
             _table.Rows[1]["本月累计"] = yearRow.Count() > 0 ? yearRow[0]["LimestoneConsumptionSum"] : 0;
             DataRow[] yearSumRow = yearData.Select("vDate='合计'");
             _table.Rows[1]["本年累计"] = yearSumRow.Count() > 0 ? yearSumRow[0]["LimestoneConsumptionSum"] : 0;
@@ -109,8 +135,8 @@ namespace Monitor.Service.ProcessEnergyMonitor
             for (int i = 0; i < 6; i++)
             {
                 rows[i] = _table.NewRow();
-            }
-            rows[0]["项目指标"] = "生料产量(t)";
+            }           
+            rows[0]["项目指标"] = "生料产量(t)";          
             rows[1]["项目指标"] = "生料制备用电量(KWh)";
             rows[2]["项目指标"] = "原料制备用电量(KWh)";
             rows[3]["项目指标"] = "生料磨用电量(KWh)";
@@ -157,11 +183,11 @@ namespace Monitor.Service.ProcessEnergyMonitor
             _table.Rows[3]["本年累计"] = yearSumRow_second.Count() > 0 ? yearSumRow_second[0]["RawBatchGrindingSum"] : 0;
 
             for (int i = 1; i <= 6; i++)
-            {
-                _table.Rows[4][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[1][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
+            {           
+                _table.Rows[4][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[1][i])/Convert.ToDecimal(_table.Rows[0][i]) : 0;
                 _table.Rows[5][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[3][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
             }
-
+            
         }
         /// <summary>
         /// 返回燃料表
@@ -210,7 +236,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
             _table.Rows[1]["本年累计"] = yearSumRow_second.Count() > 0 ? yearSumRow_second[0]["CoalMillSystemSum"] : 0;
             for (int i = 1; i <= 6; i++)
             {
-                _table.Rows[2][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[1][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
+                _table.Rows[2][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[1][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;            
             }
         }
         /// <summary>
@@ -235,11 +261,11 @@ namespace Monitor.Service.ProcessEnergyMonitor
             rows[4]["项目指标"] = "生料均化用电量(KWh)";
             rows[5]["项目指标"] = "窑系统用电量(KWh)";
             rows[6]["项目指标"] = "废气处理用电量(KWh)";
-            rows[7]["项目指标"] = "熟料制备电耗(KWh/t）";
-            rows[8]["项目指标"] = "烧成系统电耗(KWh/t）";
-            rows[9]["项目指标"] = "生料均化电耗(KWh/t）";
-            rows[10]["项目指标"] = "窑系统电耗(KWh/t）";
-            rows[11]["项目指标"] = "废气处理电耗(KWh/t）";
+            rows[7]["项目指标"] = "熟料制备电耗(KWh/t)";
+            rows[8]["项目指标"] = "烧成系统电耗(KWh/t)";
+            rows[9]["项目指标"] = "生料均化电耗(KWh/t)";
+            rows[10]["项目指标"] = "窑系统电耗(KWh/t)";
+            rows[11]["项目指标"] = "废气处理电耗(KWh/t)";
             rows[12]["项目指标"] = "煤粉消耗量(t)";
             rows[13]["项目指标"] = "窑头煤粉消耗量(t)";
             rows[14]["项目指标"] = "窑尾煤粉消耗量(t)";
@@ -337,20 +363,22 @@ namespace Monitor.Service.ProcessEnergyMonitor
             string year = _date.Substring(0, 4);
             string month = _date.Substring(5, 2);
             string day = _date.Substring(8, 2);
-            DataRow[] rows = new DataRow[9];
-            for (int i = 0; i < 9; i++)
+            DataRow[] rows = new DataRow[11];
+            for (int i = 0; i < 11; i++)
             {
                 rows[i] = _table.NewRow();
             }
             rows[0]["项目指标"] = "水泥产量(t)";
             rows[1]["项目指标"] = "水泥包装(t)";
             rows[2]["项目指标"] = "水泥制备用电量(KWh)";
-            rows[3]["项目指标"] = "原料制备用电量(KWh)";
+            rows[3]["项目指标"] = "水泥原料制备用电量(KWh)";
             rows[4]["项目指标"] = "水泥磨用电量(KWh)";
             rows[5]["项目指标"] = "水泥包装用电量(KWh)";
             rows[6]["项目指标"] = "水泥制备电耗(KWh/t)";
-            rows[7]["项目指标"] = "生料磨电耗(KWh/t)";
+            rows[7]["项目指标"] = "水泥磨电耗(KWh/t)";
             rows[8]["项目指标"] = "水泥包装电耗(KWh/t)";
+            rows[9]["项目指标"] = "水泥合计用电量(KWh)";//新加
+            rows[10]["项目指标"] = "水泥电耗(KWh/t)";//新加
             foreach (DataRow dr in rows)
             {
                 _table.Rows.Add(dr);
@@ -421,8 +449,10 @@ namespace Monitor.Service.ProcessEnergyMonitor
             for (int i = 1; i <= 6; i++)
             {
                 _table.Rows[6][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[2][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
-                //_table.Rows[7][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[3][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
+                _table.Rows[7][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[4][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
                 _table.Rows[8][i] = Convert.ToDecimal(_table.Rows[0][i]) != 0 ? Convert.ToDecimal(_table.Rows[5][i]) / Convert.ToDecimal(_table.Rows[0][i]) : 0;
+                _table.Rows[9][i] = MyToDecimal(_table.Rows[2][i]) + MyToDecimal(_table.Rows[5][i]);
+                _table.Rows[10][i] =  MyToDecimal(_table.Rows[0][i])!=0?MyToDecimal(_table.Rows[9][i]) / MyToDecimal(_table.Rows[0][i]):0;
             }
 
         }
@@ -549,14 +579,14 @@ namespace Monitor.Service.ProcessEnergyMonitor
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
             Query query = new Query("EnergyConsumptionContrast");
-            query.AddCriterion("OrganizationID", _organizeID, CriteriaOperator.Equal);
+            query.AddCriterion("OrganizationID", _organizeID,CriteriaOperator.Equal);
             DataTable temp = sqlServer.Query(query);
             DataTable table = new DataTable();
             CreatAmmeterTableStructure(table);
-            GetAmmeterTable(_organizeID, table, date, temp, _viewName);
+            GetAmmeterTable(_organizeID, table, date, temp, _viewName);           
             return table;
         }
-        private static void GetAmmeterTable(string _organizeID, DataTable _table, string _date, DataTable _dataTable, string _viewName)
+        private static void GetAmmeterTable(string _organizeID, DataTable _table, string _date,DataTable _dataTable,string _viewName)
         {
             string year_month = _date.Substring(0, 7);
             string year = _date.Substring(0, 4);
@@ -585,7 +615,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
                 DataRow[] yearRows = yearTable.Select("AmmeterName='" + VariableName + "'");
                 row["年累计(KWh)"] = yearRows.Count() > 0 ? yearRows[0]["Sum_Electricity"] : 0;
                 _table.Rows.Add(row);
-            }
+            }          
         }
 
         private static void CreatAmmeterTableStructure(DataTable table)
@@ -639,9 +669,9 @@ namespace Monitor.Service.ProcessEnergyMonitor
             DataTable FormulaStringTable = GetFormulaGroupsEffectived(_organizeID, 1);
             string guid = "D9E069EA-9868-4515-8D66-E49ECA32281E";//一个随机的GUID
             string formulaKeyID = FormulaStringTable.Rows.Count > 0 ? FormulaStringTable.Rows[0]["KeyID"].ToString() : guid;
-            DataTable dayTable = tzHelper.GetFormulaData("tz_Report", _organizeID, _date, "table_PublicFormulaDay", formulaKeyID);
+            DataTable dayTable = tzHelper.GetFormulaData("tz_Report", _organizeID, _date, "table_PublicFormulaDay",formulaKeyID);
             DataTable monthTable = tzHelper.GetFormulaData("tz_Report", _organizeID, year_month, "table_PublicFormulaMonth", formulaKeyID);
-            DataTable yearTable = tzHelper.GetFormulaData("tz_Report", _organizeID, year, "table_PublicFormulaYear", formulaKeyID);
+            DataTable yearTable = tzHelper.GetFormulaData("tz_Report", _organizeID, year, "table_PublicFormulaYear", formulaKeyID); 
             string sql = "type=3 and ViewName like '%" + _viewName + "%'";
             DataRow[] rows = _dataTable.Select(sql);
             foreach (DataRow dr in rows)
@@ -661,13 +691,16 @@ namespace Monitor.Service.ProcessEnergyMonitor
             }
 
         }
-
+        /// <summary>
+        /// 建立表结构
+        /// </summary>
+        /// <param name="table"></param>
         private static void CreatFormulaTableStructure(DataTable table)
         {
             DataColumn[] columns = new DataColumn[6];
             columns[0] = new DataColumn("编号", Type.GetType("System.String"));
             columns[1] = new DataColumn("工序/设备名称", Type.GetType("System.String"));
-            columns[2] = new DataColumn("电量公式", Type.GetType("System.String"));
+            columns[2] = new DataColumn("电量公式", Type.GetType("System.String"));            
             columns[3] = new DataColumn("日合计(KWH)", Type.GetType("System.Int64"));
             columns[4] = new DataColumn("月累计(KWH)", Type.GetType("System.Int64"));
             columns[5] = new DataColumn("年累计(KWH)", Type.GetType("System.Int64"));
@@ -681,7 +714,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
         /// </summary>
         /// <param name="organizationId"></param>
         /// <returns></returns>
-        public static DataTable GetFormulaGroupsEffectived(string organizationId, int formulaType)
+        public static DataTable GetFormulaGroupsEffectived(string organizationId,int formulaType)
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             DataSet ds = new DataSet();
@@ -706,5 +739,85 @@ namespace Monitor.Service.ProcessEnergyMonitor
         }
 
         #endregion
+        //景老师最后要求添加的方法，将以上几个合起来
+        #region
+        /// <summary>
+        /// 获取全部的画面table
+        /// </summary>
+        /// <param name="organizationId">organizationId到生产线层次</param>
+        /// <param name="type">生产线类型</param>
+        /// <returns></returns>
+        public static DataTable TableQuery(string organizationId, string type)
+        {
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
+            DataTable resultTable = new DataTable();
+            CreatEnergyConsumptionTableStructure(resultTable);
+            if ("熟料" == type)
+            {
+                DataTable temp1, temp2, temp3, temp4;
+                temp1 = resultTable.Clone();
+                temp2 = resultTable.Clone();
+                temp3 = resultTable.Clone();
+                temp4 = resultTable.Clone();
+                GetRawMaterialEnergyConsumptionTable(organizationId, temp1, date);
+                GetRawBatchEnergyConsumptionTable(organizationId, temp2, date);
+                GetFuelEnergyConsumptionTable(organizationId, temp3, date);
+                GetClinkerEnergyConsumptionTable(organizationId, temp4, date);
+                resultTable.Merge(temp1);
+                resultTable.Merge(temp2);
+                resultTable.Merge(temp3);
+                resultTable.Merge(temp4);
+                string[] fieldName = { "本日甲班", "本日乙班", "本日丙班", "本日合计", "本月累计", "本年累计" };
+                DataRow row_slydl = resultTable.NewRow();
+                row_slydl["项目指标"] = "熟料用电量(KWh)";
+                int first= ReportHelper.GetNoRow(resultTable, "项目指标", "生料制备用电量(KWh)");
+                int second = ReportHelper.GetNoRow(resultTable, "项目指标", "熟料制备用电量(KWh)");
+                if (first != -1 ||second != -1)
+                {
+                    DataRow rowFirst = resultTable.Rows[first];
+                    DataRow rowSecond = resultTable.Rows[second];
+                    foreach (string name in fieldName)
+                    {
+                        row_slydl[name] = MyToDecimal(rowFirst[name]) + MyToDecimal(rowSecond[name]);
+                    }
+                }
+                DataRow row_slzhdh = resultTable.NewRow();
+                row_slzhdh["项目指标"] = "熟料综合电耗(KWh/t)";
+                int third = ReportHelper.GetNoRow(resultTable, "项目指标", "熟料产量(t)");
+                if (third != -1)
+                {
+                    DataRow rowThird = resultTable.Rows[third];
+                    foreach (string name in fieldName)
+                    {
+                        row_slzhdh[name] =MyToDecimal(rowThird[name])!=0? MyToDecimal(row_slydl[name]) / MyToDecimal(rowThird[name]):0;
+                    }
+                }
+                resultTable.Rows.Add(row_slydl);
+                resultTable.Rows.Add(row_slzhdh);   
+            }
+            else
+            {
+                DataTable temp1;
+                temp1 = resultTable.Clone();
+                GetCementEnergyConsumptionTable(organizationId, temp1, date);
+                resultTable.Merge(temp1);
+
+            }
+            return resultTable;
+        }
+        #endregion
+        //public static decimal MyToDecimal(object obj)
+        //{
+        //    if (obj is DBNull)
+        //    {
+        //        obj = 0;
+        //        return Convert.ToDecimal(obj);
+        //    }
+        //    else
+        //    {
+        //        return Convert.ToDecimal(obj);
+        //    }
+        //}
     }
+
 }
