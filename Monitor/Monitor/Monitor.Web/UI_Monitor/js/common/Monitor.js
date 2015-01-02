@@ -18,7 +18,7 @@ function Initialize() {
         $('#myTabs').tabs('update', {
             tab: tab,
             options: {
-                content: '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>'
+                content: '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99%;"></iframe>'
             }
         });
     }
@@ -43,7 +43,7 @@ function Initialize() {
                 $('#myTabs').tabs('update', {
                     tab: tab,
                     options: {
-                        content: '<iframe scrolling="auto" frameborder="0"  src="about:blank" style="width:100%;height:100%;"></iframe>'
+                        content: '<iframe scrolling="auto" frameborder="0"  src="about:blank" style="width:100%;height:99%;"></iframe>'
                     }
                 });
             }
@@ -53,7 +53,7 @@ function Initialize() {
             $('#myTabs').tabs('update', {
                 tab: tab,
                 options: {
-                    content: '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>'
+                    content: '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99%;"></iframe>'
                 }
             });
         }

@@ -27,8 +27,8 @@
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false" style="width: 100%;">
-        <div data-options="region:'center',border:true,collapsible:false">
-            <div id="myTabs" class="easyui-tabs" data-options="fit:true" style="float: left;">
+        <div data-options="region:'center',border:true,collapsible:false" style="overflow:hidden;">
+            <div id="myTabs" class="easyui-tabs" data-options="fit:true">
             </div>
         </div>
     </div>

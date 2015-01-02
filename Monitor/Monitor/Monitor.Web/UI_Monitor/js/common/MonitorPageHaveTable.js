@@ -102,7 +102,7 @@ function setupTimerToGetTableData() {
 
 function initializeTable() {
     $('#consumption').datagrid({
-        title: '产量/电量/电耗',
+        title: '能耗信息',
         iconCls: 'icon-save', singleSelect: true, rownumbers: true, striped: true,
         columns: [[
             { field: '项目指标', title: '项目指标', width: '20%', align: 'center' },
