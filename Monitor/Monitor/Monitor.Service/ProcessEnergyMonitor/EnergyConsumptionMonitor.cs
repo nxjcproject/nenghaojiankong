@@ -295,14 +295,14 @@ namespace Monitor.Service.ProcessEnergyMonitor
             DataTable yearData_first = tzHelper.GetReportData("tz_Report", _organizeID, year, "table_ClinkerYearlyOutput");
             DataRow[] yearRow_first = yearData_first.Select("vDate='" + month + "'");
             _table.Rows[0]["本月累计"] = yearRow_first.Count() > 0 ? yearRow_first[0]["ClinkerProductionSum"] : 0;
-            _table.Rows[12]["本月累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["AmounttoCoalDustConsumptionSum"] : 0;
-            _table.Rows[13]["本月累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["KilnHeadCoalDustConsumptionSum"] : 0;
-            _table.Rows[14]["本月累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["KilnTailCoalDustConsumptionSum"] : 0;
+            _table.Rows[12]["本月累计"] = yearRow_first.Count() > 0 ? yearRow_first[0]["AmounttoCoalDustConsumptionSum"] : 0;
+            _table.Rows[13]["本月累计"] = yearRow_first.Count() > 0 ? yearRow_first[0]["KilnHeadCoalDustConsumptionSum"] : 0;
+            _table.Rows[14]["本月累计"] = yearRow_first.Count() > 0 ? yearRow_first[0]["KilnTailCoalDustConsumptionSum"] : 0;
             DataRow[] yearSumRow_first = yearData_first.Select("vDate='合计'");
             _table.Rows[0]["本年累计"] = yearSumRow_first.Count() > 0 ? yearSumRow_first[0]["ClinkerProductionSum"] : 0;
-            _table.Rows[12]["本年累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["AmounttoCoalDustConsumptionSum"] : 0;
-            _table.Rows[13]["本年累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["KilnHeadCoalDustConsumptionSum"] : 0;
-            _table.Rows[14]["本年累计"] = monthRow_first.Count() > 0 ? monthRow_first[0]["KilnTailCoalDustConsumptionSum"] : 0;
+            _table.Rows[12]["本年累计"] = yearSumRow_first.Count() > 0 ? yearSumRow_first[0]["AmounttoCoalDustConsumptionSum"] : 0;
+            _table.Rows[13]["本年累计"] = yearSumRow_first.Count() > 0 ? yearSumRow_first[0]["KilnHeadCoalDustConsumptionSum"] : 0;
+            _table.Rows[14]["本年累计"] = yearSumRow_first.Count() > 0 ? yearSumRow_first[0]["KilnTailCoalDustConsumptionSum"] : 0;
 
             DataTable monthData_second = tzHelper.GetReportData("tz_Report", _organizeID, year_month, "table_ClinkerMonthlyElectricity_sum");
             DataRow[] monthRow_second = monthData_second.Select("vDate='" + day + "'");
@@ -533,7 +533,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
                 electricityConsumptionRow["项目指标"] = CementTypes + "电耗(KWh/t)";
                 for (int i = 1; i <= 6; i++)
                 {
-                    electricityConsumptionRow[i] = Convert.ToDecimal(electricRow[i]) != 0 ? Convert.ToDecimal(electricRow[i]) / Convert.ToDecimal(outputRow[i]) : 0;
+                    electricityConsumptionRow[i] = Convert.ToDecimal(outputRow[i]) != 0 ? Convert.ToDecimal(electricRow[i]) / Convert.ToDecimal(outputRow[i]) : 0;
                 }
                 _table.Rows.Add(electricityConsumptionRow);
             }
@@ -543,7 +543,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
             sumRow_electricityConsumption["项目指标"] = "合计电耗(KWh/t)";
             for (int i = 1; i <= 6; i++)
             {
-                sumRow_electricityConsumption[i] = MyToDecimal(sumRow_electricity[i]) != 0 ? MyToDecimal(sumRow_electricity[i]) / MyToDecimal(sumRow_output[i]) : 0;
+                sumRow_electricityConsumption[i] = MyToDecimal(sumRow_output[i]) != 0 ? MyToDecimal(sumRow_electricity[i]) / MyToDecimal(sumRow_output[i]) : 0;
             }
             _table.Rows.Add(sumRow_output);
             _table.Rows.Add(sumRow_electricity);

@@ -21,7 +21,8 @@
             tabIndex: 0,
             organizationId: "zc_nxjc_qtx_efc_cementmill01",
             viewName: "1#水泥制备",
-            tableDataView: "CementMill_CementMillProductionLine"
+            //tableDataView: "CementMill_CementMillProductionLine"
+            tableDataView: "CementPreparation_CementMillProductionLine"
         };
     </script>
 
