@@ -30,11 +30,20 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx.monitor
         {
             ProcessPowerMonitor precessPower = new ProcessPowerMonitor(connString);
             DataTable sourceDt = precessPower.GetMonitorDatas(organizationId);
-            foreach (DataRow dr in sourceDt.Rows)
+            //foreach (DataRow dr in sourceDt.Rows)
+            //{
+            //    if (dr["OrganizationID"].ToString().Split('_').Length == 5)
+            //    {
+            //        sourceDt.Rows.Remove(dr);
+            //    }
+            //}
+            int sourceDTRowsCount = sourceDt.Rows.Count;
+            for (int i = sourceDTRowsCount - 1; i >= 0; i--)
             {
-                if (dr["OrganizationID"].ToString().Split('_').Length == 5)
+                DataRow row = sourceDt.Rows[i];
+                if (row["OrganizationID"].ToString().Split('_').Length == 5)
                 {
-                    sourceDt.Rows.Remove(dr);
+                    sourceDt.Rows.Remove(row);
                 }
             }
             string[] fields = { "本日合计", "本月累计", "本年累计" };

@@ -26,10 +26,8 @@
 
     <title></title>
 </head>
-<body>
-    <div class="easyui-layout" data-options="fit:true,border:false" style="width: 100%;">
-        <div id="template">
-        </div>
+<body  class="easyui-layout" data-options="border:false" >
+    <div id="template" style="height:100%; overflow: auto;">
     </div>
 </body>
 </html>
