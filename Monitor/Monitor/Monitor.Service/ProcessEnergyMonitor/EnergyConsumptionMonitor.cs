@@ -224,7 +224,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
             _table.Rows[0]["本年累计"] = yearSumRow_first.Count() > 0 ? yearSumRow_first[0]["CoalDustProductionSum"] : 0;
 
             DataTable monthData_second = tzHelper.GetReportData("tz_Report", _organizeID, year_month, "table_ClinkerMonthlyElectricity_sum");
-            DataRow[] monthRow_second = monthData_first.Select("vDate='" + day + "'");
+            DataRow[] monthRow_second = monthData_second.Select("vDate='" + day + "'");
             _table.Rows[1]["本日甲班"] = monthRow_second.Count() > 0 ? monthRow_second[0]["CoalMillSystemFirstShift"] : 0;
             _table.Rows[1]["本日乙班"] = monthRow_second.Count() > 0 ? monthRow_second[0]["CoalMillSystemSecondShift"] : 0;
             _table.Rows[1]["本日丙班"] = monthRow_second.Count() > 0 ? monthRow_second[0]["CoalMillSystemThirdShift"] : 0;

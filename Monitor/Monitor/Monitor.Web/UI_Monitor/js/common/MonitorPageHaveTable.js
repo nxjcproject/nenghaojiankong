@@ -64,7 +64,7 @@ function displayScene(scene) {
 function displayDataItem(dataSets) {
     $.each(dataSets, function (i, item) {
         var value = Number(item.Value)
-        $("#" + item.ID).val(value.toFixed(2));
+        $(document.getElementById(item.ID)).val(value.toFixed(2));
     });
 }
 
