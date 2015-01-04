@@ -4,10 +4,11 @@
 input {
     text-align: right;
     /*background-color: #C0C0C0;*/
-    background-color:#F5F5F5;
+    background-color:#fff;
     width: 50px;
     height: 14px;
     border: 0px;
+    min-width:96%;
 }
 
 .divBorder {
@@ -19,7 +20,7 @@ input {
 }
 
 .tablecompany {
-    width: 573px;
+    width: auto;
     top: 42px;
     left: 11px;
     font-size: 15px;
