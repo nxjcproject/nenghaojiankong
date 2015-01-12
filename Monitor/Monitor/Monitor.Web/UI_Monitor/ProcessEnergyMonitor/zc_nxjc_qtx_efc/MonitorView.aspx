@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/gray/easyui.css" />
     <link rel="stylesheet" type="text/css" href="/lib/ealib/themes/icon.css" />
     <link href="../../css/common/mymonitor.css" rel="stylesheet" />
+    <link href="../../css/common/trendlineAnalysis.css" rel="stylesheet" />
 
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/common/jquery.utility.js" charset="utf-8"></script>
@@ -16,6 +17,8 @@
     <script type="text/javascript" src="/lib/ealib/easyui-lang-zh_CN.js" charset="utf-8"></script>
 
     <script src="../../js/common/myMonitor.js"></script>
+    <script src="../../js/common/trendlineAnalysis.js"></script>
+
     <script type="text/javascript">
         var pageData = {
             organizationId: "zc_nxjc_qtx_efc",

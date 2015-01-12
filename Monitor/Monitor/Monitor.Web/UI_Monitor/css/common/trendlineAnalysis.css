@@ -1,0 +1,11 @@
+﻿.selectable {
+	border: 2px dashed grey;
+}
+    .selectable:hover {
+        border: 2px solid black;
+        cursor: cell;
+        background:blue; 
+        filter:alpha(opacity=20);   /* 支持 IE 浏览器 */
+        -moz-opacity:0.20;          /* 支持 FireFox 浏览器 */
+        opacity:0.20;               /* 支持 Chrome, Opera, Safari 等浏览器 */
+    }

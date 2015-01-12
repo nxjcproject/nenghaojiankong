@@ -75,7 +75,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\common\charts.css" />
+    <Content Include="css\common\NormalPage.css" />
+    <Content Include="js\common\components\Charts.js" />
+    <Content Include="js\common\components\DataGrid.js" />
+    <Content Include="js\common\components\GridChart.js" />
+    <Content Include="js\common\components\WindowsDialog.js" />
+    <Content Include="js\common\format\DateTimeFormat.js" />
     <Content Include="js\common\jquery.utility.js" />
+    <Content Include="js\common\json2.min.js" />
     <Content Include="js\common\PrintFile.js" />
     <Content Include="lib\ealib\changelog.txt" />
     <Content Include="lib\ealib\easyloader.js" />
@@ -1583,6 +1591,7 @@
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
     <Content Include="UI_Monitor\css\common\Monitor.css" />
     <Content Include="UI_Monitor\css\common\mymonitor.css" />
+    <Content Include="UI_Monitor\css\common\trendlineAnalysis.css" />
     <Content Include="UI_Monitor\images\page\CementPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS_dan.jpg" />
@@ -1594,12 +1603,15 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_efc.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_efc_cementmill.jpg" />
+    <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_efc_clinker.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
+    <Content Include="UI_Monitor\js\common\trendlineAnalysis.js" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\monitor\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.html" />
@@ -1653,10 +1665,16 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx.cs">
+      <DependentUpon>ElectricityAnalysis.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\monitor\MonitorView.aspx.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
