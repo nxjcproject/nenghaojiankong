@@ -18,5 +18,11 @@ namespace Monitor.Infrastructure.Configuration
         public static string zc_nxjc_qtx_efc_cementmill01 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_cementmill01"].ToString(); } }
         public static string zc_nxjc_qtx_efc_clinker02 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_clinker02"].ToString(); } }
         public static string zc_nxjc_qtx_efc_clinker03 { get { return ConfigurationManager.ConnectionStrings["zc_nxjc_qtx_efc_clinker03"].ToString(); } }
+
+        public static string GetDCSConnectionString(string organizationId)
+        {
+            string connString = ConfigurationManager.ConnectionStrings[organizationId].ToString();
+            return connString;
+        }
     }
 }

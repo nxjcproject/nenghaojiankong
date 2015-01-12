@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MonitorView.aspx.cs" Inherits="Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx.MonitorView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MonitorView.aspx.cs" Inherits="Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill01.MonitorView" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
     <script src="../../js/common/myMonitor.js"></script>
     <script type="text/javascript">
         var pageData = {
-            organizationId: "zc_nxjc_qtx",
+            organizationId: "zc_nxjc_qtx_efc_cementmill01",
             viewName: "saa"
         };
     </script>

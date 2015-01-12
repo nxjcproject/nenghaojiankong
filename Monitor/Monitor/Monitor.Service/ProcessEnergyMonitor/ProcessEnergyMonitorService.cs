@@ -152,6 +152,21 @@ namespace Monitor.Service.ProcessEnergyMonitor
             }
             return result;
         }
+        public static IEnumerable<DataItem> GetPowerMonitor(DataRow[] sourceRows, string[] fieldName)
+        {
+            IList<DataItem> result = new List<DataItem>();
+            foreach (DataRow dr in sourceRows)
+            {
+                foreach (var item in fieldName)
+                {
+                    DataItem newData = new DataItem();
+                    newData.ID = dr["OrganizationID"].ToString().Trim() + dr["项目指标"].ToString().Trim() + item.Trim();
+                    newData.Value = dr[item].ToString().Trim();
+                    result.Add(newData);
+                }
+            }
+            return result;
+        }
     }
 
     public class DataSetInformation
