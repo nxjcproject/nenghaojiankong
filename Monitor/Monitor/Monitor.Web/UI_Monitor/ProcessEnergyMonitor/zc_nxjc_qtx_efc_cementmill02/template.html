@@ -1,6 +1,157 @@
-﻿<div style="position: relative; background-image: url('../../images/page/zc_nxjc_qtx_efc.jpg'); width: 1820px; height: 1000px; overflow: hidden;">
+﻿<div style="position: relative; background-image: url('../../images/page/zc_nxjc_qtx_efc_cementmill.jpg'); width: 1820px; height: 1000px; overflow: hidden;">
     <div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">当前时间：<span id="timestamp"></span></div>
 
+    <div>
+        <p style="text-align: center; font-size: 30px;">水泥生产能耗监控图</p>
+    </div>
+    <table class="mytable" style="position: absolute; top: 101px; left: 776px;">
+        <tr>
+            <th>指标名称</th>
+            <th>本日合计</th>
+            <th>本月累计</th>
+            <th>本年累计</th>
+        </tr>
+        <tr>
+            <td>水泥产量（t）</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥产量(t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥产量(t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥产量(t)本年累计" />
+            </td>
+        </tr>
+        <tr>
+            <td>水泥制备电耗（kwh/t）</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥制备电耗(KWh/t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥制备电耗(KWh/t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥制备电耗(KWh/t)本年累计" />
+            </td>
+        </tr>
 
+        <tr>
+            <td>水泥磨电耗（kwh/t）</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥磨电耗(KWh/t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥磨电耗(KWh/t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill02水泥磨电耗(KWh/t)本年累计" />
+            </td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 676px; left: 772px;">
+        <tr>
+            <td>主电机电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F_5AH_I_R" />
+                A</td>
+        </tr>
+        <tr>
+            <td>主电机功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A117Power " />
+                KW</td>
+
+        </tr>
+        <tr>
+            <td>排风机电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F_6AH_I_R" />
+                A</td>
+
+        </tr>
+        <tr>
+            <td>排风机功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A118Power" />
+                KW</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 679px; left: 408px;">
+        <tr>
+            <td>动辊电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F_7AH_I_R" />
+                A</td>
+        </tr>
+        <tr>
+            <td>动辊功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A119Power" />
+                KW</td>
+        </tr>
+        <tr>
+            <td>定辊电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F_8AH_I_R" />
+                A</td>
+        </tr>
+        <tr>
+            <td>定辊功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A120Power" />
+                KW</td>
+
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 231px; left: 439px;">
+        <tr>
+            <td>提升机电流：</td>
+        </tr>
+        <tr>
+            <td>
+                <input class="easyui-numberbox" id="M70M1_I_R" /></td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 241px; left: 1028px;">
+        <tr>
+            <td>提升机电流：</td>
+        </tr>
+        <tr>
+            <td>
+                <input class="easyui-numberbox" id="M48M_I_R" /></td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 313px; left: 1090px;">
+        <tr>
+            <td>提升机电流：</td>
+        </tr>
+        <tr>
+            <td>
+                <input class="easyui-numberbox" id="M34M_I_R" /></td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 285px; left: 639px;">
+        <tr>
+            <th colspan="2">选粉仓</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="M51AC_I_R" />
+                A</td>
+        </tr>
+        <tr>
+            <td>转速：</td>
+            <td>
+                <input class="easyui-numberbox" id="M51AC_S_R" />r/min</td>
+        </tr>
+    </table>
 
 </div>

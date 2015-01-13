@@ -1,6 +1,284 @@
-﻿<div style="position: relative; background-image: url('../../images/page/zc_nxjc_qtx_efc.jpg'); width: 1820px; height: 1000px; overflow: hidden;">
+﻿<div style="position: relative; background-image: url('../../images/page/zc_nxjc_qtx_tys_clinker.jpg'); width: 1820px; height: 1000px; overflow: hidden;">
     <div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">当前时间：<span id="timestamp"></span></div>
 
+    <div>
+        <p style="text-align: center; font-size: 30px;">2#熟料生产能耗监控总貌图</p>
+    </div>
+    <table class="mytable" style="position: absolute; top: 306px; left: 1221px;">
+        <tr>
+            <th colspan="2">破碎机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="Q11M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>温度：</td>
+            <td>
+                <input class="easyui-numberbox" id="QTE09_T_M" />℃</td>
+        </tr>
+    </table>
 
+    <table class="mytable" style="position: absolute; top: 257px; left: 655px;">
+        <tr>
+            <th colspan="2">煤磨主电机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="K18M_CUN_M" />
+                A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A007Power" />KW</td>
+        </tr>
+        <tr>
+            <th colspan="2">煤粉通风机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="K2M_CUN_M" />
+                A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A008Power" />
+                KW</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 513px; left: 68px;">
+        <tr>
+            <th colspan="2">入窑生料</th>
+
+        </tr>
+        <tr>
+            <td style="text-align: left">流  量：</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="F45AC_FF_M" />t/h
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left">累计量：</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="F45AC_TOL_M" />t
+            </td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 890px; left: 243px;">
+        <tr>
+            <th colspan="2">窑尾排风机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="B20M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A004Power" />KW</td>
+        </tr>
+
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 340px; left: 891px;">
+        <tr>
+            <th colspan="2">生料磨主电机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="B49M_CUN_M" />
+                A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A002Power" />
+                KW</td>
+        </tr>
+        <tr>
+            <th colspan="2">循环风机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="B52M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A001Power" />KW</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 891px; left: 627px; right: 1045px;">
+        <tr>
+            <th colspan="2">窑主电机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F4M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>转速：</td>
+            <td>
+                <input class="easyui-numberbox" id="F4M_SDF_M" />rpm</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 891px; left: 426px;">
+        <tr>
+            <th colspan="2">高温风机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F30AC_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A005Power" />KW</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 691px; left: 1537px;">
+        <tr>
+            <th colspan="2">窑头排风机</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="G4M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>功率：</td>
+            <td>
+                <input class="easyui-numberbox" id="A006Power" />KW</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 328px; left: 76px;">
+        <tr>
+            <th colspan="2">分解炉喂煤量</th>
+        </tr>
+        <tr>
+            <td style="text-align: left">流量:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="K12AC_SDF_M" />t/h</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">累计量:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="K12AC_TOL_M" />t</td>
+        </tr>
+        <tr>
+            <th colspan="2">窑头喂煤量</th>
+        </tr>
+        <tr>
+            <td style="text-align: left">流量:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="K11AC_SDF_M" />t/h</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">累计量:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="K11AC_TOL_M" />t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 891px; left: 821px;">
+        <tr>
+            <th colspan="2">冷却风机电流</th>
+        </tr>
+        <tr>
+            <td style="text-align: left">#1:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="F6M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">#2:</td>
+            <td style="text-align: left">
+                <input class="easyui-numberbox" id="F7M_CUN_M" />A</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 800px; left: 1172px;">
+        <tr>
+            <th>指标名称</th>
+            <th>本日累计</th>
+            <th>本月累计</th>
+            <th>本年累计</th>
+        </tr>
+        <tr>
+            <td>熟料用电量(KWh)</td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料用电量(KWh)本日合计" />
+            </td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料用电量(KWh)本月累计" />
+            </td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料用电量(KWh)本年累计" />
+            </td>
+        </tr>
+        <tr>
+            <td>熟料产量(t)</td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料产量(t)本日合计" />
+            </td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料产量(t)本月累计" />
+            </td>
+            <td style="text-align: center;">
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料产量(t)本年累计" />
+            </td>
+        </tr>
+        <tr>
+            <td>熟料制备电耗(KWh/t)</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料制备电耗(KWh/t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料制备电耗(KWh/t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04熟料制备电耗(KWh/t)本年累计" />
+            </td>
+        </tr>
+        <tr>
+            <td>生料磨电耗(KWh/t)</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04生料磨电耗(KWh/t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04生料磨电耗(KWh/t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04生料磨电耗(KWh/t)本年累计" />
+            </td>
+        </tr>
+        <tr>
+            <td>煤粉制备电耗(KWh/t)</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04煤粉制备电耗(KWh/t)本日合计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04煤粉制备电耗(KWh/t)本月累计" />
+            </td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_tys_clinker04煤粉制备电耗(KWh/t)本年累计" />
+            </td>
+        </tr>
+    </table>
 
 </div>

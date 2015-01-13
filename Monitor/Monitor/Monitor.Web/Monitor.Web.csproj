@@ -1606,6 +1606,8 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_efc_clinker.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
+    <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_cementmill.jpg" />
+    <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker.jpg" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
