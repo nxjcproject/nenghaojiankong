@@ -59,7 +59,7 @@ namespace Monitor.Service.ProcessEnergyMonitor
             }
             cmpquery.JoinCriterion = new JoinCriterion
             {
-                DefaultJoinFieldName = "v_date",
+                DefaultJoinFieldName = "vDate",
                 JoinType = JoinType.FULL_JOIN
             };
             cmpquery.TopNumber = 1;

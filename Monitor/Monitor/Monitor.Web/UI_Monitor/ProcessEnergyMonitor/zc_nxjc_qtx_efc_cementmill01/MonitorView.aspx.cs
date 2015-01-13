@@ -23,10 +23,10 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
         public static SceneMonitor GetRealTimeData(string organizationId, string sceneName)
         {
             IList<DataItem> dataItems = new List<DataItem>();
+            string factoryLevel = OrganizationHelper.GetFactoryLevel(organizationId);
 
             #region 获得表中实时数据
             ProcessPowerMonitor precessPower = new ProcessPowerMonitor(connString);
-            string factoryLevel = OrganizationHelper.GetFactoryLevel(organizationId);
             DataTable sourceDt = precessPower.GetMonitorDatas(factoryLevel);
             DataRow[] rows = sourceDt.Select(String.Format("OrganizationID='{0}'", organizationId));
 
@@ -39,6 +39,16 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             ProcessEnergyMonitorService monitorService = new ProcessEnergyMonitorService(dcsConn);
             IEnumerable<DataItem> monitorItems = monitorService.GetRealtimeDatas(organizationId, sceneName);
             foreach (var item in monitorItems)
+            {
+                dataItems.Add(item);
+            }
+            #endregion
+
+            #region 获得电表功率数据
+            string ammeterConn = ConnectionStringFactory.GetAmmeterConnectionString(factoryLevel);
+            ProcessEnergyMonitorService ammeterService = new ProcessEnergyMonitorService(ammeterConn);
+            IEnumerable<DataItem> ammeterItems = ammeterService.GetRealtimeDatas(organizationId, sceneName);
+            foreach (var item in ammeterItems)
             {
                 dataItems.Add(item);
             }

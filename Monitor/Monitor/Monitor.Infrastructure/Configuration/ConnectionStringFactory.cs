@@ -21,8 +21,18 @@ namespace Monitor.Infrastructure.Configuration
 
         public static string GetDCSConnectionString(string organizationId)
         {
-            string connString = ConfigurationManager.ConnectionStrings[organizationId].ToString();
-            return connString;
+            if (organizationId.Split('_').Count() != 5)
+                throw new Exception("组织机构Id格式不正确！");
+            else
+                return ConfigurationManager.ConnectionStrings[organizationId].ToString();
+        }
+
+        public static string GetAmmeterConnectionString(string organizationId)
+        {
+            if (organizationId.Split('_').Count() != 4)
+                throw new Exception("组织机构Id格式不正确！");
+            else
+                return ConfigurationManager.ConnectionStrings[organizationId].ToString();
         }
     }
 }
