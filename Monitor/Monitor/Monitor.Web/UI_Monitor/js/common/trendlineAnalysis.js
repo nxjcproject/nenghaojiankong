@@ -39,17 +39,17 @@ function query(title, organizationId, levelcode, startTime, endTime, x, y) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
-            updateChart(JSON.parse(msg.d), x, y);
+            updateChart(JSON.parse(msg.d), title, x, y);
         }
     });
 }
 
-function updateChart(data, x, y) {
+function updateChart(data, title, x, y) {
     // 更新Chart
 
     var m_WindowContainerId = 'Windows_Container';
 
-    WindowsDialogOpen(data, m_WindowContainerId, false, 'Line', 500, 200, y + 200, x, true, false, false);
+    WindowsDialogOpen(data, m_WindowContainerId, title, false, 'Line', 500, 200, y + 200, x, true, false, false);
 }
 
 
@@ -85,9 +85,9 @@ function GetWindowPostion(myWindowIndex, myWindowContainerId) {
     return [m_Width, m_Height, m_Left, m_Top]
 }
 ///////////////////////////////////////////打开window窗口//////////////////////////////////////////
-function WindowsDialogOpen(myData, myContainerId, myIsShowGrid, myChartType, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized) {
+function WindowsDialogOpen(myData, myContainerId, myTitle, myIsShowGrid, myChartType, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized) {
     ;
-    var m_WindowId = OpenWindows(myContainerId, '数据分析', myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized); //弹出windows
+    var m_WindowId = OpenWindows(myContainerId, myTitle, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized); //弹出windows
     var m_WindowObj = $('#' + m_WindowId);
     if (myMaximized != true) {
         CreateGridChart(myData, m_WindowId, myIsShowGrid, myChartType);               //生成图表
