@@ -18,7 +18,7 @@
 
         var endTime = new Date();
 
-        var startTime = new Date(endTime.getTime() - 1000 * 60 * 60 * 24 * 10);
+        var startTime = new Date(endTime.getTime() - 1000 * 60 * 60 * 24 * 2);
 
         var x = $(this).offset().top;
         var y = $(this).offset().left;
