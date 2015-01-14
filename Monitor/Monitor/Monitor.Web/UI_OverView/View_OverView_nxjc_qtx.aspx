@@ -31,9 +31,9 @@
                             <table class="table" style ="width:440px;">
                                 <tr>
                                     <th class="StaticsItemName">总功率(KWh)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">总用电量(年累)(KWh)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">总用电量(日累)(KWh)</th>

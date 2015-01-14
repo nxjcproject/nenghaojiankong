@@ -27,13 +27,13 @@
             <table>
                 <tr>
                     <td class ="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style ="padding:2px; width:406px;">
+                        <div class="easyui-panel" title="银川水泥" style ="padding:2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -61,39 +61,39 @@
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc总用电功率(KW)本年累计"></span></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc余热发电功率(MW)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc煤粉制备电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc水泥磨电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc生料磨电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc水泥电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc熟料综合电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc煤耗(kg/t)本年累计"></span></td>
                                 </tr>
                             </table>
                         </div>
                     </td>
                     <td class ="StaticsItemsRightTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="石嘴山水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -119,31 +119,31 @@
                 </tr>
                 <tr>
                     <td class ="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="青铜峡水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx总用电功率(KW)本年累计"></span></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx余热发电功率(MW)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx煤粉制备电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx水泥磨电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx生料磨电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx水泥电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx熟料综合电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
-                                    <td class="StaticsItemValue"></td>
+                                    <td class="StaticsItemValue"><span id="zc_nxjc_qtx煤耗(kg/t)本年累计"></span></td>
                                 </tr>
                             </table>
                         </div>
@@ -151,13 +151,13 @@
                     <td class ="StaticsItemsCenterTd" rowspan="4" style="background-image: url('images/page/GlobalMapArrow_nxjc.png'); background-repeat: no-repeat">
                     </td>
                     <td class ="StaticsItemsRightTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="天山水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -183,13 +183,13 @@
                 </tr>
                 <tr>
                     <td class ="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="中宁水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -213,13 +213,13 @@
                         </div>
                     </td>
                     <td class ="StaticsItemsRightTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="乌海赛马" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -245,13 +245,13 @@
                 </tr>
                 <tr>
                     <td class ="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="六盘山水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -275,13 +275,13 @@
                         </div>
                     </td>
                     <td class ="StaticsItemsRightTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="白银水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -307,13 +307,13 @@
                 </tr>
                 <tr>
                     <td class ="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="乌海西水" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
@@ -337,13 +337,13 @@
                         </div>
                     </td>
                     <td class ="StaticsItemsRightTd">
-                        <div class="easyui-panel" title="宁夏建材集团" style="padding: 2px; width:406px;">
+                        <div class="easyui-panel" title="喀喇沁水泥" style="padding: 2px; width:406px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">总功率(万千瓦)</th>
-                                    <td class="StaticsItemValue">234324</td>
+                                    <td class="StaticsItemValue"></td>
                                     <th class="StaticsItemName">余热发电功率(MW)</th>
-                                    <td class="StaticsItemValue">3242342</td>
+                                    <td class="StaticsItemValue"></td>
                                 </tr>
                                 <tr>
                                     <th class="StaticsItemName">煤磨电耗(KWh/t)</th>

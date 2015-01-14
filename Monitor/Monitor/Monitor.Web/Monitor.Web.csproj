@@ -1908,6 +1908,7 @@
     </Compile>
     <Compile Include="UI_OverView\View_OverView_nxjc_qtx.aspx.cs">
       <DependentUpon>View_OverView_nxjc_qtx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI_OverView\View_OverView_nxjc_qtx.aspx.designer.cs">
       <DependentUpon>View_OverView_nxjc_qtx.aspx</DependentUpon>
