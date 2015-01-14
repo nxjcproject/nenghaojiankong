@@ -1675,6 +1675,7 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.html" />
     <Content Include="UI_OverView\css\page\View_OverView_nxjc.css" />
+    <Content Include="UI_OverView\css\page\View_OverView_nxjc_qtx.css" />
     <Content Include="UI_OverView\images\page\GlobalMapArrow_nxjc.png" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc.js" />
     <Content Include="UI_OverView\View_OverView_nxjc.aspx" />
