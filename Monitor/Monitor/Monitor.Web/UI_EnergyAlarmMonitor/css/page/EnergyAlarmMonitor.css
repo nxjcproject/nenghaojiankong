@@ -1,0 +1,17 @@
+﻿
+.EnergyAlarmPic {
+    width:80px;
+    height:90px;
+    text-align:center;
+    vertical-align:bottom;
+    font-size:10pt;
+    font-weight:bold;
+    color:black;
+    background-repeat: no-repeat
+}
+.EnergyAlarmHorizontalBlank {
+    width:20px;
+}
+.EnergyAlarmVerticalBlank {
+    height:30px;
+}

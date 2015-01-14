@@ -1,0 +1,48 @@
+﻿.StaticsItemsLeftTd {
+    width: 380px; 
+    text-align:center; 
+    vertical-align:top; 
+    padding-top:20px;
+    padding-right:10px;
+}
+.StaticsItemsRightTd {
+    width: 380px; 
+    text-align:center; 
+    vertical-align:top; 
+    padding-top:20px;
+    padding-left:10px;
+}
+.SumStaticsItemsTd {
+    height:100px;
+    text-align:center;
+    vertical-align:top;
+    padding-top:10px;
+    padding-left:155px;
+}
+
+.table {
+    width:360px;
+}
+.SumTable {
+    width:400px;
+}
+.StaticsItemName {
+    width: 120px;
+    height: 20px;
+    text-align:right;
+    font-size:9pt;
+    font-family:SimSun;
+    font-weight:normal;
+    overflow:hidden;
+    white-space:nowrap;  
+    word-break:keep-all;
+}
+.StaticsItemValue {
+    text-align:left;
+    font-size:9pt;
+    font-family:SimSun;
+    font-weight:normal;
+    overflow:hidden;
+    white-space:nowrap;  
+    word-break:keep-all;
+}

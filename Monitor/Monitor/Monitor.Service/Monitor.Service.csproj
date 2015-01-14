@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnergyAlarmMonitor\DataBaseHelper.cs" />
+    <Compile Include="EnergyAlarmMonitor\EnergyAlarmMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\ClinkerEnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\EnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\OrganizationHelper.cs" />

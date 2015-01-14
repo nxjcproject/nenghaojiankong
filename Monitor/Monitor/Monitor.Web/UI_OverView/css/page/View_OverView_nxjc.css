@@ -1,0 +1,41 @@
+﻿.StaticsItemsCenterTd {
+    width: 520px; 
+    text-align:center; 
+    vertical-align:top; 
+}
+.StaticsItemsLeftTd {
+    width: 520px; 
+    height: 180px; 
+    text-align:center; 
+    vertical-align:top; 
+}
+.StaticsItemsRightTd {
+    width: 520px; 
+    height: 180px; 
+    text-align:center; 
+    vertical-align:top; 
+}
+
+.table {
+    width:400px;
+}
+.StaticsItemName {
+    width: 120px;
+    height: 20px;
+    text-align:right;
+    font-size:9pt;
+    font-family:SimSun;
+    font-weight:normal;
+    overflow:hidden;
+    white-space:nowrap;  
+    word-break:keep-all;
+}
+.StaticsItemValue {
+    text-align:left;
+    font-size:9pt;
+    font-family:SimSun;
+    font-weight:normal;
+    overflow:hidden;
+    white-space:nowrap;  
+    word-break:keep-all;
+}

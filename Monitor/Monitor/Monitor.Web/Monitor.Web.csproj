@@ -1589,6 +1589,13 @@
     <Content Include="lib\pllib\syntaxhighlighter\styles\shThemejqPlot.min.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
+    <Content Include="UI_EnergyAlarmMonitor\css\page\EnergyAlarmMonitor.css" />
+    <Content Include="UI_EnergyAlarmMonitor\EnergyAlarmMonitor.aspx" />
+    <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Blank.png" />
+    <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Green.png" />
+    <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Red.png" />
+    <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Yellow.png" />
+    <Content Include="UI_EnergyAlarmMonitor\js\page\EnergyAlarmMonitor.js" />
     <Content Include="UI_Monitor\css\common\Monitor.css" />
     <Content Include="UI_Monitor\css\common\mymonitor.css" />
     <Content Include="UI_Monitor\css\common\trendlineAnalysis.css" />
@@ -1667,12 +1674,24 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.html" />
+    <Content Include="UI_OverView\css\page\View_OverView_nxjc.css" />
+    <Content Include="UI_OverView\images\page\GlobalMapArrow_nxjc.png" />
+    <Content Include="UI_OverView\js\page\View_OverView_nxjc.js" />
+    <Content Include="UI_OverView\View_OverView_nxjc.aspx" />
+    <Content Include="UI_OverView\View_OverView_nxjc_qtx.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI_EnergyAlarmMonitor\EnergyAlarmMonitor.aspx.cs">
+      <DependentUpon>EnergyAlarmMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_EnergyAlarmMonitor\EnergyAlarmMonitor.aspx.designer.cs">
+      <DependentUpon>EnergyAlarmMonitor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx.cs">
       <DependentUpon>ElectricityAnalysis.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1880,6 +1899,19 @@
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx.designer.cs">
       <DependentUpon>template3.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI_OverView\View_OverView_nxjc.aspx.cs">
+      <DependentUpon>View_OverView_nxjc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_OverView\View_OverView_nxjc.aspx.designer.cs">
+      <DependentUpon>View_OverView_nxjc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_OverView\View_OverView_nxjc_qtx.aspx.cs">
+      <DependentUpon>View_OverView_nxjc_qtx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_OverView\View_OverView_nxjc_qtx.aspx.designer.cs">
+      <DependentUpon>View_OverView_nxjc_qtx.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\pllib\syntaxhighlighter\LGPL-LICENSE" />
@@ -1899,6 +1931,9 @@
     <Folder Include="UI_Monitor\css\page\" />
     <Folder Include="UI_Monitor\images\common\" />
     <Folder Include="UI_Monitor\js\page\" />
+    <Folder Include="UI_OverView\css\common\" />
+    <Folder Include="UI_OverView\images\common\" />
+    <Folder Include="UI_OverView\js\common\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monitor.Infrastructure\Monitor.Infrastructure.csproj">
