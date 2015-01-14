@@ -36,19 +36,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -66,19 +66,19 @@
                                     <td class="StaticsItemValue"><span id="zc_nxjc余热发电功率(MW)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc煤粉制备电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc水泥磨电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc生料磨电耗(KWh/t)本年累计"></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc水泥电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc熟料综合电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc煤耗(kg/t)本年累计"></span></td>
@@ -96,19 +96,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -128,19 +128,19 @@
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx余热发电功率(MW)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx煤粉制备电耗(KWh/t)本年累计"></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx水泥磨电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx生料磨电耗(KWh/t)本年累计"></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx水泥电耗(KWh/t)本年累计"></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx熟料综合电耗(KWh/t)本年累计"></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id="zc_nxjc_qtx煤耗(kg/t)本年累计"></span></td>
@@ -160,19 +160,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -192,19 +192,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -222,19 +222,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -254,19 +254,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -284,19 +284,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -316,19 +316,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
@@ -346,19 +346,19 @@
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">煤磨电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">煤磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                </tr>
-                                <tr>
-                                    <th class="StaticsItemName">生料磨电耗(KWh/t)</th>
-                                    <td class="StaticsItemValue"><span id=""></span></td>
-                                    <th class="StaticsItemName">水泥分步电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">水泥磨电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                 </tr>
                                 <tr>
-                                    <th class="StaticsItemName">熟料综合电耗(KWh/t)</th>
+                                    <th class="StaticsItemName">生料磨电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                    <th class="StaticsItemName">水泥分步电耗(kW·h/t)</th>
+                                    <td class="StaticsItemValue"><span id=""></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="StaticsItemName">熟料综合电耗(kW·h/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
                                     <th class="StaticsItemName">熟料综合煤耗(kg/t)</th>
                                     <td class="StaticsItemValue"><span id=""></span></td>
