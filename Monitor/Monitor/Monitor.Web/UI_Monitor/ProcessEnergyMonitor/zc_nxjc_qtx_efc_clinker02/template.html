@@ -2,23 +2,23 @@
     <div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">当前时间：<span id="timestamp"></span></div>
 
     <!-- 趋势分析描点开始 -->
-    
+
     <!-- 2#窑 -->
-	<div style="position: absolute; width:313px; height:61px; top: 661px; left: 711px;" data-title="2#窑" data-organizationId="zc_nxjc_qtx_efc_clinker02" data-levelcode="P01020202" class="selectable"></div>
+    <div style="position: absolute; width: 313px; height: 61px; top: 661px; left: 711px;" data-title="2#窑" data-organizationid="zc_nxjc_qtx_efc_clinker02" data-levelcode="P01020202" class="selectable"></div>
     <!-- 2#煤磨系统-->
-    <div style="position: absolute; width:69px; height:96px; top: 323px; left: 1149px;" data-title="2#煤磨" data-organizationId="zc_nxjc_qtx_efc_clinker02" data-levelcode="P010201" class="selectable"></div>
+    <div style="position: absolute; width: 69px; height: 96px; top: 323px; left: 1149px;" data-title="2#煤磨" data-organizationid="zc_nxjc_qtx_efc_clinker02" data-levelcode="P010201" class="selectable"></div>
     <!-- 2#生料粉磨-->
-    <div style="position: absolute; width:62px; height:113px; top: 269px; left: 618px;" data-title="2#生料粉磨" data-organizationId="zc_nxjc_qtx_efc_clinker02" data-levelcode="P010102" class="selectable"></div>
-    
+    <div style="position: absolute; width: 62px; height: 113px; top: 269px; left: 618px;" data-title="2#生料粉磨" data-organizationid="zc_nxjc_qtx_efc_clinker02" data-levelcode="P010102" class="selectable"></div>
+
     <!-- 2#废气处理-->
-    <div style="position: absolute; width:177px; height:277px; top: 473px; left: 414px;" data-title="2#废气处理" data-organizationId="zc_nxjc_qtx_efc_clinker02" data-levelcode="P01020203" class="selectable"></div>
+    <div style="position: absolute; width: 177px; height: 277px; top: 473px; left: 414px;" data-title="2#废气处理" data-organizationid="zc_nxjc_qtx_efc_clinker02" data-levelcode="P01020203" class="selectable"></div>
 
     <!-- 趋势分析描点结束 -->
 
     <div>
         <p style="text-align: center; font-size: 30px;">2#熟料生产能耗监控总貌图</p>
     </div>
-    <table class="mytable" style="position: absolute; top: 252px; left: 183px;">
+    <table class="mytable" style="position: absolute; top: 272px; left: 220px;">
         <tr>
             <th colspan="2">破碎机</th>
         </tr>
@@ -126,22 +126,6 @@
 
         <table class="mytable" style="float: left;">
             <tr>
-                <th colspan="2">窑主电机</th>
-            </tr>
-            <tr>
-                <td>电流：</td>
-                <td>
-                    <input class="easyui-numberbox" id="F4M_CUN_M" />A</td>
-            </tr>
-            <tr>
-                <td>转速：</td>
-                <td>
-                    <input class="easyui-numberbox" id="F4M_SDF_M" />rpm</td>
-            </tr>
-        </table>
-
-        <table class="mytable" style="float: left;">
-            <tr>
                 <th colspan="2">冷却风机电流</th>
             </tr>
             <tr>
@@ -157,6 +141,22 @@
         </table>
     </div>
 
+    <table class="mytable" style="position: absolute; top: 570px; left: 845px;">
+        <tr>
+            <th colspan="2">窑</th>
+        </tr>
+        <tr>
+            <td>电流：</td>
+            <td>
+                <input class="easyui-numberbox" id="F4M_CUN_M" />A</td>
+        </tr>
+        <tr>
+            <td>窑系统电耗:</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020202" />kW·h/t</td>
+        </tr>
+    </table>
+
     <table class="mytable" style="position: absolute; top: 607px; left: 1358px;">
         <tr>
             <th colspan="2">窑头排风机</th>
@@ -170,35 +170,6 @@
             <td>功率：</td>
             <td>
                 <input class="easyui-numberbox" id="A006Power" />KW</td>
-        </tr>
-    </table>
-
-    <table class="mytable" style="position: absolute; top: 470px; left: 1469px;">
-        <tr>
-            <th colspan="2">分解炉喂煤量</th>
-        </tr>
-        <tr>
-            <td style="text-align: left">流量:</td>
-            <td style="text-align: left">
-                <input class="easyui-numberbox" id="K12AC_SDF_M" />t/h</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">累计量:</td>
-            <td style="text-align: left">
-                <input class="easyui-numberbox" id="K12AC_TOL_M" />t</td>
-        </tr>
-        <tr>
-            <th colspan="2">窑头喂煤量</th>
-        </tr>
-        <tr>
-            <td style="text-align: left">流量:</td>
-            <td style="text-align: left">
-                <input class="easyui-numberbox" id="K11AC_SDF_M" />t/h</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">累计量:</td>
-            <td style="text-align: left">
-                <input class="easyui-numberbox" id="K11AC_TOL_M" />t</td>
         </tr>
     </table>
 
@@ -270,46 +241,80 @@
             </td>
         </tr>
     </table>
-    <table class="mytable" style="position: absolute; top: 491px; left: 182px;">
+
+    <table class="mytable" style="position: absolute; top: 247px; left: 790px;">
         <tr>
             <td>2#熟料线电耗合计:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01" />kW·h/t</td>
-        </tr>
-       <tr>
-            <td>&nbsp;生料制备电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P0101" />kW·h/t</td>
         </tr>
         <tr>
-            <td>&nbsp; 原料破碎电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010101" />kW·h/t</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 195px; left: 486px;">
+        <tr>
+            <td>生料制备电耗:</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P0101" />kW·h/t</td>
         </tr>
         <tr>
-            <td>&nbsp;熟料烧成电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P0102" />kW·h/t</td>
+            <td>原料破碎电耗:</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010101" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 367px; left: 754px;">
+        <tr>
+            <td>熟料烧成电耗:</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P0102" />kW·h/t</td>
         </tr>
         <tr>
-            <td>&nbsp; 煤磨系统电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010201" />kW·h/t</td>
+            <td>烧成系统电耗:</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010202" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 419px; left: 458px;">
+        <tr>
+            <td>生料均化电耗:</td>
         </tr>
         <tr>
-            <td>&nbsp; 烧成系统电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010202" />kW·h/t</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020201" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 790px; left: 406px;">
+        <tr>
+            <td>废气处理电耗:</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp; 生料均化电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020201" />kW·h/t</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020203" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 441px; left: 1138px;">
+        <tr>
+            <td>煤磨系统电耗:</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp; 窑系统电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020202" />kW·h/t</td>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P010201" />kW·h/t</td>
         </tr>
-         <tr>
-            <td>&nbsp;&nbsp; 废气处理:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020203" />kW·h/t</td>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 724px; left: 1084px;">
+        <tr>
+            <td>熟料储送电耗:</td>
         </tr>
-         <tr>
-            <td>&nbsp;&nbsp; 熟料储送电耗:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020204" />kW·h/t</td>
+        <tr>
+            <td>
+                <input class="easyui-numberbox" id="zc_nxjc_qtx_efc_clinker02P01020204" />kW·h/t</td>
         </tr>
     </table>
 </div>
