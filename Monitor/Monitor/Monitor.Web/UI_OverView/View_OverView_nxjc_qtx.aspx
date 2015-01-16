@@ -65,7 +65,7 @@
                 </tr>
                 <tr>
                     <td class="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="熟料生产环节" style="padding: 2px; width: 366px;">
+                        <div class="easyui-panel" title="熟料生产环节" style="padding: 2px; width: 372px; overflow:hidden">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">项目指标</th>
@@ -179,7 +179,7 @@
                         </div>
                     </td>
                     <td class="StaticsItemsLeftTd">
-                        <div class="easyui-panel" title="水泥生产环节" style="padding: 2px; width: 366px;">
+                        <div class="easyui-panel" title="水泥生产环节" style="padding: 2px; width: 372px;">
                             <table class="table">
                                 <tr>
                                     <th class="StaticsItemName">项目指标</th>

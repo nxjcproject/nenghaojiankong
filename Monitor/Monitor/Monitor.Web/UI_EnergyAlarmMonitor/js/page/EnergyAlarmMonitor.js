@@ -7,8 +7,8 @@ var CurrentRefreshTimeCount = 0;
 $(document).ready(function () {
     InitializingEnergyAlarmStatus();
     InitializingEnergyAlarmGroup();
+    InitializingAlarmDataGrid({ "rows": [], "total": 0 });
     LoadEnergyAlarmNodesData('');
-    InitializingAlarmDataGrid({ 'rows': [], total: 0 });
     setInterval("BlinkInterval()", 1000);
 });
 

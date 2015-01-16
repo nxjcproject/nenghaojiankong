@@ -1678,6 +1678,7 @@
     <Content Include="UI_OverView\css\page\View_OverView_nxjc_qtx.css" />
     <Content Include="UI_OverView\images\page\GlobalMapArrow_nxjc.png" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc.js" />
+    <Content Include="UI_OverView\js\page\View_OverView_nxjc_qtx.js" />
     <Content Include="UI_OverView\View_OverView_nxjc.aspx" />
     <Content Include="UI_OverView\View_OverView_nxjc_qtx.aspx" />
     <Content Include="Web.config">

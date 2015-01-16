@@ -24,7 +24,7 @@
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false">
         <div data-options="region:'north',border:false,collapsible:false" style="padding-top:5px;padding-left:20px;height:35px;">
-            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+        <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-back',plain:true"
              onclick ="BackToUpFun();">返回</a>
         </div>
         <div data-options="region:'center',border:false,collapsible:false" style="padding:10px;">
@@ -104,7 +104,7 @@
                 </tr>
             </table>
         </div>
-        <div data-options="region:'south',border:false,collapsible:false" style="height:160px;">
+        <div data-options="region:'south',border:true,collapsible:false" style="height:160px;">
         <table id="dataGrid_AlarmInfo" class="easyui-datagrid" data-options="fit:true,border:true"></table>
         </div>
     </div>
