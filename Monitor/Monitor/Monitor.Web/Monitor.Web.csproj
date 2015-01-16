@@ -1621,9 +1621,6 @@
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
     <Content Include="UI_Monitor\js\common\trendlineAnalysis.js" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\template.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc\MonitorView.aspx" />
@@ -1648,32 +1645,6 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker04\template.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\template.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\view\template0.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\view\template0.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template0.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template4.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template4.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.html" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx" />
-    <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.html" />
     <Content Include="UI_OverView\css\page\View_OverView_nxjc.css" />
     <Content Include="UI_OverView\css\page\View_OverView_nxjc_qtx.css" />
     <Content Include="UI_OverView\images\page\GlobalMapArrow_nxjc.png" />
@@ -1697,20 +1668,6 @@
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx.cs">
       <DependentUpon>ElectricityAnalysis.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\monitor\MonitorView.aspx.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\monitor\MonitorView.aspx.designer.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.aspx.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc\view\template0.aspx.designer.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\MonitorView.aspx.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
@@ -1795,111 +1752,6 @@
     </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\MonitorView.aspx.designer.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\monitor\MonitorView.aspx.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\monitor\MonitorView.aspx.designer.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\view\template0.aspx.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx副本\view\template0.aspx.designer.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\monitor\MonitorView.aspx.designer.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\view\template0.aspx.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_cementmill01\view\template0.aspx.designer.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\monitor\MonitorView.aspx.designer.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template0.aspx.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template0.aspx.designer.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.aspx.cs">
-      <DependentUpon>template1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template1.aspx.designer.cs">
-      <DependentUpon>template1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.aspx.cs">
-      <DependentUpon>template2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template2.aspx.designer.cs">
-      <DependentUpon>template2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.aspx.cs">
-      <DependentUpon>template3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template3.aspx.designer.cs">
-      <DependentUpon>template3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template4.aspx.cs">
-      <DependentUpon>template4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker02\view\template4.aspx.designer.cs">
-      <DependentUpon>template4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\monitor\MonitorView.aspx.designer.cs">
-      <DependentUpon>MonitorView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.aspx.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template0.aspx.designer.cs">
-      <DependentUpon>template0.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.aspx.cs">
-      <DependentUpon>template1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template1.aspx.designer.cs">
-      <DependentUpon>template1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.aspx.cs">
-      <DependentUpon>template2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template2.aspx.designer.cs">
-      <DependentUpon>template2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx.cs">
-      <DependentUpon>template3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc_clinker03\view\template3.aspx.designer.cs">
-      <DependentUpon>template3.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_OverView\View_OverView_nxjc.aspx.cs">
       <DependentUpon>View_OverView_nxjc.aspx</DependentUpon>

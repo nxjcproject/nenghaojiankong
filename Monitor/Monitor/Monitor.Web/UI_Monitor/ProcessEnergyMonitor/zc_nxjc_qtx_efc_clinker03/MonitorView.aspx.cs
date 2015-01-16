@@ -54,6 +54,15 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker03
             }
             #endregion
 
+            #region 获得实时电能消耗数据
+            RealtimeFormulaValueService formulaValue = new RealtimeFormulaValueService(ammeterConn, "");
+            IEnumerable<DataItem> formulaValueItems = formulaValue.GetFormulaPowerConsumption(factoryLevel);
+            foreach (var item in formulaValueItems)
+            {
+                dataItems.Add(item);
+            }
+            #endregion
+
             SceneMonitor result = new SceneMonitor();
             result.Name = sceneName;
             result.time = DateTime.Now;

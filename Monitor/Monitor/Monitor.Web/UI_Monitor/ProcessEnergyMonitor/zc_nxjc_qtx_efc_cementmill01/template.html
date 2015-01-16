@@ -1,6 +1,13 @@
 ﻿<div style="position: relative; background-image: url('../../images/page/zc_nxjc_qtx_efc_cementmill.jpg'); width: 1820px; height: 1000px; overflow: hidden;">
     <div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">当前时间：<span id="timestamp"></span></div>
 
+    <!-- 趋势分析描点开始 -->
+
+    <!-- 1#水泥粉磨-->
+    <div style="position: absolute; width:320px; height:111px; top: 625px; left: 702px;" data-title="1#水泥粉磨" data-organizationId="zc_nxjc_qtx_efc_cementmill01" data-levelcode="P010101" class="selectable"></div>
+    
+    <!-- 趋势分析描点结束 -->
+
     <div>
         <p style="text-align: center; font-size: 30px;">水泥生产能耗监控图</p>
     </div>
@@ -49,8 +56,29 @@
             </td>
         </tr>
     </table>
-
-    <table class="mytable" style="position: absolute; top: 676px; left: 772px;">
+     <table class="mytable" style="position: absolute; top: 212px; left: 778px;">
+        <tr>
+            <td>1#水泥磨电耗合计:</td>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P01" />kW·h/t</td>
+        </tr>
+        <tr>
+            <td>水泥制备电耗：</td>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P0101" />kW·h/t</td>
+        </tr>
+        <tr>
+            <td>水泥粉磨电耗：</td>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P010101" />kW·h/t</td>
+        </tr>
+       <tr>
+            <td>混合材制备电耗：</td>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P010102" />kW·h/t</td>
+        </tr>
+        <tr>
+            <td>水泥包装与输送电耗：</td>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P0102" />kW·h/t</td>
+        </tr>
+    </table>
+    <table class="mytable" style="position: absolute; top: 745px; left: 751px;">
         <tr>
             <td>主电机电流：</td>
             <td>
@@ -77,9 +105,10 @@
                 <input class="easyui-numberbox" id="A118Power" />
                 KW</td>
         </tr>
+        
     </table>
-
-    <table class="mytable" style="position: absolute; top: 679px; left: 408px;">
+   
+    <table class="mytable" style="position: absolute; top: 731px; left: 478px;">
         <tr>
             <td>动辊电流：</td>
             <td>
@@ -107,7 +136,7 @@
         </tr>
     </table>
 
-    <table class="mytable" style="position: absolute; top: 231px; left: 439px;">
+    <table class="mytable" style="position: absolute; top: 289px; left: 432px;">
         <tr>
             <td>提升机电流：</td>
         </tr>
@@ -117,7 +146,7 @@
         </tr>
     </table>
 
-    <table class="mytable" style="position: absolute; top: 241px; left: 1028px;">
+    <table class="mytable" style="position: absolute; top: 310px; left: 1051px;">
         <tr>
             <td>提升机电流：</td>
         </tr>
@@ -127,7 +156,7 @@
         </tr>
     </table>
 
-    <table class="mytable" style="position: absolute; top: 313px; left: 1090px;">
+    <table class="mytable" style="position: absolute; top: 366px; left: 1081px;">
         <tr>
             <td>提升机电流：</td>
         </tr>
@@ -137,7 +166,7 @@
         </tr>
     </table>
 
-    <table class="mytable" style="position: absolute; top: 285px; left: 639px;">
+    <table class="mytable" style="position: absolute; top: 419px; left: 753px;">
         <tr>
             <th colspan="2">选粉仓</th>
         </tr>
@@ -155,3 +184,5 @@
     </table>
 
 </div>
+
+<script src="../../js/common/trendlineAnalysis.js"></script>
