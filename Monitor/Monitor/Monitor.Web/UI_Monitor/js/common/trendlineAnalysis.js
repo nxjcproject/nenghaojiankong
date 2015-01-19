@@ -234,7 +234,7 @@ function addCurrentAchorToTagList() {
 
 function popupAddTagItemWindow() {
     $('#tagSelectorWindow').dialog('open');
-    $('#tagSelector').attr('src', '/UI_Monitor/ProcessEnergyMonitor/TrendLineAnalysis/ProcessSelector.aspx');
+    $('#tagSelector').attr('src', '/UI_Monitor/ProcessEnergyMonitor/TrendLineAnalysis/ProcessSelector.aspx?PageId=5CE25714-15AE-490B-947E-13C28BA20316');
 }
 
 // 弹出简单趋势
