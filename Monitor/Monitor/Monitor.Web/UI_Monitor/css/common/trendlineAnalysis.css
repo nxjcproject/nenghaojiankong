@@ -9,3 +9,12 @@
         -moz-opacity:0.20;          /* 支持 FireFox 浏览器 */
         opacity:0.20;               /* 支持 Chrome, Opera, Safari 等浏览器 */
     }
+
+.actived {
+        border: 2px solid black;
+        cursor: cell;
+        background:yellow; 
+        filter:alpha(opacity=50);   /* 支持 IE 浏览器 */
+        -moz-opacity:0.50;          /* 支持 FireFox 浏览器 */
+        opacity:0.50;               /* 支持 Chrome, Opera, Safari 等浏览器 */
+}

@@ -1620,7 +1620,10 @@
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
     <Content Include="UI_Monitor\js\common\trendlineAnalysis.js" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\css\page\ProcessSelector.css" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\HorizontalAnalysis.asmx" />
+    <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ProcessSelector.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\template.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_efc\MonitorView.aspx" />
@@ -1668,6 +1671,17 @@
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx.cs">
       <DependentUpon>ElectricityAnalysis.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\HorizontalAnalysis.asmx.cs">
+      <DependentUpon>HorizontalAnalysis.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ProcessSelector.aspx.cs">
+      <DependentUpon>ProcessSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ProcessSelector.aspx.designer.cs">
+      <DependentUpon>ProcessSelector.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx\MonitorView.aspx.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>

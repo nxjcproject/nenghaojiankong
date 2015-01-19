@@ -57,6 +57,5 @@
 <body  class="easyui-layout" data-options="border:false" >
     <div id="template" style="height:100%; overflow: auto;">
     </div>
-    <div id="Windows_Container"></div>
 </body>
 </html>

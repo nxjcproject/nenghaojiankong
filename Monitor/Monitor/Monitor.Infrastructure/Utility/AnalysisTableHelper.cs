@@ -27,15 +27,35 @@ namespace Monitor.Infrastructure.Utility
                 destination.Columns.Add(dc);
             }
 
-            DataRow dr = destination.NewRow();
-
-            for (int i = 0; i < source.Rows.Count; i++)
+            if (source.Columns.Contains("OrganizationID") && source.Columns.Contains("LevelCode"))
             {
-                string columnName = source.Rows[i]["Year"].ToString() + "-" + ((int)source.Rows[i]["Month"]).ToString("00") + "-" + ((int)source.Rows[i]["Day"]).ToString("00") + "-" + ((int)source.Rows[i]["Hour"]).ToString("00");
-                dr[columnName] = (decimal)source.Rows[i]["Sum"];
-            }
+                DataRow dr = destination.NewRow();
 
-            destination.Rows.Add(dr);
+                for (int i = 0; i < source.Rows.Count; i++)
+                {
+                    if (i > 0 && (source.Rows[i]["OrganizationID"].ToString() != source.Rows[i - 1]["OrganizationID"].ToString() || source.Rows[i]["LevelCode"].ToString() != source.Rows[i - 1]["LevelCode"].ToString()))
+                    {
+                        destination.Rows.Add(dr);
+                        dr = destination.NewRow();
+                    }
+                    string columnName = source.Rows[i]["Year"].ToString() + "-" + ((int)source.Rows[i]["Month"]).ToString("00") + "-" + ((int)source.Rows[i]["Day"]).ToString("00") + "-" + ((int)source.Rows[i]["Hour"]).ToString("00");
+                    dr[columnName] = (decimal)source.Rows[i]["Sum"];
+                }
+
+                destination.Rows.Add(dr);
+            }
+            else
+            {
+                DataRow dr = destination.NewRow();
+
+                for (int i = 0; i < source.Rows.Count; i++)
+                {
+                    string columnName = source.Rows[i]["Year"].ToString() + "-" + ((int)source.Rows[i]["Month"]).ToString("00") + "-" + ((int)source.Rows[i]["Day"]).ToString("00") + "-" + ((int)source.Rows[i]["Hour"]).ToString("00");
+                    dr[columnName] = (decimal)source.Rows[i]["Sum"];
+                }
+
+                destination.Rows.Add(dr);
+            }
 
             return destination;
         }

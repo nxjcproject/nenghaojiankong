@@ -4,7 +4,7 @@
     <!-- 趋势分析描点开始 -->
 
     <!-- 1#水泥粉磨-->
-    <div style="position: absolute; width:320px; height:111px; top: 625px; left: 702px;" data-title="1#水泥粉磨" data-organizationId="zc_nxjc_qtx_efc_cementmill01" data-levelcode="P010101" class="selectable"></div>
+    <div style="position: absolute; width:130px; height:62px; top: 463px; left: 721px;" data-title="1#水泥粉磨" data-organizationId="zc_nxjc_qtx_efc_cementmill01" data-levelcode="P010101" class="selectable"></div>
     
     <!-- 趋势分析描点结束 -->
 
@@ -56,11 +56,26 @@
             </td>
         </tr>
     </table>
-     <table class="mytable" style="position: absolute; top: 212px; left: 778px;">
+
+    <table class="mytable" style="position: absolute; top: 407px; left: 1335px;">
         <tr>
-            <td>1#水泥磨电耗合计:</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P01" />kW·h/t</td>
+            <td>水泥包装与输送电耗：</td>
+            </tr>
+        <tr>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P0102" />kW·h/t</td>
         </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 264px; left: 474px;">
+        <tr>
+            <td>混合材制备电耗：</td>
+            </tr>
+        <tr>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P010102" />kW·h/t</td>
+        </tr>
+    </table>
+
+    <table class="mytable" style="position: absolute; top: 553px; left: 726px;">
         <tr>
             <td>水泥制备电耗：</td>
             <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P0101" />kW·h/t</td>
@@ -69,16 +84,17 @@
             <td>水泥粉磨电耗：</td>
             <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P010101" />kW·h/t</td>
         </tr>
-       <tr>
-            <td>混合材制备电耗：</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P010102" />kW·h/t</td>
-        </tr>
-        <tr>
-            <td>水泥包装与输送电耗：</td>
-            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P0102" />kW·h/t</td>
-        </tr>
     </table>
-    <table class="mytable" style="position: absolute; top: 745px; left: 751px;">
+
+     <table class="mytable" style="position: absolute; top: 212px; left: 778px;">
+        <tr>
+            <td>1#水泥磨电耗合计:</td>
+            </tr>
+         <tr>
+            <td><input class="easyui-numberbox" id="zc_nxjc_qtx_efc_cementmill01P01" />kW·h/t</td>
+        </tr>    
+    </table>
+    <table class="mytable" style="position: absolute; top: 358px; left: 645px;">
         <tr>
             <td>主电机电流：</td>
             <td>
@@ -108,7 +124,7 @@
         
     </table>
    
-    <table class="mytable" style="position: absolute; top: 731px; left: 478px;">
+    <table class="mytable" style="position: absolute; top: 664px; left: 484px;">
         <tr>
             <td>动辊电流：</td>
             <td>
@@ -136,37 +152,7 @@
         </tr>
     </table>
 
-    <table class="mytable" style="position: absolute; top: 289px; left: 432px;">
-        <tr>
-            <td>提升机电流：</td>
-        </tr>
-        <tr>
-            <td>
-                <input class="easyui-numberbox" id="M70M1_I_R" />A</td>
-        </tr>
-    </table>
-
-    <table class="mytable" style="position: absolute; top: 310px; left: 1051px;">
-        <tr>
-            <td>提升机电流：</td>
-        </tr>
-        <tr>
-            <td>
-                <input class="easyui-numberbox" id="M48M_I_R" />A</td>
-        </tr>
-    </table>
-
-    <table class="mytable" style="position: absolute; top: 366px; left: 1081px;">
-        <tr>
-            <td>提升机电流：</td>
-        </tr>
-        <tr>
-            <td>
-                <input class="easyui-numberbox" id="M34M_I_R" />A</td>
-        </tr>
-    </table>
-
-    <table class="mytable" style="position: absolute; top: 419px; left: 753px;">
+    <table class="mytable" style="position: absolute; top: 281px; left: 946px;">
         <tr>
             <th colspan="2">选粉仓</th>
         </tr>
@@ -185,4 +171,5 @@
 
 </div>
 
+<div id="trendlineAnalysisContainer"></div>
 <script src="../../js/common/trendlineAnalysis.js"></script>
