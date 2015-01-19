@@ -23,7 +23,7 @@ function getLatestData() {
         organizationId: pageData.organizationId,
         sceneName: pageData.viewName
     };
-    var urlString = "/UI_Monitor/ProcessEnergyMonitor/zc_nxjc/view/template0.aspx/GetRealTimeData";
+    var urlString = "View_OverView_nxjc.aspx/GetRealTimeData";
     $.ajax({
         type: "POST",
         url: urlString,
