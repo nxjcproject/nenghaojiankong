@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="EnergyAlarmMonitor\DataBaseHelper.cs" />
     <Compile Include="EnergyAlarmMonitor\EnergyAlarmMonitor.cs" />
+    <Compile Include="EnergyAlarmMonitor\MachineHaltAlarmMonitor.cs" />
+    <Compile Include="EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\ClinkerEnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\EnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\OrganizationHelper.cs" />

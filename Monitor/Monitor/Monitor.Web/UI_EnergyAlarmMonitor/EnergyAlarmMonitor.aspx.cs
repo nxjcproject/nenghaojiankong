@@ -26,7 +26,7 @@ namespace Monitor.Web.UI_EnergyAlarmMonitor
             }
         }
         [WebMethod]
-        public static string GetAlarmNodes(string myNodeId)
+        public static string GetAlarmNodes()
         {
             DataTable m_AlarmNodesTable = Monitor.Service.EnergyAlarmMonitor.EnergyAlarmMonitor.GetAlarmNodes(GetDataValidIdGroup("ProductionOrganization"));
             string result = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(m_AlarmNodesTable);

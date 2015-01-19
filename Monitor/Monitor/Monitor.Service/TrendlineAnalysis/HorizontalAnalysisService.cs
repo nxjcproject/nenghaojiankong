@@ -17,8 +17,8 @@ namespace Monitor.Service.TrendlineAnalysis
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
 
-            string queryString = @"SELECT [OrganizationID], [LevelCode], YEAR([vDate]) AS [Year], MONTH([vDate]) AS [Month], DAY([vDate]) AS [Day], DATEPART(HOUR, [vDate]) AS [Hour], SUM([Value]) AS [Sum]
-                                     FROM [dbo].[temp_ProcessValue]
+            string queryString = @"SELECT [OrganizationID], [LevelCode], YEAR([vDate]) AS [Year], MONTH([vDate]) AS [Month], DAY([vDate]) AS [Day], DATEPART(HOUR, [vDate]) AS [Hour], SUM([FormulaValue]) AS [Sum]
+                                     FROM [{2}].[dbo].[HistoyFormulaValue]
                                     WHERE [OrganizationID] = '{0}'
                                       AND [LevelCode] = '{1}'
                                       AND [vDate] >= @startTime
@@ -30,7 +30,7 @@ namespace Monitor.Service.TrendlineAnalysis
 
             foreach (DataRow dr in tagTable.Rows)
             {
-                queryBuilder.Append(string.Format(queryString, dr["OrganizationID"], dr["LevelCode"]));
+                queryBuilder.Append(string.Format(queryString, dr["OrganizationID"], dr["LevelCode"], ConnectionStringFactory.GetAmmeterDatabaseName(dr["OrganizationID"].ToString())));
                 queryBuilder.Append(" UNION ");
             }
 

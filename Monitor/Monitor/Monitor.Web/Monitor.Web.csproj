@@ -1596,6 +1596,10 @@
     <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Red.png" />
     <Content Include="UI_EnergyAlarmMonitor\images\page\AlarmCircular_Yellow.png" />
     <Content Include="UI_EnergyAlarmMonitor\js\page\EnergyAlarmMonitor.js" />
+    <Content Include="UI_EnergyAlarmMonitor\js\page\MachineHaltAlarmMonitor.js" />
+    <Content Include="UI_EnergyAlarmMonitor\js\page\SlaverHaltDelayAlarmMonitor.js" />
+    <Content Include="UI_EnergyAlarmMonitor\MachineHaltAlarmMonitor.aspx" />
+    <Content Include="UI_EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.aspx" />
     <Content Include="UI_Monitor\css\common\Monitor.css" />
     <Content Include="UI_Monitor\css\common\mymonitor.css" />
     <Content Include="UI_Monitor\css\common\trendlineAnalysis.css" />
@@ -1667,6 +1671,18 @@
     </Compile>
     <Compile Include="UI_EnergyAlarmMonitor\EnergyAlarmMonitor.aspx.designer.cs">
       <DependentUpon>EnergyAlarmMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_EnergyAlarmMonitor\MachineHaltAlarmMonitor.aspx.cs">
+      <DependentUpon>MachineHaltAlarmMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_EnergyAlarmMonitor\MachineHaltAlarmMonitor.aspx.designer.cs">
+      <DependentUpon>MachineHaltAlarmMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.aspx.cs">
+      <DependentUpon>SlaverHaltDelayAlarmMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.aspx.designer.cs">
+      <DependentUpon>SlaverHaltDelayAlarmMonitor.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx.cs">
       <DependentUpon>ElectricityAnalysis.asmx</DependentUpon>

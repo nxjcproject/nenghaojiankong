@@ -17,8 +17,8 @@ namespace Monitor.Service.TrendlineAnalysis
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
 
-            string queryString = @"SELECT YEAR([vDate]) AS [Year], MONTH([vDate]) AS [Month], DAY([vDate]) AS [Day], DATEPART(HOUR, [vDate]) AS [Hour], SUM([Value]) AS [Sum]
-                                     FROM [dbo].[temp_ProcessValue]
+            string queryString = @"SELECT YEAR([vDate]) AS [Year], MONTH([vDate]) AS [Month], DAY([vDate]) AS [Day], DATEPART(HOUR, [vDate]) AS [Hour], SUM([FormulaValue]) AS [Sum]
+                                     FROM [{0}].[dbo].[HistoyFormulaValue]
                                     WHERE [OrganizationID] = @organizationId
                                       AND [LevelCode] = @levelcode
                                       AND [vDate] >= @startTime
@@ -34,7 +34,7 @@ namespace Monitor.Service.TrendlineAnalysis
                 new SqlParameter("endTime", endTime)
             };
 
-            return dataFactory.Query(queryString, parameters);
+            return dataFactory.Query(string.Format(queryString, ConnectionStringFactory.GetAmmeterDatabaseName(organizationId)), parameters);
         }
     }
 }
