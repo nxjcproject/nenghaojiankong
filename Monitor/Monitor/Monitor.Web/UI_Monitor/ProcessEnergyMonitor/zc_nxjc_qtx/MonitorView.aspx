@@ -44,7 +44,6 @@
     <script type="text/javascript" src="/js/common/components/WindowsDialog.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/common/components/GridChart.js" charset="utf-8"></script>
 
-    <script src="../../js/common/blink.js"></script>
     <script src="../../js/common/myMonitor.js"></script>
     <script type="text/javascript">
         var pageData = {

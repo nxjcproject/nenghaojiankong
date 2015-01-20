@@ -1,14 +1,15 @@
 ﻿$(function () {
-    setInterval(blink, 500);
+    blink();
 });
 
 function getImgTag(src) {
-    return '<img class="myimg" src="'+ src + '" style="width:100%;height:100%;" />';
+    return '<img class="myimg" src="' + src + '" style="width:100%;height:100%;" />';
 }
 
 function blink() {
+    //setInterval(AddImage, 20000);
     AddImage();
-    setBlink();
+    setInterval(setBlink, 500);
 }
 
 function AddImage() {
@@ -22,7 +23,7 @@ function AddImage() {
         var basePath = "/UI_Monitor/images/common/";
         switch (code) {
             case '100':
-                content = getImgTag (basePath + "redL.png");
+                content = getImgTag(basePath + "redL.png");
                 break;
 
             case '010':
@@ -32,11 +33,14 @@ function AddImage() {
             case '001':
                 content = getImgTag(basePath + "yellowL.png");
                 break;
+
+            default:
+                content = getImgTag(basePath + "redL.png");
         }
         $(this).html(content);
     });
 }
 
 function setBlink() {
-    setInterval($('.myimg').fadeOut(500), 50000);
+    $('.myimg').fadeIn(500).fadeOut(500);
 }

@@ -901,5 +901,11 @@
     </div>
     <div id="trendlineAnalysisContainer"></div>
     <script src="../../js/common/trendlineAnalysis.js"></script>
-    <script src="../../js/common/blink.js"></script>
 </div>
+<<<<<<< HEAD
+=======
+
+<div id="trendlineAnalysisContainer"></div>
+<script src="../../js/common/trendlineAnalysis.js"></script>
+<script src="../../js/common/blink.js"></script>
+>>>>>>> 修改闪烁时间
