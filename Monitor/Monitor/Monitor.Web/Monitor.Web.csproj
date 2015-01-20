@@ -82,6 +82,7 @@
     <Content Include="js\common\components\GridChart.js" />
     <Content Include="js\common\components\WindowsDialog.js" />
     <Content Include="js\common\format\DateTimeFormat.js" />
+    <Content Include="js\common\jquery.fullscreen.js" />
     <Content Include="js\common\jquery.utility.js" />
     <Content Include="js\common\json2.min.js" />
     <Content Include="js\common\PrintFile.js" />

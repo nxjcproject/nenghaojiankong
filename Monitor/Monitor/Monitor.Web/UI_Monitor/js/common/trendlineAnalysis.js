@@ -11,6 +11,12 @@ var currentAnchor = null;
 
 $(document).ready(function () {
 
+    if ($.getUrlParam('fullscreen') != 1) {
+        // 添加全屏
+
+        $('#trendlineAnalysisContainer').append(getFullscreenHtml());
+    }
+
     // 为趋势容器添加标签选择器
 
     $('#trendlineAnalysisContainer').append(getTagSelectorHtml());
@@ -80,6 +86,15 @@ $(document).ready(function () {
     });
 
 });
+
+// 获取全屏按钮HTML
+
+function getFullscreenHtml() {
+    var html = '<div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">\
+                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'ext-icon-arrow_out\',plain:true" onclick="window.open(document.location + \'&fullscreen=1\', \'\', \'fullscreen=yes\');">全屏</a>\
+                </div>';
+    return html;
+}
 
 // 获取标签选择器HTML
 

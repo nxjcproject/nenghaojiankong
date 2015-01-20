@@ -55,7 +55,7 @@
 
     <title></title>
 </head>
-<body  class="easyui-layout" data-options="border:false" >
+<body class="easyui-layout" data-options="border:false" >
     <div id="template" style="height:100%; overflow: auto;">
     </div>
 </body>
