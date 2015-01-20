@@ -1603,6 +1603,9 @@
     <Content Include="UI_Monitor\css\common\Monitor.css" />
     <Content Include="UI_Monitor\css\common\mymonitor.css" />
     <Content Include="UI_Monitor\css\common\trendlineAnalysis.css" />
+    <Content Include="UI_Monitor\images\common\greenL.png" />
+    <Content Include="UI_Monitor\images\common\redL.png" />
+    <Content Include="UI_Monitor\images\common\yellowL.png" />
     <Content Include="UI_Monitor\images\page\CementPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS.jpg" />
     <Content Include="UI_Monitor\images\page\ClinkerPreparation_QTXQS_dan.jpg" />
@@ -1621,6 +1624,7 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_cementmill.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker.jpg" />
+    <Content Include="UI_Monitor\js\common\blink.js" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
@@ -1676,12 +1680,14 @@
     </Compile>
     <Compile Include="UI_EnergyAlarmMonitor\MachineHaltAlarmMonitor.aspx.cs">
       <DependentUpon>MachineHaltAlarmMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI_EnergyAlarmMonitor\MachineHaltAlarmMonitor.aspx.designer.cs">
       <DependentUpon>MachineHaltAlarmMonitor.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.aspx.cs">
       <DependentUpon>SlaverHaltDelayAlarmMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI_EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.aspx.designer.cs">
       <DependentUpon>SlaverHaltDelayAlarmMonitor.aspx</DependentUpon>
@@ -1816,7 +1822,6 @@
     <Folder Include="Images\Page\" />
     <Folder Include="js\page\" />
     <Folder Include="UI_Monitor\css\page\" />
-    <Folder Include="UI_Monitor\images\common\" />
     <Folder Include="UI_Monitor\js\page\" />
     <Folder Include="UI_OverView\css\common\" />
     <Folder Include="UI_OverView\images\common\" />
