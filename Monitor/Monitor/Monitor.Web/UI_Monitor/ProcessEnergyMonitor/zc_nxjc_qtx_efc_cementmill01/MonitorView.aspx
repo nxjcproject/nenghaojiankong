@@ -34,7 +34,11 @@
     <!-- Additional plugins go here -->
     <script type="text/javascript" src="/lib/pllib/plugins/jqplot.barRenderer.min.js"></script>
     <script type="text/javascript" src="/lib/pllib/plugins/jqplot.pieRenderer.min.js"></script>
+    <script type="text/javascript" src="/lib/pllib/plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="/lib/pllib/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
     <script type="text/javascript" src="/lib/pllib/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="/lib/pllib/plugins/jqplot.cursor.min.js"></script>
+    <script type="text/javascript" src="/lib/pllib/plugins/jqplot.dateAxisRenderer.min.js"></script>
     <script type="text/javascript" src="/lib/pllib/plugins/jqplot.pointLabels.min.js"></script>
 
     <!--[if lt IE 8 ]><script type="text/javascript" src="/js/common/json2.min.js"></script><![endif]-->

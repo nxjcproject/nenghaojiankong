@@ -56,7 +56,11 @@ $(document).ready(function () {
 
         // 弹出单条趋势
 
-        popupSimpleTrendline();
+        //popupSimpleTrendline();
+
+        // 添加当前锚点至标签列表
+
+        addCurrentAchorToTagList();
 
         // 清空当前锚点
 
@@ -124,6 +128,15 @@ function onTagItemSelect(item) {
         Source: '标签选择',
         Name: item.Name
     });
+
+    // 提示添加成功
+
+    $.messager.show({
+        title: '提示',
+        msg: '标签"' + item.Name + '"添加成功.',
+        timeout: 5000,
+        showType: 'slide'
+    });
 }
 
 // 获取右键菜单HTML
@@ -151,9 +164,16 @@ function menuHandler(item) {
 // 获取标签列表窗口HTML
 
 function getTagListWindowHtml() {
-    var html = '<div id="tagListWindow" class="easyui-window" title="项目列表" data-options="iconCls:\'icon-filter\', minimizable: false, maximizable: false, collapsible: false, resizable:false, closed:true" style="width:300px;height:304px;">\
+    var html = '<div id="tagListWindow" class="easyui-window" title="项目列表" data-options="iconCls:\'icon-filter\', minimizable: false, maximizable: false, collapsible: false, resizable:false, closed:true" style="width:300px;height:334px;">\
                     <div class="easyui-layout" data-options="fit:true">\
-                        <div data-options="region:\'north\'" style="height:40px;padding:5px;background-color:rgb(250, 250, 250);">\
+                        <div data-options="region:\'north\'" style="height:70px;padding:5px;background-color:rgb(250, 250, 250);">\
+                            <div>\
+                            时间段：\
+                            <input id="StartTime" class="easyui-datebox" data-options="validType:\'md[\\\'2012-10\\\']\', required:true" style="width: 100px" />\
+                            <span id="InnerlLine">-</span>\
+                            <input id="EndTime" class="easyui-datebox" data-options="validType:\'md[\\\'2012-10-10\\\']\', required:true" style="width: 100px" />\
+                            </div>\
+                            <div style="margin-top:8px;">\
                             趋势类型：\
                             <select id="trendlineType" class="easyui-combobox" name="trendlineType" data-options="panelHeight: \'auto\',editable: false" style="width:60px;">\
                                 <option value="electricityUsage">电量</option>\
@@ -162,6 +182,7 @@ function getTagListWindowHtml() {
                             </select>\
                             <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'icon-add\'" onclick="popupAddTagItemWindow();">添加项目</a>\
                             <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'ext-icon-chart_curve\'" onclick="popupHorizontalTrendline();">分析</a>\
+                            </div>\
                         </div>\
                         <div data-options="region:\'center\'">\
                             <table id="tagItems" class="easyui-datagrid" data-options="rownumbers:true, stripe:true, singleSelect:true, onDblClickRow: tagItemsDblClickHandler">\
@@ -243,6 +264,15 @@ function addCurrentAchorToTagList() {
         Source: '当前画面',
         Name: title
     });
+
+    // 提示添加成功
+
+    $.messager.show({
+        title: '提示',
+        msg: '标签"' + title + '"添加成功.',
+        timeout: 5000,
+        showType: 'slide'
+    });
 }
 
 // 弹出标签选择窗口
@@ -312,7 +342,7 @@ function updateSimpleTrendlineChart(data, title, x, y) {
 
     var m_WindowContainerId = 'Windows_Container';
 
-    WindowsDialogOpen(data, m_WindowContainerId, title, false, 'Line', 500, 200, x + 80, y, true, false, false);
+    WindowsDialogOpen(data, m_WindowContainerId, title, false, 'Line', 800, 400, x + 80, y, true, false, false);
 }
 
 // 弹出横向比较趋势
@@ -324,13 +354,10 @@ function horizontalTrendlineQuery() {
     var tagItems = JSON.stringify($('#tagItems').datagrid('getData'));
     var trendlineType = $('#trendlineType').combobox('getValue');
 
-    // 设置结束时间为当前时间
+    // 获取起止时间
 
-    var endTime = new Date();
-
-    // 设置起始时间为10天前
-
-    var startTime = new Date(endTime.getTime() - 1000 * 60 * 60 * 24 * 2);
+    var startTime = new Date($('#StartTime').datebox('getValue'));
+    var endTime = new Date($('#EndTime').datebox('getValue'));
 
 
     $.ajax({
@@ -390,8 +417,7 @@ function GetWindowPostion(myWindowIndex, myWindowContainerId) {
 }
 ///////////////////////////////////////////打开window窗口//////////////////////////////////////////
 function WindowsDialogOpen(myData, myContainerId, myTitle, myIsShowGrid, myChartType, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized) {
-    ;
-    var m_WindowId = OpenWindows(myContainerId, myTitle, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized); //弹出windows
+    var m_WindowId = OpenWindows(myContainerId, myTitle, myWidth, myHeight, myLeft, myTop, myDraggable, myMaximizable, myMaximized, true); //弹出windows
     var m_WindowObj = $('#' + m_WindowId);
     if (myMaximized != true) {
         CreateGridChart(myData, m_WindowId, myIsShowGrid, myChartType);               //生成图表

@@ -1625,6 +1625,8 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_cementmill.jpg" />
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker.jpg" />
+    <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker4.jpg" />
+    <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker5.jpg" />
     <Content Include="UI_Monitor\js\common\blink.js" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />

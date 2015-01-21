@@ -42,6 +42,8 @@
             // 用于呈现，在界面上显示当前的组织机构名称
 
             $('#txtOrganization').textbox('setText', node.text);
+
+            query();
         }
 
         function query() {
@@ -51,6 +53,7 @@
 
         // 所有公式组
         function loadProcess() {
+            $.messager.progress();
             var organizationId = $('#organizationId').val();
             var queryUrl = 'ProcessSelector.aspx/GetProcessWithTreeGridFormat';
             var dataToSend = '{organizationId: "' + organizationId + '"}';
@@ -63,6 +66,11 @@
                 dataType: "json",
                 success: function (msg) {
                     initializeProcessTable(jQuery.parseJSON(msg.d));
+                    $.messager.progress('close');
+                },
+                error: function (msg) {
+                    $.messager.progress('close');
+                    $.messager.alert('提示', '加载失败');
                 }
             });
         }
@@ -86,9 +94,9 @@
             <!-- 工具栏开始 -->
             <div class="queryPanel" data-options="region:'north', border:true, collapsible:false, split:false" style="height:50px;">
                 组织机构：
-                <input id="txtOrganization" class="easyui-textbox" data-options="editable:false" style="width: 100px;" />
-                <input id="organizationId" readonly="true" style="display:none;"/> | 
-                <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="query();">搜索</a>
+                <input id="txtOrganization" class="easyui-textbox" data-options="editable:false" style="width: 150px;" />
+                <input id="organizationId" readonly="true" style="display:none;"/><!-- | 
+                <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="query();">搜索</a>-->
             </div>
             <!-- 工具栏结束 -->
             <div data-options="region:'center', border:true, collapsible:false, split:false" style="height:50px; padding:0px;">
@@ -107,7 +115,7 @@
 			            ">
 		            <thead>
 			            <tr>
-                            <th data-options="field:'LevelCode',width:50">层次码</th>
+                            <th data-options="field:'LevelCode',hidden:true">层次码</th>
 				            <th data-options="field:'Name',width:100,editor:'text'">工序名称</th>
 			            </tr>
 		            </thead>
