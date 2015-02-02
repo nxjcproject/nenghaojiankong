@@ -26,6 +26,9 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             IList<DataItem> dataItems = new List<DataItem>();
             string factoryLevel = OrganizationHelper.GetFactoryLevel(organizationId);
 
+            string dcsConn = ConnectionStringFactory.GetDCSConnectionString(organizationId);
+            string ammeterConn = ConnectionStringFactory.GetAmmeterConnectionString(factoryLevel);
+
             //#region 获得表中实时数据
             //ProcessPowerMonitor precessPower = new ProcessPowerMonitor(connString);
             //DataTable sourceDt = precessPower.GetMonitorDatas(factoryLevel);
@@ -36,7 +39,6 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             //#endregion
 
             #region 获得dcs实时数据
-            string dcsConn = ConnectionStringFactory.GetDCSConnectionString(organizationId);
             ProcessEnergyMonitorService monitorService = new ProcessEnergyMonitorService(dcsConn);
             IEnumerable<DataItem> monitorItems = monitorService.GetRealtimeDatas(organizationId, sceneName);
             foreach (var item in monitorItems)
@@ -46,7 +48,6 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             #endregion
 
             #region 获得电表功率数据
-            string ammeterConn = ConnectionStringFactory.GetAmmeterConnectionString(factoryLevel);
             ProcessEnergyMonitorService ammeterService = new ProcessEnergyMonitorService(ammeterConn);
             IEnumerable<DataItem> ammeterItems = ammeterService.GetRealtimeDatas(organizationId, sceneName);
             foreach (var item in ammeterItems)
@@ -65,7 +66,7 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_cementmill
             //#endregion
 
             #region  获得实时公式电耗
-            FormulaEnergyService formulaEnergyServer = new FormulaEnergyService(connString);
+            FormulaEnergyService formulaEnergyServer = new FormulaEnergyService(ammeterConn);
             IEnumerable<DataItem> formulaEnergyItems = formulaEnergyServer.GetFormulaPowerConsumption(factoryLevel);
             foreach (var item in formulaEnergyItems)
             {

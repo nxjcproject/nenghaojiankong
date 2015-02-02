@@ -22,7 +22,7 @@ namespace Monitor.Service.FormulaEnergy
         private DataTable GetFormulaValues(string organizationId)
         {
             DataTable result;
-            string queryString = "select * from RealtimeFormulaValue where OrganizationID like @organizaionId";
+            string queryString = "select * from RealtimeFormulaValue where OrganizationID like @organizationId";
             SqlParameter[] parameters = { new SqlParameter("@organizationId", organizationId + "%") };
 
             result = _dataFactory.Query(queryString, parameters);
