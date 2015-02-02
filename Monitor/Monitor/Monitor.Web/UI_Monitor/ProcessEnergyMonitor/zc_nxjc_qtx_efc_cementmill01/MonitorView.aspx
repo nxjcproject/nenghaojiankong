@@ -48,7 +48,7 @@
     <script type="text/javascript" src="/js/common/components/WindowsDialog.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/common/components/GridChart.js" charset="utf-8"></script>
 
-    <script src="../../js/common/myMonitor.js"></script>
+    <script src="../../js/common/monitorjs.js"></script>
     <script type="text/javascript">
         var pageData = {
             organizationId: "zc_nxjc_qtx_efc_cementmill01",

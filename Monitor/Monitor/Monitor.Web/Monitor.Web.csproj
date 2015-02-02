@@ -1629,6 +1629,7 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker5.jpg" />
     <Content Include="UI_Monitor\js\common\blink.js" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
+    <Content Include="UI_Monitor\js\common\monitorjs.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
