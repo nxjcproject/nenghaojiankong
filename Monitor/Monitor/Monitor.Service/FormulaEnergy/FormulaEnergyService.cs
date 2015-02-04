@@ -35,13 +35,13 @@ namespace Monitor.Service.FormulaEnergy
             sourceTable.Columns.Add(newCol);
             foreach(DataRow item in sourceTable.Rows)
             {
-                if ((Convert.ToDecimal(item["DenominatorValue"]) != 0) && (!Convert.IsDBNull(item["DenominatorValue"])))
+                if (Convert.IsDBNull(item["DenominatorValue"]) || (Convert.ToDecimal(item["DenominatorValue"]) == 0))
                 {
-                    item["PowerConsumption"] = (decimal)item["FormulaValue"] / (decimal)item["DenominatorValue"];
+                    item["PowerConsumption"] = 0;
                 }
                 else
                 {
-                    item["PowerConsumption"] = 0;
+                    item["PowerConsumption"] = (decimal)item["FormulaValue"] / (decimal)item["DenominatorValue"];
                 }
             }
             return sourceTable;
