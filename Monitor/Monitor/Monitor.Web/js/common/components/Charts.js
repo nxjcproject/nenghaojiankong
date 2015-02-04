@@ -69,6 +69,10 @@ function GetLineChart(myChartObjId, myData, myTitle, temp) {
         animate: true,
         // Will animate plot on calls to plot1.replot({resetAxes:true})
         animateReplot: true,
+        seriesDefaults: {
+            lineWidth: 1,
+            markerOptions: { size: 0 }
+        },
         axesDefaults: {
             tickRenderer: $.jqplot.CanvasAxisTickRenderer
         },
@@ -135,6 +139,7 @@ function GetDateXLineChart(myChartObjId, myData, myTitle) {
     var m_Labels = new Array();
     var m_AxisX = new Array();
     var m_MaxBarValue = 0;
+    var formatString = "";
     ////////////////////////////////获得颜色标签名////////////////////
     for (var i = 0; i < m_Rows.length; i++) {
         var m_LabelItem = { label: m_Rows[i][myData['columns'][0]['field']] };
@@ -154,14 +159,22 @@ function GetDateXLineChart(myChartObjId, myData, myTitle) {
                 if (m_ColumnName == m_Name) {
                     var timeArray = myData['columns'][j]['title'].split('-');
                     var date = null;
-                    if (timeArray.length == 4)
+                    if (timeArray.length == 4) {
                         date = new Date(timeArray[0], timeArray[1], timeArray[2], timeArray[3]);
-                    else if (timeArray.length == 3)
+                        formatString = "%Y-%m-%d-%H";
+                    }
+                    else if (timeArray.length == 3) {
                         date = new Date(timeArray[0], timeArray[1], timeArray[2]);
-                    else if (timeArray.length == 2 && timeArray[0].length == 4)
+                        formatString = "%Y-%m-%d";
+                    }
+                    else if (timeArray.length == 2 && timeArray[0].length == 4) {
                         date = new Date(timeArray[0], timeArray[1]);
-                    else if (timeArray.length == 2 && timeArray[0].length == 2)
-                        date = new Date((new Date).getFullYear, timeArray[0], timeArray[1]);
+                        formatString = "%Y-%m";
+                    }
+                    else if (timeArray.length == 2 && timeArray[0].length == 2) {
+                        date = new Date((new Date()).getFullYear(), timeArray[0], timeArray[1]);
+                        formatString = "%m-%d";
+                    }
 
                     m_LineTemp.push([date.toUTCString(), parseFloat(m_Rows[i][m_Name])]);
                 }
@@ -184,6 +197,10 @@ function GetDateXLineChart(myChartObjId, myData, myTitle) {
         animate: true,
         // Will animate plot on calls to plot1.replot({resetAxes:true})
         animateReplot: true,
+        seriesDefaults: {
+            lineWidth: 1,
+            markerOptions: { size: 0 }
+        },
         axesDefaults: {
             tickRenderer: $.jqplot.CanvasAxisTickRenderer
         },
@@ -206,7 +223,7 @@ function GetDateXLineChart(myChartObjId, myData, myTitle) {
                 renderer: $.jqplot.DateAxisRenderer,
                 tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
                 tickOptions: {
-                    formatString: '%Y-%m-%d-%H',
+                    formatString: formatString,
                     angle: -30,
                     fontSize: '10pt'
                 },
