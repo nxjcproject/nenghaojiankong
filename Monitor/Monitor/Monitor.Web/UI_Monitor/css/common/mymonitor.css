@@ -35,6 +35,9 @@ table.mytable {
         border-style: solid;
         border-color: #666666;
         background-color: #ffffff;
+        /*text-align: right;*/
+    }
+    table.mytable td:first-child {
         text-align:left;
     }
 
@@ -42,6 +45,7 @@ table.mytable {
         display:block;
         width:35px;
         text-align:right;
+        float:right;
     }
 
 .processBorder {
