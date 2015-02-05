@@ -1634,6 +1634,8 @@
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
     <Content Include="UI_Monitor\js\common\trendlineAnalysis.js" />
+    <Content Include="UI_Monitor\js\common\trendlineAnalysis_template.js" />
+    <Content Include="UI_Monitor\js\common\trendlineAnalysis_monitorView.js" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\css\page\ProcessSelector.css" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\HorizontalAnalysis.asmx" />

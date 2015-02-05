@@ -94,7 +94,7 @@ $(document).ready(function () {
 // 获取全屏按钮HTML
 
 function getFullscreenHtml() {
-    var html = '<div style="position: absolute; z-index: 10; margin-left: 10px; margin-top: 5px;">\
+    var html = '<div style="position: absolute; z-index: 100; margin-left: 10px; margin-top: 5px;">\
                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'ext-icon-arrow_out\',plain:true" onclick="window.open(document.location + \'&fullscreen=1\', \'\', \'fullscreen=yes\');">全屏</a>\
                 </div>';
     return html;
@@ -164,7 +164,7 @@ function menuHandler(item) {
 // 获取标签列表窗口HTML
 
 function getTagListWindowHtml() {
-    var html = '<div id="tagListWindow" class="easyui-window" title="项目列表" data-options="iconCls:\'icon-filter\', minimizable: false, maximizable: false, collapsible: false, resizable:false, closed:true" style="width:300px;height:334px;">\
+    var html = '<div id="tagListWindow" <!--class="easyui-window"--> title="项目列表" data-options="iconCls:\'icon-filter\', minimizable: false, maximizable: false, collapsible: false, resizable:false, closed:true" style="width:300px;height:334px;">\
                     <div class="easyui-layout" data-options="fit:true">\
                         <div data-options="region:\'north\'" style="height:70px;padding:5px;background-color:rgb(250, 250, 250);">\
                             <div>\

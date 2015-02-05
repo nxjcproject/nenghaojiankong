@@ -49,6 +49,7 @@
     <script type="text/javascript" src="/js/common/components/GridChart.js" charset="utf-8"></script>
 
     <script src="../../js/common/monitorjs.js"></script>
+    <script src="../../js/common/trendlineAnalysis_monitorView.js"></script>
     <script type="text/javascript">
         var pageData = {
             organizationId: "zc_nxjc_qtx_efc_clinker02",
@@ -58,8 +59,20 @@
 
     <title></title>
 </head>
-<body  class="easyui-layout" data-options="border:false" >
-    <div id="template" style="height:100%; overflow: auto;">
+<body class="easyui-layout" data-options="border:false" >
+    <div data-options="region:'center'">
+        <div id="template" style="height:100%; overflow: auto;"></div>
+    </div>
+    <div data-options="region:'south',title:'趋势分析',split:true,collapsed:false" style="height:334px;">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'west',split:false" style="height:100%;width:285px">
+                <div id="tagListContainer" class="easyui-layout" data-options="fit:true"></div>
+            </div>
+            <div data-options="region:'center'">
+                <div id="Windows_Container" class="easyui-layout" data-options="fit:true">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
