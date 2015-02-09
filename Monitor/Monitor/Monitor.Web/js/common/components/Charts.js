@@ -160,19 +160,19 @@ function GetDateXLineChart(myChartObjId, myData, myTitle) {
                     var timeArray = myData['columns'][j]['title'].split('-');
                     var date = null;
                     if (timeArray.length == 4) {
-                        date = new Date(timeArray[0], timeArray[1], timeArray[2], timeArray[3]);
+                        date = new Date(timeArray[0], timeArray[1] - 1, timeArray[2], timeArray[3]);
                         formatString = "%Y-%m-%d-%H";
                     }
                     else if (timeArray.length == 3) {
-                        date = new Date(timeArray[0], timeArray[1], timeArray[2]);
+                        date = new Date(timeArray[0], timeArray[1] - 1, timeArray[2]);
                         formatString = "%Y-%m-%d";
                     }
                     else if (timeArray.length == 2 && timeArray[0].length == 4) {
-                        date = new Date(timeArray[0], timeArray[1]);
+                        date = new Date(timeArray[0], timeArray[1] - 1);
                         formatString = "%Y-%m";
                     }
                     else if (timeArray.length == 2 && timeArray[0].length == 2) {
-                        date = new Date((new Date()).getFullYear(), timeArray[0], timeArray[1]);
+                        date = new Date((new Date()).getFullYear(), timeArray[0] - 1, timeArray[1]);
                         formatString = "%m-%d";
                     }
 
@@ -312,7 +312,7 @@ function GetBarChart(myChartObjId, myData, myTitle) {
     }
 
     m_MaxBarValue = GetYaxisMax(m_MaxBarValue);
-    var BarJqplot = $.jqplot(myChartObjId, [m_Bars], {
+    var BarJqplot = $.jqplot(myChartObjId, m_Bars, {
             animate: !$.jqplot.use_excanvas,
             seriesDefaults: {
                 renderer: $.jqplot.BarRenderer,

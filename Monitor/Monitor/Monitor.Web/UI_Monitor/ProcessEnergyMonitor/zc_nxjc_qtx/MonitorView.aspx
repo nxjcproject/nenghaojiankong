@@ -63,7 +63,7 @@
     <div data-options="region:'center'">
         <div id="template" style="height:100%; overflow: auto;"></div>
     </div>
-    <div data-options="region:'south',title:'趋势分析',split:true,collapsed:false" style="height:334px;">
+    <div data-options="region:'south',title:'趋势分析',split:true,collapsed:true" style="height:334px;">
         <div class="easyui-layout" data-options="fit:true">
             <div data-options="region:'west',split:false" style="height:100%;width:285px">
                 <div id="tagListContainer" class="easyui-layout" data-options="fit:true"></div>

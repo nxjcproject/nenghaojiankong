@@ -1,6 +1,6 @@
 ﻿/*!
  * 趋势分析 Javascript库
- * 张迪 - 第1次修改(2015-01-16)
+ * 张迪 - 第4次修改(2015-02-06)
  *
  * Include jQuery easyui (http://jeasyui.com/)
  */
@@ -11,7 +11,15 @@ var currentAnchor = null;
 
 $(document).ready(function () {
 
-    if ($.getUrlParam('fullscreen') != 1) {
+    if ($.getUrlParam('fullscreen') == 1) {
+
+        // 添加退出全屏
+
+        $('#trendlineAnalysisContainer').append(getExitFullscreenHtml());
+
+    }
+    else {
+
         // 添加全屏
 
         $('#trendlineAnalysisContainer').append(getFullscreenHtml());
@@ -88,6 +96,15 @@ $(document).ready(function () {
 function getFullscreenHtml() {
     var html = '<div style="position: absolute; z-index: 100; margin-left: 10px; margin-top: 5px;">\
                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'ext-icon-arrow_out\',plain:true" onclick="window.open(document.location + \'&fullscreen=1\', \'\', \'fullscreen=yes\');">全屏</a>\
+                </div>';
+    return html;
+}
+
+// 获取退出全屏按钮HTML
+
+function getExitFullscreenHtml() {
+    var html = '<div style="position: absolute; z-index: 100; margin-left: 10px; margin-top: 5px;">\
+                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:\'ext-icon-arrow_in\',plain:true" onclick="if(confirm(\'您确定要退出全屏吗？\')){self.opener=null;self.open(\'\',\'_self\');self.close();}">退出全屏</a>\
                 </div>';
     return html;
 }
