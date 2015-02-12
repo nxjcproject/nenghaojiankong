@@ -1,4 +1,5 @@
 ﻿using Monitor.Infrastructure.Configuration;
+using Monitor.Service.FormulaEnergy;
 using Monitor.Service.ProcessEnergyMonitor;
 using System;
 using System.Collections.Generic;
@@ -25,17 +26,19 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker03
             IList<DataItem> dataItems = new List<DataItem>();
             string factoryLevel = OrganizationHelper.GetFactoryLevel(organizationId);
 
-            #region 获得表中实时数据
-            ProcessPowerMonitor precessPower = new ProcessPowerMonitor(connString);
-            DataTable sourceDt = precessPower.GetMonitorDatas(factoryLevel);
-            DataRow[] rows = sourceDt.Select(String.Format("OrganizationID='{0}'", organizationId));
+            string dcsConn = ConnectionStringFactory.GetDCSConnectionString(organizationId);
+            string ammeterConn = ConnectionStringFactory.GetAmmeterConnectionString(factoryLevel);
 
-            string[] fields = { "本日合计", "本月累计", "本年累计" };
-            dataItems = ProcessEnergyMonitorService.GetPowerMonitor(rows, fields).ToList();
-            #endregion
+            //#region 获得表中实时数据
+            //ProcessPowerMonitor precessPower = new ProcessPowerMonitor(connString);
+            //DataTable sourceDt = precessPower.GetMonitorDatas(factoryLevel);
+            //DataRow[] rows = sourceDt.Select(String.Format("OrganizationID='{0}'", organizationId));
+
+            //string[] fields = { "本日合计", "本月累计", "本年累计" };
+            //dataItems = ProcessEnergyMonitorService.GetPowerMonitor(rows, fields).ToList();
+            //#endregion
 
             #region 获得dcs实时数据
-            string dcsConn = ConnectionStringFactory.GetDCSConnectionString(organizationId);
             ProcessEnergyMonitorService monitorService = new ProcessEnergyMonitorService(dcsConn);
             IEnumerable<DataItem> monitorItems = monitorService.GetRealtimeDatas(organizationId, sceneName);
             foreach (var item in monitorItems)
@@ -45,7 +48,6 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker03
             #endregion
 
             #region 获得电表功率数据
-            string ammeterConn = ConnectionStringFactory.GetAmmeterConnectionString(factoryLevel);
             ProcessEnergyMonitorService ammeterService = new ProcessEnergyMonitorService(ammeterConn);
             IEnumerable<DataItem> ammeterItems = ammeterService.GetRealtimeDatas(organizationId, sceneName);
             foreach (var item in ammeterItems)
@@ -54,10 +56,28 @@ namespace Monitor.Web.UI_Monitor.ProcessEnergyMonitor.zc_nxjc_qtx_efc_clinker03
             }
             #endregion
 
-            #region 获得实时电能消耗数据
-            RealtimeFormulaValueService formulaValue = new RealtimeFormulaValueService(ammeterConn, "");
-            IEnumerable<DataItem> formulaValueItems = formulaValue.GetFormulaPowerConsumption(factoryLevel);
-            foreach (var item in formulaValueItems)
+            //#region 获得实时电能消耗数据
+            //RealtimeFormulaValueService formulaValue = new RealtimeFormulaValueService(ammeterConn, "");
+            //IEnumerable<DataItem> formulaValueItems = formulaValue.GetFormulaPowerConsumption(factoryLevel);
+            //foreach (var item in formulaValueItems)
+            //{
+            //    dataItems.Add(item);
+            //}
+            //#endregion
+
+            #region  获得实时公式电耗
+            FormulaEnergyService formulaEnergyServer = new FormulaEnergyService(ammeterConn);
+            IEnumerable<DataItem> formulaEnergyItems = formulaEnergyServer.GetFormulaPowerConsumption(factoryLevel);
+            foreach (var item in formulaEnergyItems)
+            {
+                dataItems.Add(item);
+            }
+            #endregion
+
+            #region 获得实时公式功率
+            FormulaPowerService formulaPowerServer = new FormulaPowerService(connString);
+            IEnumerable<DataItem> formulaPowerItems = formulaPowerServer.GetFormulaPower(factoryLevel);
+            foreach (var item in formulaPowerItems)
             {
                 dataItems.Add(item);
             }

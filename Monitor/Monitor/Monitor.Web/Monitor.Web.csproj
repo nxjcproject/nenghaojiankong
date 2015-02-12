@@ -1629,10 +1629,13 @@
     <Content Include="UI_Monitor\images\page\zc_nxjc_qtx_tys_clinker5.jpg" />
     <Content Include="UI_Monitor\js\common\blink.js" />
     <Content Include="UI_Monitor\js\common\Monitor.js" />
+    <Content Include="UI_Monitor\js\common\monitorjs.js" />
     <Content Include="UI_Monitor\js\common\MonitorPage.js" />
     <Content Include="UI_Monitor\js\common\MonitorPageHaveTable.js" />
     <Content Include="UI_Monitor\js\common\myMonitor.js" />
     <Content Include="UI_Monitor\js\common\trendlineAnalysis.js" />
+    <Content Include="UI_Monitor\js\common\trendlineAnalysis_template.js" />
+    <Content Include="UI_Monitor\js\common\trendlineAnalysis_monitorView.js" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\css\page\ProcessSelector.css" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\ElectricityAnalysis.asmx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\TrendLineAnalysis\HorizontalAnalysis.asmx" />
@@ -1812,6 +1815,7 @@
   <ItemGroup>
     <Content Include="lib\pllib\syntaxhighlighter\LGPL-LICENSE" />
     <Content Include="lib\pllib\syntaxhighlighter\MIT-LICENSE" />
+    <None Include="Properties\PublishProfiles\Release_DEC-WINSVR12.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
