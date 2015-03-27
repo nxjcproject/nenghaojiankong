@@ -18,7 +18,7 @@ namespace Monitor.Service.TrendlineAnalysis
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
 
             string queryString = @"SELECT YEAR([vDate]) AS [Year], MONTH([vDate]) AS [Month], DAY([vDate]) AS [Day], DATEPART(HOUR, [vDate]) AS [Hour], SUM([FormulaValue]) AS [Sum]
-                                     FROM [{0}].[dbo].[HistoyFormulaValue]
+                                     FROM [{0}].[dbo].[HistoryFormulaValue]
                                     WHERE [OrganizationID] = @organizationId
                                       AND [LevelCode] = @levelcode
                                       AND [vDate] >= @startTime
