@@ -78,22 +78,28 @@ namespace Monitor.Service.EnergyAlarmMonitor
                         A.OrganizationID as OrganizationID, 
                         A.Name as Name,
                         A.LevelCode as LevelCode, 
-                        'ProductionLine' as OrganizationType
+                        A.LevelType as OrganizationType
                         from system_Organization A 
-					    where A.Enabled = {1}
-                        and len(A.LevelCode) <= 7
-                        and {0} 
+					    where A.Enabled = 1
+                        and (A.LevelType = 'Company' or A.LevelType = 'Factory' or A.LevelType = 'ProductionLine')
+                        and ( A.LevelCode like 'O0301%' ) 
                         union 
                         select 
-					    CONVERT(varchar(64), B.ID) as OrganizationID, 
-                        B.VariableDescription as Name,
-                        A.LevelCode + substring(A.LevelCode,6,2) as LevelCode,
+					    CONVERT(varchar(64), D.ID) as OrganizationID, 
+                        D.VariableDescription as Name,
+                        A.LevelCode + (case when len(D.LevelCode) = 1 then '0' + D.LevelCode else D.LevelCode end) as LevelCode,
                         'MasterMachine' as OrganizationType 
-                        from system_Organization A, system_MasterMachineDescription B  
+                        from system_Organization A, 
+						(select 
+						    B.ID as ID,
+							cast(row_number() over(order by B.ID desc) as varchar) as LevelCode, 
+							B.OrganizationID as OrganizationID,
+						    B.VariableDescription as VariableDescription 
+						    from system_MasterMachineDescription B ) D 
 					    where A.Enabled = {1}
-                        and len(A.LevelCode) = 7 
+                        and A.LevelType = 'ProductionLine'
                         and {0} 
-                        and A.OrganizationID = B.OrganizationID ) M 
+                        and A.OrganizationID = D.OrganizationID ) M 
                     where M.LevelCode like '{2}%' 
                     and len(M.LevelCode) = len('{2}') + 2 
                     order by M.OrganizationType, M.LevelCode";
@@ -139,28 +145,33 @@ namespace Monitor.Service.EnergyAlarmMonitor
         //获得报警值
         public static DataTable GetAlarmValueByLevelCode(string[] myAlarmNodeLevelCode)
         {
-            string m_EndTime = DateTime.Now.AddMinutes(-10).ToString("yyyy-MM-dd HH:mm:ss");
-            string m_Sql = @"Select 
-                        A.OrganizationID as OrganizationId, 
-                        D.Name as Name, 
-                        D.LevelCode + substring(A.LevelCode,2 ,len(A.LevelCode)-1) as LevelCode, 
-                        C.Name as FormulaName, 
-                        A.StandardValue as StandardValue,
-                        A.ActualValue as ActualValue,
-                        A.StartTime as StartTime, 
-						A.EnergyConsumptionType as EnergyConsumptionType   
-                        from shift_EnergyConsumptionAlarmLog A  
-                        left join system_Organization D on A.OrganizationID = D.OrganizationID, 
-						tz_Formula B, formula_FormulaDetail C
-					    where A.OrganizationID = B.OrganizationID 
-                        and B.Type = 2 
-                        and B.Enable = 1 
-                        and B.KeyID = C.KeyID
-                        and C.LevelCode = A.LevelCode
-                        and A.EndTime > '{1}' 
-                        and {0}";
+            string m_Sql = @"select 
+					            CONVERT(varchar(64), D.ID) as Id, 
+						        A.OrganizationID as OrganizationId,
+                                A.Name as OrganizationName, 
+                                F.EquipmentName as Name,
+                                A.LevelCode + (case when len(D.LevelCode) = 1 then '0' + D.LevelCode else D.LevelCode end) as LevelCode,
+                                'MasterMachine' as OrganizationType,
+                                F.HaltTime as StartTime,
+                                F.ReasonText as ReasonText  
+                                from system_Organization A, 
+						        (select 
+						            B.ID as ID,
+							        cast(row_number() over(order by B.ID desc) as varchar) as LevelCode, 
+							        B.OrganizationID as OrganizationID,
+						            B.VariableDescription as VariableDescription 
+						            from system_MasterMachineDescription B ) D, system_TenDaysRealtimeAlarm E, shift_MachineHaltLog F
+					            where A.Enabled = 1
+                                and A.LevelType = 'ProductionLine'
+                                and A.OrganizationID = D.OrganizationID
+						        and D.ID = F.EquipmentID
+						        and A.OrganizationID = E.OrganizationID
+						        and (E.AlarmType = 'MachineHalt' or E.AlarmType = 'SlaverHaltDelay')
+						        and E.KeyID = F.MachineHaltLogID
+                                and {0}";
 
-            string m_SqlConditionTemp = @" D.LevelCode + substring(A.LevelCode,2 ,len(A.LevelCode)-1) like '{0}%' ";
+            string m_SqlConditionTemp = @" A.LevelCode + (case when len(D.LevelCode) = 1 then '0' + D.LevelCode else D.LevelCode end) like '{0}%' ";
+           
             string m_SqlCondition = "";                 //数据数据授权
 
             //tz_Formula B, formula_FormulaDetail C
@@ -181,11 +192,109 @@ namespace Monitor.Service.EnergyAlarmMonitor
 
             if (m_SqlCondition != "")
             {
-                m_Sql = string.Format(m_Sql, "(" + m_SqlCondition + ")", m_EndTime);
+                m_Sql = string.Format(m_Sql, "(" + m_SqlCondition + ")");
             }
             else
             {
-                m_Sql = string.Format(m_Sql, "A.OrganizationID <> A.OrganizationID", m_EndTime);
+                m_Sql = string.Format(m_Sql, "A.OrganizationID <> A.OrganizationID");
+            }
+
+            try
+            {
+                DataTable m_Result = _dataFactory.Query(m_Sql);
+                return m_Result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        //获得报警值(树)
+        public static DataTable GetAlarmValueTreeByLevelCode(string[] myAlarmNodeLevelCode)
+        {
+            string m_Sql = @"select 
+					            CONVERT(varchar(64), D.ID) as Id, 
+						        A.OrganizationID as OrganizationId,
+                                A.Name as OrganizationName, 
+                                '' as ParentId,
+                                F.EquipmentName as Name,
+                                A.LevelCode + (case when len(D.LevelCode) = 1 then '0' + D.LevelCode else D.LevelCode end) as LevelCode,
+                                'MasterMachine' as OrganizationType,
+                                F.HaltTime as StartTime,
+                                F.ReasonText as ReasonText  
+                                from system_Organization A, 
+						        (select 
+						            B.ID as ID,
+							        cast(row_number() over(order by B.ID desc) as varchar) as LevelCode, 
+							        B.OrganizationID as OrganizationID,
+						            B.VariableDescription as VariableDescription 
+						            from system_MasterMachineDescription B ) D, system_TenDaysRealtimeAlarm E, shift_MachineHaltLog F
+					            where A.Enabled = 1
+                                and A.LevelType = 'ProductionLine'
+                                and A.OrganizationID = D.OrganizationID
+						        and D.ID = F.EquipmentID
+						        and A.OrganizationID = E.OrganizationID
+						        and (E.AlarmType = 'MachineHalt' or E.AlarmType = 'SlaverHaltDelay')
+						        and E.KeyID = F.MachineHaltLogID
+                                and {0} 
+                            union all
+                            select 
+                                CONVERT(varchar(64), G1.MachineHaltLogID) as Id,
+						        A1.OrganizationID as OrganizationId,
+                                A1.Name as OrganizationName, 
+					            CONVERT(varchar(64), D1.ID) as ParentId, 
+                                G1.EquipmentName as Name,
+                                'X00000001' as LevelCode,
+                                'SlaveMachine' as OrganizationType,
+                                G1.WarmingTime as StartTime,
+                                G1.ReasonText as ReasonText 
+                                from system_Organization A1, 
+						        (select 
+						            B1.ID as ID,
+							        cast(row_number() over(order by B1.ID desc) as varchar) as LevelCode, 
+							        B1.OrganizationID as OrganizationID,
+						            B1.VariableDescription as VariableDescription 
+						            from system_MasterMachineDescription B1 ) D1, system_TenDaysRealtimeAlarm E1, shift_MachineHaltLog F1, shift_SlaverHaltDelayAlarmLog G1
+					            where A1.Enabled = 1
+                                and A1.LevelType = 'ProductionLine'
+                                and A1.OrganizationID = D1.OrganizationID
+						        and D1.ID = F1.EquipmentID
+						        and A1.OrganizationID = E1.OrganizationID
+						        and (E1.AlarmType = 'MachineHalt' or E1.AlarmType = 'SlaverHaltDelay')
+						        and E1.KeyID = F1.MachineHaltLogID
+                                and G1.KeyID = F1.MachineHaltLogID
+                                and {1}";
+
+            string m_SqlConditionTemp = @" A.LevelCode + (case when len(D.LevelCode) = 1 then '0' + D.LevelCode else D.LevelCode end) like '{0}%' ";
+            string m_SqlConditionTemp1 = @" A1.LevelCode + (case when len(D1.LevelCode) = 1 then '0' + D1.LevelCode else D1.LevelCode end) like '{0}%' ";
+            string m_SqlCondition = "";                 //数据数据授权
+            string m_SqlCondition1 = "";                 //数据数据授权
+
+            //tz_Formula B, formula_FormulaDetail C
+            if (myAlarmNodeLevelCode != null)                //数据授权约束
+            {
+                for (int i = 0; i < myAlarmNodeLevelCode.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        m_SqlCondition = string.Format(m_SqlConditionTemp, myAlarmNodeLevelCode[i]);
+                        m_SqlCondition1 = string.Format(m_SqlConditionTemp1, myAlarmNodeLevelCode[i]);
+                    }
+                    else
+                    {
+                        m_SqlCondition = m_SqlCondition + " or " + string.Format(m_SqlConditionTemp, myAlarmNodeLevelCode[i]);
+                        m_SqlCondition1 = m_SqlCondition1 + " or " + string.Format(m_SqlConditionTemp1, myAlarmNodeLevelCode[i]);
+                    }
+                }
+            }
+
+            if (m_SqlCondition != "")
+            {
+                m_Sql = string.Format(m_Sql, "(" + m_SqlCondition + ")", "(" + m_SqlCondition1 + ")");
+            }
+            else
+            {
+                m_Sql = string.Format(m_Sql, "A.OrganizationID <> A.OrganizationID", "A.OrganizationID <> A.OrganizationID");
             }
 
             try

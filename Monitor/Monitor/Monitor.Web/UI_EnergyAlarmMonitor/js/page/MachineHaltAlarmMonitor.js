@@ -31,7 +31,7 @@ function SetEnergyAlarmStatusPic(myData) {
         SetEnergyAlarmNodeById(m_LineId, myData[i].LevelCode, myData[i].OrganizationId);
     }
     /////////////////////////每次加载新的报警节点后刷新报警值///////////////////
-    //GetAlarmValues();
+    GetAlarmValues();
 }
 function SetEnergyNodeText(myData) {
     for (var i = 0; i < myData.length; i++) {
@@ -125,7 +125,23 @@ function GetAlarmValues() {
             var m_MsgData = jQuery.parseJSON(msg.d);
             if (m_MsgData['rows'] && m_MsgData['rows'].length > 0) {
                 SetAlarmValueToNodes(m_MsgData['rows']);
-                $('#dataGrid_AlarmInfo').datagrid('loadData', m_MsgData);
+                //ClearEnergyAlarmNode();
+                //SetEnergyAlarmStatusPic(m_MsgData["rows"]);
+                //SetEnergyNodeText(m_MsgData["rows"]);
+            }
+        }
+    });
+    $.ajax({
+        type: "POST",
+        url: "MachineHaltAlarmMonitor.aspx/GetAlarmValueTreeByLevelCode",
+        data: "{myAlarmNodeLevelCode:'" + m_AlarmNodeLevelCode + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            var m_MsgData = jQuery.parseJSON(msg.d);
+            if (m_MsgData['rows'] && m_MsgData['rows'].length > 0) {
+                $('#dataGrid_AlarmInfo').treegrid('loadData', m_MsgData);
+                $('#dataGrid_AlarmInfo').treegrid('collapseAll');
                 //ClearEnergyAlarmNode();
                 //SetEnergyAlarmStatusPic(m_MsgData["rows"]);
                 //SetEnergyNodeText(m_MsgData["rows"]);
@@ -134,33 +150,31 @@ function GetAlarmValues() {
     });
 }
 function InitializingAlarmDataGrid(myData) {
-    $('#dataGrid_AlarmInfo').datagrid({
-        title: '',
+    $('#dataGrid_AlarmInfo').treegrid({
         data: myData,
         dataType: "json",
-        striped: true,
         //loadMsg: '',   //设置本身的提示消息为空 则就不会提示了的。这个设置很关键的
+        idField: 'Id',
+        treeField: 'Name',
         rownumbers: true,
         singleSelect: true,
-        idField: 'OrganizationId',
-        fit: true,
         columns: [[{
             width: 200,
-            title: '组织机构名称',
+            title: '主机名称',
             field: 'Name'
+        }, {
+            width: 200,
+            title: '组织机构名称',
+            field: 'OrganizationName'
         }, {
             width: 150,
             title: '报警开始时间',
             field: 'StartTime'
         }, {
-            width: 200,
-            title: '主机名称',
-            field: 'EnergyConsumptionType'
-        }, {
             width: 400,
             title: '主机停机原因',
-            field: 'StandardValue'
-        }]]
+            field: 'ReasonText'
+        }]]        
     });
 }
 function InitializingEnergyAlarmStatus() {
@@ -196,10 +210,12 @@ function InitializingEnergyAlarmGroup() {
             'id': m_LineId, 'LevelCode': '', 'OrganizationId': '', 'Value': '',
             'AlarmValue': '', 'AlarmType': '', 'AlarmStatus': ''
         });
-        $('#Line' + m_RowIndexString + m_ColumnIndexString).dblclick(function () {
+        $('#Line' + m_RowIndexString + m_ColumnIndexString).click(function () {
             var m_EnergyAlarmNode = GetEnergyAlarmNodeById($(this).attr("id"));
-            LoadSubEnergyAlarmNodesData(m_EnergyAlarmNode.LevelCode);
-            //双击事件的执行代码
+            if (m_EnergyAlarmNode.LevelCode != "") {
+                LoadSubEnergyAlarmNodesData(m_EnergyAlarmNode.LevelCode);
+            }
+            //单击事件的执行代码
         });
     }
 }
@@ -292,7 +308,7 @@ function SetAlarmValueToNodes(myData) {
 function BlinkInterval() {
     if (CurrentRefreshTimeCount >= MaxDataRefreshTime) {
         /////////////////////////每次加载新的报警节点后刷新报警值///////////////////
-        //GetAlarmValues();
+        GetAlarmValues();
         CurrentRefreshTimeCount = 0;
     }
     else {
@@ -335,7 +351,7 @@ function BlinkInterval() {
     }
 }
 function BlinkDataGridBackColor(myBackColorFlag) {
-    $('#dataGrid_AlarmInfo').datagrid({
+    $('#dataGrid_AlarmInfo').treegrid({
         rowStyler: function (index, row) {
             if (myBackColorFlag == true) {
                 return 'background-color:red;';

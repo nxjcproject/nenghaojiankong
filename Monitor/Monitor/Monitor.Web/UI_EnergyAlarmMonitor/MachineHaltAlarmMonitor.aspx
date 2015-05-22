@@ -105,7 +105,7 @@
             </table>
         </div>
         <div data-options="region:'south',border:true,collapsible:false" style="height:160px;">
-        <table id="dataGrid_AlarmInfo" class="easyui-datagrid" data-options="fit:true,border:true"></table>
+        <table id="dataGrid_AlarmInfo" class="easyui-treegrid" data-options="fit:true,border:true"></table>
         </div>
     </div>
     <form id="form1" runat="server"></form>

@@ -159,7 +159,7 @@ function InitializingAlarmDataGrid(myData) {
         }, {
             width: 150,
             title: '报警类型',
-            field: 'EnergyConsumptionType'
+            field: 'AlarmType'
         }, {
             width: 150,
             title: '报警上限',
@@ -203,10 +203,12 @@ function InitializingEnergyAlarmGroup() {
         AlarmGroup.push({ 'id': m_LineId, 'LevelCode': '', 'OrganizationId': '', 'Value': '',
             'AlarmValue': '', 'AlarmType': '', 'AlarmStatus': ''
         });
-        $('#Line' + m_RowIndexString + m_ColumnIndexString).dblclick(function () {
+        $('#Line' + m_RowIndexString + m_ColumnIndexString).click(function () {
             var m_EnergyAlarmNode = GetEnergyAlarmNodeById($(this).attr("id"));
-            LoadSubEnergyAlarmNodesData(m_EnergyAlarmNode.LevelCode);
-            //双击事件的执行代码
+            if (m_EnergyAlarmNode.LevelCode != "") {
+                LoadSubEnergyAlarmNodesData(m_EnergyAlarmNode.LevelCode);
+            }
+            //单击事件的执行代码
         });
     }
 }

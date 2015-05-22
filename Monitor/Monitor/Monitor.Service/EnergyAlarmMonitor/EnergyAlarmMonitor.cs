@@ -79,7 +79,7 @@ namespace Monitor.Service.EnergyAlarmMonitor
                         A.LevelCode as LevelCode 
                         from system_Organization A 
 					    where A.Enabled = {1}
-                        and len(A.LevelCode) <= 7
+                        and (A.LevelType = 'Company' or A.LevelType = 'Factory' or A.LevelType = 'ProductionLine')
                         and {0} 
                         union 
                         select 
@@ -88,7 +88,7 @@ namespace Monitor.Service.EnergyAlarmMonitor
                         A.LevelCode + substring(C.LevelCode,2 ,len(C.LevelCode)-1) as LevelCode
                         from system_Organization A, tz_Formula B, formula_FormulaDetail C  
 					    where A.Enabled = {1}
-                        and len(A.LevelCode) = 7 
+                        and A.LevelType = 'ProductionLine'
                         and {0} 
                         and A.OrganizationID = B.OrganizationID 
                         and B.Type = 2
@@ -139,28 +139,31 @@ namespace Monitor.Service.EnergyAlarmMonitor
         //获得报警值
         public static DataTable GetAlarmValueByLevelCode(string[] myAlarmNodeLevelCode)
         {
-            string m_EndTime = DateTime.Now.AddMinutes(-10).ToString("yyyy-MM-dd HH:mm:ss");
             string m_Sql = @"Select 
                         A.OrganizationID as OrganizationId, 
-                        D.Name as Name, 
-                        D.LevelCode + substring(A.LevelCode,2 ,len(A.LevelCode)-1) as LevelCode, 
+						A.KeyId as KeyId, 
+                        (case when A.AlarmType = 'EnergyConsumption' then '电耗报警' when A.AlarmType = 'Power' then '功率报警' when A.AlarmType = 'CoalConsumption' then '煤耗报警' else A.AlarmType end) as AlarmType,
+                        A.VariableID as VariableID,
+                        D.LevelCode + substring(C.LevelCode,2 ,len(C.LevelCode)-1) as LevelCode,
                         C.Name as FormulaName, 
-                        A.StandardValue as StandardValue,
-                        A.ActualValue as ActualValue,
-                        A.StartTime as StartTime, 
-						A.EnergyConsumptionType as EnergyConsumptionType   
-                        from shift_EnergyConsumptionAlarmLog A  
-                        left join system_Organization D on A.OrganizationID = D.OrganizationID, 
-						tz_Formula B, formula_FormulaDetail C
-					    where A.OrganizationID = B.OrganizationID 
-                        and B.Type = 2 
-                        and B.Enable = 1 
-                        and B.KeyID = C.KeyID
-                        and C.LevelCode = A.LevelCode
-                        and A.EndTime > '{1}' 
+                        D.Name as Name, 
+                        E.StandardValue as StandardValue,
+                        E.ActualValue as ActualValue,
+                        E.StartTime as StartTime 
+						from system_TenDaysRealtimeAlarm A, tz_Formula B, formula_FormulaDetail C, system_Organization D, shift_EnergyConsumptionAlarmLog E 
+						where A.VariableID is not null
+						and A.AlarmType in ('EnergyConsumption','Power','CoalConsumption') 
+						and B.Type = 2
+						and B.ENABLE = 1
+						and B.State = 0
+						and A.OrganizationID = B.OrganizationID
+						and B.KeyID = C.KeyID
+						and A.VariableID = C.VariableID
+						and A.OrganizationID = D.OrganizationID
+                        and A.KeyId = E.EnergyConsumptionAlarmLogID
                         and {0}";
 
-            string m_SqlConditionTemp = @" D.LevelCode + substring(A.LevelCode,2 ,len(A.LevelCode)-1) like '{0}%' ";
+            string m_SqlConditionTemp = @" D.LevelCode + substring(C.LevelCode,2 ,len(C.LevelCode)-1) like '{0}%' ";
             string m_SqlCondition = "";                 //数据数据授权
 
             //tz_Formula B, formula_FormulaDetail C
@@ -181,11 +184,11 @@ namespace Monitor.Service.EnergyAlarmMonitor
 
             if (m_SqlCondition != "")
             {
-                m_Sql = string.Format(m_Sql, "(" + m_SqlCondition + ")", m_EndTime);
+                m_Sql = string.Format(m_Sql, "(" + m_SqlCondition + ")");
             }
             else
             {
-                m_Sql = string.Format(m_Sql, "A.OrganizationID <> A.OrganizationID", m_EndTime);
+                m_Sql = string.Format(m_Sql, "A.OrganizationID <> A.OrganizationID");
             }
 
             try
