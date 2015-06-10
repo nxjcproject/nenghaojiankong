@@ -1667,10 +1667,12 @@
     <Content Include="UI_OverView\css\page\Style_OverView_nxjc.css" />
     <Content Include="UI_OverView\css\page\View_OverView_nxjc_qtx.css" />
     <Content Include="UI_OverView\images\page\GlobalMap.png" />
+    <Content Include="UI_OverView\js\common\OverViewMonitor.js" />
     <Content Include="UI_OverView\js\page\Style_OverView_nxjc.js" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc.js" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc_qtx.js" />
     <Content Include="UI_OverView\js\page\View_OverView_zhuzhou.js" />
+    <Content Include="UI_OverView\OverViewMonitor.asmx" />
     <Content Include="UI_OverView\View_OverView_nxjc.aspx" />
     <Content Include="UI_OverView\View_OverView_nxjc_qtx.aspx" />
     <Content Include="UI_OverView\View_OverView_zhuzhou.aspx" />
@@ -1800,6 +1802,10 @@
     <Compile Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\MonitorView.aspx.designer.cs">
       <DependentUpon>MonitorView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI_OverView\OverViewMonitor.asmx.cs">
+      <DependentUpon>OverViewMonitor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI_OverView\View_OverView_nxjc.aspx.cs">
       <DependentUpon>View_OverView_nxjc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1843,7 +1849,6 @@
     <Folder Include="UI_Monitor\js\page\" />
     <Folder Include="UI_OverView\css\common\" />
     <Folder Include="UI_OverView\images\common\" />
-    <Folder Include="UI_OverView\js\common\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monitor.Infrastructure\Monitor.Infrastructure.csproj">

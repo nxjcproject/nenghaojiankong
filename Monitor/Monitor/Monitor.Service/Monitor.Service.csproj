@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EnergyConsumption">
+      <HintPath>..\..\Lib\EnergyConsumption.dll</HintPath>
+    </Reference>
     <Reference Include="SqlServerDataAdapter">
       <HintPath>..\..\Lib\SqlServerDataAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Standard_GB16780-2012">
+      <HintPath>..\..\Lib\Standard_GB16780-2012.dll</HintPath>
     </Reference>
     <Reference Include="StatisticalReport.Infrastructure">
       <HintPath>..\..\Lib\StatisticalReport.Infrastructure.dll</HintPath>
@@ -52,6 +58,12 @@
     <Compile Include="EnergyAlarmMonitor\SlaverHaltDelayAlarmMonitor.cs" />
     <Compile Include="FormulaEnergy\FormulaEnergyService.cs" />
     <Compile Include="FormulaEnergy\FormulaPowerService.cs" />
+    <Compile Include="OverViewMonitorFactory\ComprehensiveConsumptionProvider.cs" />
+    <Compile Include="OverViewMonitorFactory\DataItemProviderFactory.cs" />
+    <Compile Include="OverViewMonitorFactory\DataItemProviderType.cs" />
+    <Compile Include="OverViewMonitorFactory\IOverViewMonitorDataProvider.cs" />
+    <Compile Include="OverViewMonitorFactory\NullProvider.cs" />
+    <Compile Include="OverViewMonitorFactory\ProcessConsumptionProvider.cs" />
     <Compile Include="ProcessEnergyMonitor\ClinkerEnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\EnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\OrganizationHelper.cs" />

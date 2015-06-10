@@ -13,8 +13,9 @@
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
     <!--[if lt IE 8 ]><script type="text/javascript" src="/js/common/json2.min.js"></script><![endif]-->
 
-    <script type="text/javascript" src="js/page/Style_OverView_nxjc.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/page/View_OverView_nxjc.js" charset="utf-8"></script>
+    <%--<script type="text/javascript" src="js/page/Style_OverView_nxjc.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/page/View_OverView_nxjc.js" charset="utf-8"></script>--%>
+    <script src="js/common/OverViewMonitor.js"></script>
 </head>
 <body>
     <img id="GlobalBackGroundImg" src="images/page/GlobalMap.png" />
@@ -40,43 +41,51 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd">
+                                <span id="zc_nxjc>rawMaterialsPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc余热发电功率(MW)本月累计"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc煤粉制备电耗(KWh/t)本月累计"></span>
-                            </td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValeTopTd">
+                                <span id="zc_nxjc>clinkerPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>cementPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>clinkerElectricityGeneration_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>clinker_ElectricityConsumption_Comprehensive>Comprehensive"></span>
                             </td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>clinker_CoalConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
+                            </td>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>cementmill_ElectricityConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd">
+                                <span id="zc_nxjc>cementmill_CoalConsumption_Comprehensive>Comprehensive"></span>
                             </td>
                         </tr>
                     </table>
@@ -99,43 +108,43 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc>rawMaterialsPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc余热发电功率(MW)本月累计"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc煤粉制备电耗(KWh/t)本月累计"></span>
-                            </td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc>clinkerPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>cementPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>clinkerElectricityGeneration_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>clinker_ElectricityConsumption_Comprehensive>Comprehensive"></span>
                             </td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>clinker_CoalConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>cementmill_ElectricityConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_ychc>cementmill_CoalConsumption_Comprehensive>Comprehensive"></span>
                             </td>
                         </tr>
                     </table>
@@ -152,49 +161,48 @@
                         <tr>
                             <td class="DataItemsTitleTd" colspan="2">
                                 <div class="DataItemsTitleDiv">青铜峡水泥</div>
-
                             </td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx>rawMaterialsPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx余热发电功率(MW)本月累计"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx煤粉制备电耗(KWh/t)本月累计"></span>
-                            </td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx>clinkerPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>cementPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>clinkerElectricityGeneration_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>clinker_ElectricityConsumption_Comprehensive>Comprehensive"></span>
                             </td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>clinker_CoalConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>cementmill_ElectricityConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_qtx>cementmill_CoalConsumption_Comprehensive>Comprehensive"></span>
                             </td>
                         </tr>
                     </table>
@@ -220,36 +228,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span17"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span18"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span19"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span20"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span21"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span22"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span23"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span24"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -271,36 +287,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span25"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span26"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span27"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span28"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span29"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span30"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span31"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span32"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -322,36 +346,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span33"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span34"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span35"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h)
+                            </td>
+                            <td class="DataValueTd"><span id="Span36"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span37"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span38"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span39"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span40"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -376,43 +408,43 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_byc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_byc>rawMaterialsPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_byc余热发电功率(MW)本月累计"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc煤粉制备电耗(KWh/t)本月累计"></span>
-                            </td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
-                            </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_nxjc_byc>clinkerPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>cementPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>clinkerElectricityGeneration_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>clinker_ElectricityConsumption_Comprehensive>Comprehensive"></span>
                             </td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>clinker_CoalConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>cementmill_ElectricityConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="zc_nxjc_byc>cementmill_CoalConsumption_Comprehensive>Comprehensive"></span>
                             </td>
                         </tr>
                     </table>
@@ -435,36 +467,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span49"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span50"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span51"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span52"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span53"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span54"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span55"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span56"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -490,36 +530,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span57"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span58"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span59"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span60"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span61"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span62"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span63"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span64"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -541,36 +589,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span65"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span66"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span67"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span68"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span69"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span70"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span71"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span72"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -592,36 +648,44 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"></td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataValeTopTd"><span id="Span73"></span>
                             </td>
-                            <td class="DataValeTopTd"></td>
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
+                            </td>
+                            <td class="DataValeTopTd"><span id="Span74"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
+                            <td class="DataValueTd"><span id="Span75"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span76"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataValueTd"><span id="Span77"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
+                            </td>
+                            <td class="DataValueTd"><span id="Span78"></span>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
                             </td>
-                            <td class="DataValueTd"></td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataValueTd"><span id="Span79"></span>
                             </td>
-                            <td class="DataValueTd"></td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd"><span id="Span80"></span>
+                            </td>
                         </tr>
                     </table>
                 </td>
