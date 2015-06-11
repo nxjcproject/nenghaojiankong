@@ -32,33 +32,51 @@ namespace Monitor.Service.OverViewMonitorFactory
             if (organizationId == "zc_nxjc")
             {
                 dataString = @"select E.VariableId,SUM(E.monthBalance) as monthBalance from
-                                (select C.OrganizationID,C.VariableId,
-                                SUM(C.TotalBalance+(case when D.CumulantDay is null then 0 else D.CumulantDay end)) as monthBalance from 
-                                (select A.OrganizationID,B.VariableId,B.OrganizationID as detailO,SUM(B.TotalPeakValleyFlatB) as TotalBalance 
-                                from (select BalanceId,OrganizationID,TimeStamp from tz_Balance) as A
-                                right join balance_Energy as B
-                                on A.BalanceId=B.KeyId where TimeStamp like CONVERT(varchar(7),GETDATE(),20) + '%'
-                                group by A.OrganizationID,B.VariableId,B.OrganizationID) AS C
-                                left join (select OrganizationID,VariableId,(case when CumulantDay is null then 0 else CumulantDay end) as CumulantDay
-                                from RealtimeIncrementCumulant) AS D
-                                on C.detailO=D.OrganizationID and C.VariableId=D.VariableId group by C.OrganizationID,C.VariableId) AS E
-                                group by E.VariableId";
+                            (select C.OrganizationID,C.VariableId,
+                            SUM(C.TotalBalance+(case when D.CumulantDay is null then 0 else D.CumulantDay end)) as monthBalance from 
+                            (select A.OrganizationID,
+                            (case when B.VariableId = 'clinker_ClinkerFactoryTransportInput' then 'clinker_ClinkerInput'
+                            when B.VariableId = 'clinker_ClinkerCompanyTransportInput' then 'clinker_ClinkerInput'
+                            else B.VariableId end) as VariableId,B.OrganizationID as detailO,SUM(B.TotalPeakValleyFlatB) as TotalBalance 
+                            from (select BalanceId,OrganizationID,TimeStamp from tz_Balance) as A
+                            right join balance_Energy as B
+                            on A.BalanceId=B.KeyId where (B.ValueType = 'ElectricityQuantity' or B.ValueType = 'MaterialWeight') and
+                            TimeStamp like CONVERT(varchar(7),GETDATE(),20) + '%'
+                            group by A.OrganizationID,B.VariableId,B.OrganizationID) AS C
+                            left join 
+                            (select OrganizationID,
+                            (case when VariableId = 'clinker_ClinkerFactoryTransportInput' then 'clinker_ClinkerInput'
+                            when VariableId = 'clinker_ClinkerCompanyTransportInput' then 'clinker_ClinkerInput'
+                            else VariableId end) as VariableId,
+                            (case when CumulantDay is null then 0 else CumulantDay end) as CumulantDay
+                            from RealtimeIncrementCumulant) AS D
+                            on C.detailO=D.OrganizationID and C.VariableId=D.VariableId group by C.OrganizationID,C.VariableId) AS E
+                            group by E.VariableId";
             }
             else
             {
                 dataString = @"select VariableId,SUM(monthBalance) as monthBalance from
-                                (select * from(
-                                select C.OrganizationID,C.VariableId,
-                                SUM(C.TotalBalance+(case when D.CumulantDay is null then 0 else D.CumulantDay end)) as monthBalance from 
-                                (select A.OrganizationID,B.VariableId,B.OrganizationID as detailO,SUM(B.TotalPeakValleyFlatB) as TotalBalance 
-                                from (select BalanceId,OrganizationID,TimeStamp from tz_Balance) as A
-                                right join balance_Energy as B
-                                on A.BalanceId=B.KeyId where TimeStamp like CONVERT(varchar(7),GETDATE(),20) + '%'
-                                group by A.OrganizationID,B.VariableId,B.OrganizationID) AS C
-                                left join (select OrganizationID,VariableId,(case when CumulantDay is null then 0 else CumulantDay end) as CumulantDay
-                                from RealtimeIncrementCumulant) AS D
-                                on C.detailO=D.OrganizationID and C.VariableId=D.VariableId group by C.OrganizationID,C.VariableId) AS E
-                                where OrganizationID like @organizationId) AS F group by VariableId";
+                            (select * from(
+                            select C.OrganizationID,C.VariableId,
+                            SUM(C.TotalBalance+(case when D.CumulantDay is null then 0 else D.CumulantDay end)) as monthBalance from 
+                            (select A.OrganizationID,
+                            (case when B.VariableId = 'clinker_ClinkerFactoryTransportInput' then 'clinker_ClinkerInput'
+                            when B.VariableId = 'clinker_ClinkerCompanyTransportInput' then 'clinker_ClinkerInput'
+                            else B.VariableId end) as VariableId,
+                            B.OrganizationID as detailO,SUM(B.TotalPeakValleyFlatB) as TotalBalance 
+                            from (select BalanceId,OrganizationID,TimeStamp from tz_Balance) as A
+                            right join balance_Energy as B
+                            on A.BalanceId=B.KeyId where (B.ValueType = 'ElectricityQuantity' or B.ValueType = 'MaterialWeight') and
+                            TimeStamp like CONVERT(varchar(7),GETDATE(),20) + '%'
+                            group by A.OrganizationID,B.VariableId,B.OrganizationID) AS C
+                            left join (select OrganizationID,
+                            (case when VariableId = 'clinker_ClinkerFactoryTransportInput' then 'clinker_ClinkerInput'
+                            when VariableId = 'clinker_ClinkerCompanyTransportInput' then 'clinker_ClinkerInput'
+                            else VariableId end) as VariableId,
+                            (case when CumulantDay is null then 0 else CumulantDay end) as CumulantDay
+                            from RealtimeIncrementCumulant) AS D
+                            on C.detailO=D.OrganizationID and C.VariableId=D.VariableId group by C.OrganizationID,C.VariableId) AS E
+                            where OrganizationID like @organizationId) AS F group by VariableId";
             }
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@organizationId", organizationId + "%"));
