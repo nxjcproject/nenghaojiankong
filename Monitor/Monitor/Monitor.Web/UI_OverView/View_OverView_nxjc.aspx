@@ -13,8 +13,8 @@
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
     <!--[if lt IE 8 ]><script type="text/javascript" src="/js/common/json2.min.js"></script><![endif]-->
 
-    <%--<script type="text/javascript" src="js/page/Style_OverView_nxjc.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/page/View_OverView_nxjc.js" charset="utf-8"></script>--%>
+    <script type="text/javascript" src="js/page/Style_OverView_nxjc.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/page/View_OverView_nxjc.js" charset="utf-8"></script>
     <script src="js/common/OverViewMonitor.js"></script>
 </head>
 <body>
