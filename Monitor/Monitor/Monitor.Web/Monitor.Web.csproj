@@ -39,7 +39,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EasyUIJsonParser">
-      <HintPath>..\..\Lib\EasyUIJsonParser.dll</HintPath>
+      <HintPath>..\..\..\..\组件\EasyUIJsonParser\EasyUIJsonParser\bin\Debug\EasyUIJsonParser.dll</HintPath>
+    </Reference>
+    <Reference Include="EnergyConsumption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\EnergyConsumption.dll</HintPath>
     </Reference>
     <Reference Include="InternalMemeryRestore">
       <HintPath>..\..\Lib\InternalMemeryRestore.dll</HintPath>
@@ -1664,15 +1668,19 @@
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker04\template.html" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\MonitorView.aspx" />
     <Content Include="UI_Monitor\ProcessEnergyMonitor\zc_nxjc_qtx_tys_clinker05\template.html" />
+    <Content Include="UI_OverView\css\page\Style_OverView_Factory.css" />
     <Content Include="UI_OverView\css\page\Style_OverView_nxjc.css" />
     <Content Include="UI_OverView\css\page\View_OverView_nxjc_qtx.css" />
     <Content Include="UI_OverView\images\page\GlobalMap.png" />
     <Content Include="UI_OverView\js\common\OverViewMonitor.js" />
+    <Content Include="UI_OverView\js\page\Style_OverView_Factory.js" />
     <Content Include="UI_OverView\js\page\Style_OverView_nxjc.js" />
+    <Content Include="UI_OverView\js\page\View_OverView_Factory.js" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc.js" />
     <Content Include="UI_OverView\js\page\View_OverView_nxjc_qtx.js" />
     <Content Include="UI_OverView\js\page\View_OverView_zhuzhou.js" />
     <Content Include="UI_OverView\OverViewMonitor.asmx" />
+    <Content Include="UI_OverView\View_OverView_Factory.aspx" />
     <Content Include="UI_OverView\View_OverView_nxjc.aspx" />
     <Content Include="UI_OverView\View_OverView_nxjc_qtx.aspx" />
     <Content Include="UI_OverView\View_OverView_zhuzhou.aspx" />
@@ -1805,6 +1813,13 @@
     <Compile Include="UI_OverView\OverViewMonitor.asmx.cs">
       <DependentUpon>OverViewMonitor.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI_OverView\View_OverView_Factory.aspx.cs">
+      <DependentUpon>View_OverView_Factory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_OverView\View_OverView_Factory.aspx.designer.cs">
+      <DependentUpon>View_OverView_Factory.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_OverView\View_OverView_nxjc.aspx.cs">
       <DependentUpon>View_OverView_nxjc.aspx</DependentUpon>

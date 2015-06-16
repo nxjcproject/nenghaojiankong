@@ -1,0 +1,140 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+}
+
+#GlobalBackGroundImg {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    z-index:1;
+}
+
+#GlobalBackGroundDiv {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    background-color: #c7e2d3;
+    width: 1360px;
+    height: 460px;
+    left: 0px;
+    top: 0px;
+    display: block;
+    z-index:0;
+}
+#GlobalDataTablesDiv {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    width: 1360px;
+    height: 460px;
+    left: 0px;
+    top: 0px;
+    display: block;
+    z-index:99;
+}
+tr, td {
+    border: none;
+    margin: 0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    padding: 0px;
+}
+
+ul, li, div {
+    list-style-type: none;
+}
+
+/*数据表格容器*/
+.DataTablesContainer {
+    width:1360px;
+    height:456px;
+}
+.DataTableTd {
+    width:426px;
+    height:100px;
+    vertical-align:middle;
+}
+
+
+.DataTableColSpace {
+    width: 20px;
+}
+
+/*数据表格*/
+.DataItemsTable {
+    border: 1px solid #555555;
+    color: #000000;
+}
+
+
+.DataItemsTitleTd {
+    height: 29px;
+    vertical-align: top;
+}
+
+.DataItemsTitleDiv {
+    width: 160px;
+    height: 16px;
+    border-bottom: 1px solid #555555;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 10pt;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+.DataItemsTitleTop1 {
+    width: 134px;
+    height: 1px;
+}
+
+.DataItemsTitleTop2 {
+    width: 78px;
+    height: 1px;
+}
+.DataNameTopTd {
+    width: 134px;
+    height: 17px;
+    font-size: 9pt;
+    text-align: right;
+    border-left: 1px solid #555555;
+}
+
+.DataValeTopTd {
+    width: 68px;
+    height: 15px;
+    font-size: 9pt;
+    text-align: left;
+    padding-left: 15px;
+    vertical-align: bottom;
+}
+
+.DataNameTd {
+    width: 134px;
+    height: 19px;
+    font-size: 9pt;
+    text-align: right;
+    vertical-align: bottom;
+    padding-bottom: 2px;
+    border-left: 1px solid #555555;
+}
+
+.DataValueTd {
+    width: 68px;
+    height: 19px;
+    font-size: 9pt;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 2px;
+    vertical-align: bottom;
+}

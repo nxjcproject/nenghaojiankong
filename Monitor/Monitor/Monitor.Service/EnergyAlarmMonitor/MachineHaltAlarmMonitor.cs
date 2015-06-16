@@ -82,7 +82,7 @@ namespace Monitor.Service.EnergyAlarmMonitor
                         from system_Organization A 
 					    where A.Enabled = 1
                         and (A.LevelType = 'Company' or A.LevelType = 'Factory' or A.LevelType = 'ProductionLine')
-                        and ( A.LevelCode like 'O0301%' ) 
+                        and {0} 
                         union 
                         select 
 					    CONVERT(varchar(64), D.ID) as OrganizationID, 

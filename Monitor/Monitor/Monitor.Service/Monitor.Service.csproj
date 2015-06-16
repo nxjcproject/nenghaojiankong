@@ -66,7 +66,9 @@
     <Compile Include="OverViewMonitorFactory\ProcessConsumptionProvider.cs" />
     <Compile Include="ProcessEnergyMonitor\ClinkerEnergyConsumptionMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\EnergyConsumptionMonitor.cs" />
+    <Compile Include="ProcessEnergyMonitor\MultiMonitorShell.cs" />
     <Compile Include="ProcessEnergyMonitor\OrganizationHelper.cs" />
+    <Compile Include="ProcessEnergyMonitor\OverViewMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\ProcessEnergyMonitorService.cs" />
     <Compile Include="ProcessEnergyMonitor\ProcessPowerMonitor.cs" />
     <Compile Include="ProcessEnergyMonitor\RealtimeFormulaValueService.cs" />
