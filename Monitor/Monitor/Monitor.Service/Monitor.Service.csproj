@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoSetParameters">
+      <HintPath>..\..\Lib\AutoSetParameters.dll</HintPath>
+    </Reference>
     <Reference Include="EnergyConsumption">
       <HintPath>..\..\Lib\EnergyConsumption.dll</HintPath>
     </Reference>

@@ -21,15 +21,16 @@ namespace Monitor.Service.OverViewMonitorFactory
         public IEnumerable<ProcessEnergyMonitor.DataItem> GetDataItem(string organizationId, params string[] variableIds)
         {
             Standard_GB16780_2012.Function_EnergyConsumption_V1 EnergyConsumption_V1 = new Standard_GB16780_2012.Function_EnergyConsumption_V1();
-            Standard_GB16780_2012.Parameters_ComprehensiveData m_ComprehensiveData = new Standard_GB16780_2012.Parameters_ComprehensiveData();
-            m_ComprehensiveData.ClinkerOutsourcing_PowerConsumption = 55;        //外购熟料综合电耗
-            m_ComprehensiveData.ClinkerOutsourcing_CoalConsumption = 100;        //外购熟料综合煤耗
+            Standard_GB16780_2012.Parameters_ComprehensiveData m_ComprehensiveData = AutoSetParameters.AutoSetParameters_V1.SetComprehensiveParametersEntity();
+            //new Standard_GB16780_2012.Parameters_ComprehensiveData();
+            //m_ComprehensiveData.ClinkerOutsourcing_PowerConsumption = 55;        //外购熟料综合电耗
+            //m_ComprehensiveData.ClinkerOutsourcing_CoalConsumption = 100;        //外购熟料综合煤耗
 
-            m_ComprehensiveData.CoalLowCalorificValue = 29307m;                  //煤粉低位发热量
-            m_ComprehensiveData.CoalWaterContent = 0m;                           //煤粉水分
+            //m_ComprehensiveData.CoalLowCalorificValue = 29307m;                  //煤粉低位发热量
+            //m_ComprehensiveData.CoalWaterContent = 0m;                           //煤粉水分
 
-            m_ComprehensiveData.ElectricityToCoalFactor = 0.1229m;               //用电折合用煤系数
-            m_ComprehensiveData.StandardCalorificValue = 29307m;                 //标准煤发热量
+            //m_ComprehensiveData.ElectricityToCoalFactor = 0.1229m;               //用电折合用煤系数
+            //m_ComprehensiveData.StandardCalorificValue = 29307m;                 //标准煤发热量
 
             IList<DataItem> result = new List<DataItem>();
 
