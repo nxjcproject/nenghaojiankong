@@ -13,12 +13,12 @@
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
     <!--[if lt IE 8 ]><script type="text/javascript" src="/js/common/json2.min.js"></script><![endif]-->
 
-    <%--<script type="text/javascript" src="js/page/Style_OverView_nxjc.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/page/View_OverView_zhuzhou.js" charset="utf-8"></script>--%>
+    <script type="text/javascript" src="js/page/Style_OverView_zcshn.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/page/View_OverView_zcshn.js" charset="utf-8"></script>
     <script src="js/common/OverViewMonitor.js"></script>
 </head>
 <body>
-    <img id="GlobalBackGroundImg" src="images/page/GlobalMap.png" />
+    <img id="GlobalBackGroundImg" src="images/page/GlobalMap_zhuhzou.png" />
     <div id="GlobalBackGroundDiv"></div>
     <div id="GlobalDataTablesDiv">
         <table id="DataTablesContainer" class="DataTablesContainer">
@@ -41,43 +41,51 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="DataNameTopTd">总功率(万千瓦)
+                            <td class="DataNameTopTd">生料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_zcshn_zhuzhouc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd">
+                                <span id="zc_zcshn>rawMaterialsPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTopTd">余热发电功率(MW)
+                            <td class="DataNameTopTd">熟料分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_zcshn_zhuzhouc余热发电功率(MW)本月累计"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="DataNameTd">煤磨电耗(kW·h/t) 
-                            </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc煤粉制备电耗(KWh/t)本月累计"></span>
-                            </td>
-                            <td class="DataNameTd">水泥磨电耗(kW·h/t)
-                            </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValeTopTd">
+                                <span id="zc_zcshn>clinkerPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">生料磨电耗(kW·h/t)
+                            <td class="DataNameTd">水泥分布电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>cementPreparation_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
-                            <td class="DataNameTd">水泥分步电耗(kW·h/t) 
+                            <td class="DataNameTd">吨熟料发电量(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>clinkerElectricityGeneration_ElectricityConsumption>ProcessConsumption"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="DataNameTd">熟料综合电耗(kW·h/t) 
+                            <td class="DataNameTd">熟料综合电耗(kW·h/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>clinker_ElectricityConsumption_Comprehensive>Comprehensive"></span>
                             </td>
-                            <td class="DataNameTd">熟料综合煤耗(kg/t) 
+                            <td class="DataNameTd">熟料综合煤耗(kg/t)
                             </td>
-                            <td class="DataValueTd"><span id="zc_zcshn_zhuzhouc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>clinker_CoalConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="DataNameTd">水泥综合电耗(kW·h/t) 
+                            </td>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>cementmill_ElectricityConsumption_Comprehensive>Comprehensive"></span>
+                            </td>
+                            <td class="DataNameTd">水泥综合煤耗(kg/t) 
+                            </td>
+                            <td class="DataValueTd">
+                                <span id="zc_zcshn>cementmill_CoalConsumption_Comprehensive>Comprehensive"></span>
                             </td>
                         </tr>
                     </table>
@@ -102,41 +110,41 @@
                         <tr>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_ychc总用电功率(KW)本月累计"></span>
                             </td>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_ychc余热发电功率(MW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_ychc余热发电功率(MW)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc煤粉制备电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc煤粉制备电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc水泥磨电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc生料磨电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd"> 
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc水泥电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc熟料综合电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_ychc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_ychc煤耗(kg/t)本月累计"></span>
                             </td>
                         </tr>
                     </table>
@@ -161,41 +169,41 @@
                         <tr>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_qtx总用电功率(KW)本月累计"></span>
                             </td>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_qtx余热发电功率(MW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_qtx余热发电功率(MW)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx煤粉制备电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx煤粉制备电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx水泥磨电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx生料磨电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx水泥电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx熟料综合电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_qtx煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_qtx煤耗(kg/t)本月累计"></span>
                             </td>
                         </tr>
                     </table>
@@ -379,41 +387,41 @@
                         <tr>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_byc总用电功率(KW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_byc总用电功率(KW)本月累计"></span>
                             </td>
                             <td class="DataNameTopTd">
                             </td>
-                            <td class="DataValeTopTd"><span id="zc_nxjc_byc余热发电功率(MW)本月累计"></span>
+                            <td class="DataValeTopTd"><span id="zc_zcshn_byc余热发电功率(MW)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc煤粉制备电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc煤粉制备电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc水泥磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc水泥磨电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc生料磨电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc生料磨电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc水泥电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc水泥电耗(KWh/t)本月累计"></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc熟料综合电耗(KWh/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc熟料综合电耗(KWh/t)本月累计"></span>
                             </td>
                             <td class="DataNameTd">
                             </td>
-                            <td class="DataValueTd"><span id="zc_nxjc_byc煤耗(kg/t)本月累计"></span>
+                            <td class="DataValueTd"><span id="zc_zcshn_byc煤耗(kg/t)本月累计"></span>
                             </td>
                         </tr>
                     </table>
